@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ THEME TOKENS (per world) ============ */
+:root {
+  color-scheme: light;
+  /* Neutral / técnico — para la landing (sin comprometerse con ninguna unidad) */
+  --bg: #f4f4f2;
+  --ink: #0c0c0d;
+  --muted: #6e6e6a;
+  --surface: #ffffff;
+  --border: #e2e2de;
+  --hairline: #d7d7d2;
+  --brand-red: #e30613;
+  --brand-yellow: #ffd400;
+  --accent: #e30613;
+  --accent-ink: #ffffff;
+  --ring: #0c0c0d;
+  --display: 'Archivo', system-ui, sans-serif;
+  --radius: 14px;
+}
+
+[data-linea='limpieza'] {
+  --bg: #fffdf3;
+  --ink: #141210;
+  --muted: #6f6a5f;
+  --surface: #ffffff;
+  --border: #ece3c4;
+  --accent: #e30613;
+  --accent-ink: #ffffff;
+  --brand: #ffd400;
+  --ring: #141210;
+  --display: 'Archivo', system-ui, sans-serif;
+  --radius: 12px;
+}
+
+[data-linea='hogar'] {
+  --bg: #faf5f0;
+  --ink: #2b2724;
+  --muted: #857b72;
+  --surface: #ffffff;
+  --border: #e8ddd2;
+  --accent: #c08552;
+  --accent-ink: #ffffff;
+  --brand: #a8a29e;
+  --ring: #2b2724;
+  --display: 'Fraunces', Georgia, serif;
+  --radius: 20px;
+}
+
+/* ========================================================= */
+/* VERSIÓN 2 — Neubrutalism (bloques, bordes negros, sombras) */
+/* ========================================================= */
+[data-sv='2'] {
+  --bg: #fbf3dd; --ink: #141414; --muted: #5b5647; --surface: #ffffff;
+  --border: #141414; --hairline: #141414; --brand-red: #e30613; --brand-yellow: #ffd400;
+  --accent: #e30613; --brand: #ffd400; --accent-ink: #fff; --ring: #141414;
+  --display: 'Archivo', sans-serif; --radius: 12px;
+}
+[data-sv='2'][data-linea='limpieza'] {
+  --bg: #fff3b8; --ink: #141414; --muted: #6a6236; --surface: #ffffff; --border: #141414; --hairline: #141414;
+  --accent: #e30613; --brand: #ffd400; --ring: #141414; --display: 'Archivo', sans-serif; --radius: 12px;
+}
+[data-sv='2'][data-linea='hogar'] {
+  --bg: #efe6d4; --ink: #141414; --muted: #6b6252; --surface: #ffffff; --border: #141414; --hairline: #141414;
+  --accent: #c0611e; --brand: #e0d2bd; --ring: #141414; --display: 'Archivo', sans-serif; --radius: 12px;
+}
+[data-sv='2'] .card-depth { border: 2.5px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); transition: transform .15s ease-out, box-shadow .15s ease-out; }
+[data-sv='2'] .card-depth:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); border-color: var(--ink); }
+[data-sv='2'] .btn { border: 2px solid var(--ink); }
+[data-sv='2'] .btn-primary { box-shadow: 3px 3px 0 var(--ink); }
+[data-sv='2'] .btn-primary:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); filter: none; }
+[data-sv='2'] .btn-ghost:hover { box-shadow: 3px 3px 0 var(--ink); }
+[data-sv='2'] .card { border: 2px solid var(--ink); }
+[data-sv='2'] .tech-grid { opacity: 0; }
+[data-sv='2'] .chip { border-width: 2px; }
+
+/* ========================================================= */
+/* VERSIÓN 3 — Retro 1975 (terroso, arcos, serif vintage)     */
+/* ========================================================= */
+[data-sv='3'] {
+  --bg: #efe2c6; --ink: #3a2a1c; --muted: #8a7452; --surface: #f8eed6;
+  --border: #dcc9a2; --hairline: #cdb894; --brand-red: #cc3a1e; --brand-yellow: #e3a72f;
+  --accent: #c2410c; --brand: #e3a72f; --accent-ink: #fff; --ring: #3a2a1c;
+  --display: 'DM Serif Display', Georgia, serif; --radius: 26px;
+}
+[data-sv='3'][data-linea='limpieza'] {
+  --bg: #f0e0bd; --ink: #3a2a1c; --muted: #8a7148; --surface: #f9efd6; --border: #e0cc9f; --hairline: #d4bd8e;
+  --accent: #c8371a; --brand: #e3a72f; --ring: #3a2a1c; --display: 'DM Serif Display', Georgia, serif; --radius: 26px;
+}
+[data-sv='3'][data-linea='hogar'] {
+  --bg: #ece0cd; --ink: #3a2a1c; --muted: #8f7c62; --surface: #f7edda; --border: #ddccb2; --hairline: #d0bd9f;
+  --accent: #a85a2c; --brand: #c9a15a; --ring: #3a2a1c; --display: 'DM Serif Display', Georgia, serif; --radius: 26px;
+}
+[data-sv='3'] .card-depth { border: 1.5px solid var(--border); border-radius: 24px; box-shadow: 0 20px 44px -24px rgba(90, 50, 20, .42); }
+[data-sv='3'] .card-depth:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: 0 30px 55px -26px rgba(90, 50, 20, .5); }
+[data-sv='3'] .tech-grid { opacity: 0; }
+
+/* ========================================================= */
+/* VERSIÓN 4 — Clásico modernizado (medianaranja.com.ar)      */
+/* ========================================================= */
+[data-sv='4'] {
+  --bg: #ffffff; --ink: #20201d; --muted: #6f6a63; --surface: #ffffff;
+  --border: #e8e4dc; --hairline: #e8e4dc; --brand-red: #e30613; --brand-yellow: #ffd400;
+  --accent: #e30613; --brand: #ffd400; --accent-ink: #fff; --ring: #20201d;
+  --display: 'Archivo', sans-serif; --radius: 10px;
+}
+[data-sv='4'][data-linea='limpieza'],
+[data-sv='4'][data-linea='hogar'] {
+  --bg: #ffffff; --ink: #20201d; --muted: #6f6a63; --surface: #ffffff; --border: #ece7dd;
+  --accent: #e30613; --brand: #ffd400; --ring: #20201d; --display: 'Archivo', sans-serif; --radius: 8px;
+}
+[data-sv='4'] .tech-grid { opacity: 0; }
+
+/* ========================================================= */
+/* VERSIÓN 5 — Solo Limpieza · fabril · productos flotando    */
+/* ========================================================= */
+[data-sv='5'],
+[data-sv='5'][data-linea='limpieza'] {
+  --bg: #f4f4f2; --ink: #1c1a17; --muted: #6f6a62; --surface: #ffffff;
+  --border: #e5e2da; --hairline: #d9d6cd; --brand-red: #e30613; --brand-yellow: #ffd400;
+  --accent: #e30613; --brand: #ffd400; --accent-ink: #fff; --ring: #1c1a17;
+  --display: 'Archivo', sans-serif; --radius: 12px;
+}
+
+/* ============ BASE ============ */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+  button, a, [role='button'], label, input, select, textarea {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  h1, h2, h3, h4 { font-family: var(--display); line-height: 1.05; }
+}
+
+/* ============ COMPONENTS ============ */
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+
+  .display {
+    font-family: var(--display);
+    letter-spacing: -0.02em;
+  }
+
+  /* Limpieza display = tight, industrial */
+  [data-linea='limpieza'] .display { font-weight: 800; letter-spacing: -0.03em; }
+  /* Hogar display = airy serif */
+  [data-linea='hogar'] .display { font-weight: 500; letter-spacing: -0.01em; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
+      duration-200 ease-out-expo min-h-[48px] select-none;
+    transition-property: background-color, color, border-color, transform, filter, box-shadow;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-medium
+      transition-colors duration-200 whitespace-nowrap;
+  }
+
+  /* Sticker / etiqueta motif for Limpieza */
+  .sticker {
+    background: var(--brand, #ffd400);
+    color: #141210;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .text-muted { color: var(--muted); }
+
+  /* Etiqueta técnica monoespaciada */
+  .mono-label {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Grilla de hairlines de fondo (aire técnico/futurista) */
+  .tech-grid {
+    background-image:
+      linear-gradient(to right, var(--hairline, #e2e2de) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hairline, #e2e2de) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  }
+
+  /* Grano fino de película — da profundidad/atmósfera */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: overlay;
+  }
+
+  /* Glow atmosférico teñido con el color del mundo activo */
+  .atmo {
+    background:
+      radial-gradient(60% 42% at 15% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+      radial-gradient(50% 40% at 100% 8%, color-mix(in srgb, var(--brand, var(--accent)) 20%, transparent), transparent 72%);
+  }
+
+  /* Módulo de línea (selector estilo consola, tema claro) */
+  .line-module {
+    background: linear-gradient(160deg, var(--surface), color-mix(in srgb, var(--surface) 92%, var(--bg)));
+    border: 1px solid var(--border);
+    transform: rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out, box-shadow 0.5s, border-color 0.5s;
+  }
+  .line-module:hover {
+    border-color: color-mix(in srgb, var(--acc) 45%, var(--border));
+    box-shadow:
+      0 2px 4px rgba(10, 10, 12, 0.04),
+      0 34px 60px -26px color-mix(in srgb, var(--acc) 48%, rgba(10, 10, 12, 0.4));
+  }
+  .line-scan {
+    background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--acc) 8%, transparent), transparent);
+    background-size: 100% 220%;
+    background-position: 0 -60%;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .line-module:hover .line-scan { opacity: 1; animation: line-scan 1.8s linear infinite; }
+  @keyframes line-scan { 0% { background-position: 0 -60%; } 100% { background-position: 0 160%; } }
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+  /* Tarjeta con profundidad + brillo teñido al hover */
+  .card-depth {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 2px rgba(10, 10, 12, 0.04), 0 10px 24px -14px rgba(10, 10, 12, 0.22);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+  }
+  .card-depth:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    box-shadow:
+      0 2px 4px rgba(10, 10, 12, 0.05),
+      0 30px 50px -22px color-mix(in srgb, var(--accent) 45%, rgba(10, 10, 12, 0.5));
+  }
+}
+
+/* Hide scrollbar on horizontal category rails but keep scroll */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

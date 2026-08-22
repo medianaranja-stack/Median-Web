@@ -1,0 +1,1424 @@
+{
+  "total": 36,
+  "categorias": {
+    "trapos-de-piso": "TRAPOS DE PISO",
+    "secadores": "SECADORES",
+    "cabos": "CABOS",
+    "mopas": "MOPAS",
+    "baldes": "BALDES",
+    "microfibras": "MICROFIBRAS",
+    "panos-amarillos": "PAÑOS AMARILLOS",
+    "repasadores": "REPASADORES",
+    "rejillas": "REJILLAS",
+    "franelas": "FRANELAS"
+  },
+  "productos": [
+    {
+      "id": 413,
+      "nombre": "Balde escurridor",
+      "slug": "balde-escurridor",
+      "categoria": "BALDES",
+      "permalink": "https://www.medianaranja.com.ar/producto/balde-escurridor/",
+      "sku": "81905-406",
+      "descripcion": "BALDE CON ESCURRIDOR\nSúper resistente · Práctico y cómodo\nCon escurridor de mopas\nLimpiá sin necesidad de agacharte ni ensuciarte las manos.\nCAPACIDAD 16 litros\nEAN 7790927819054",
+      "specs": {
+        "CODIGO": "81905-406",
+        "DUN14": "17790927819051",
+        "EMPAQUE": "6 unidades"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_balde.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_balde-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>BALDE CON ESCURRIDOR</h1>\n<p>Súper resistente · Práctico y cómodo<br />\nCon escurridor de mopas<br />\nLimpiá sin necesidad de agacharte ni ensuciarte las manos.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81905-406</h5>\n<h5><span style=\"color: #808080\">CAPACIDAD</span> 16 litros</h5>\n<h5><span style=\"color: #808080\">EAN </span>7790927819054</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927819051</h5>\n<h5><span style=\"color: #808080\">EMPAQUE   </span>6 unidades</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1726834177\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4472\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_balde-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_balde-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 419,
+      "nombre": "Cabo",
+      "slug": "cabo",
+      "categoria": "CABOS",
+      "permalink": "https://www.medianaranja.com.ar/producto/cabo/",
+      "sku": "81502-412",
+      "descripcion": "CABO METÁLICO RECUBIERTO\nIdeal para sujetar mopas y secadores\nPráctico gancho de colgar\nPosee rosca standard inferior\nEAN 7790927815025",
+      "specs": {
+        "CODIGO": "81502-412",
+        "MEDIDAS": "120 cm (Standard)",
+        "DUN14": "17790927815029",
+        "EMPAQUE": "12 unidades"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_cabo.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_cabo-7.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<h2>CABO METÁLICO RECUBIERTO</h2>\n<p>Ideal para sujetar mopas y secadores<br />\nPráctico gancho de colgar<br />\nPosee rosca standard inferior</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81502-412</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 120 cm (Standard)</h5>\n<h5><span style=\"color: #808080\">EAN</span> 7790927815025</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927815029</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  12 unidades</h5>\n<div class=\"row row-small filadescargas\" id=\"row-995560499\">\r\n\r\n<div class=\"col medium-5 small-4 large-5\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4473\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_cabo-7.jpg\" /></a><i class=\"fa fa-download \"></i>\r\n\r\n</div></div>\r\n<div class=\"col medium-2 small-12 large-2\"><div class=\"col-inner\">\r\n\r\n</div></div>\r\n<div class=\"col medium-1 small-4 large-1\"><div class=\"col-inner text-center\">\r\n\r\n\r\n\r\n</div></div>\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_cabo-7.jpg"
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "nombre": "Triple Frisado",
+      "slug": "triple-frisado",
+      "categoria": "FRANELAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/franela/",
+      "sku": "81324",
+      "descripcion": "FRANELAS\nTRIPLE FRISADO\nAtrapa mejor la suciedad.\nRecomendado para darle brillo a muebles y objetos de cuero.",
+      "specs": {
+        "CODIGO": "81324",
+        "MEDIDAS": "45X50cm",
+        "EAN13": "7790927813243",
+        "DUN14": "17790927813240",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "98.5% algodón + 1.5% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Franela.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Franela.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_Franela-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>FRANELAS</h1>\n<h2>TRIPLE FRISADO</h2>\n<p>Atrapa mejor la suciedad.<br />\nRecomendado para darle brillo a muebles y objetos de cuero.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81324</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 45X50cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927813243</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927813240</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 98.5% algodón + 1.5% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-21052215\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13355\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Franela.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4475\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_Franela-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n<p>&nbsp;</p>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_Franela-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "nombre": "1000USOS",
+      "slug": "1000usos",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-1000usos/",
+      "sku": "81423",
+      "descripcion": "MICROFIBRAS\n1000USOS\nUn paño para cada ambiente • Máxima suavidad.\nLa misma calidad de siempre en un pack económico que contiene 3 microfibras, brindan la capacidad de limpiar sólo con agua y sin dejar pelusa.",
+      "specs": {
+        "CODIGO": "81423",
+        "MEDIDAS": "30X30cm (c/u)",
+        "EAN13": "7790927814233",
+        "DUN14": "17790927814230",
+        "EMPAQUE": "Presentación en bolsa de 10 packs.",
+        "COMPOSICION": "80% poliéster + 20% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_1000usos-1.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_1000usos.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_1000usos-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>1000USOS</h2>\n<p>Un paño para cada ambiente • Máxima suavidad.<br />\nLa misma calidad de siempre en un pack económico que contiene 3 microfibras, brindan la capacidad de limpiar sólo con agua y sin dejar pelusa.</p>\n<h5><span style=\"color: #808080\">CÓDIGO:</span> 81423</h5>\n<h5><span style=\"color: #808080\">MEDIDAS:</span> 30X30cm (c/u)</h5>\n<h5><span style=\"color: #808080\">EAN13:</span> 7790927814233</h5>\n<h5><span style=\"color: #808080\">DUN14:</span> 17790927814230</h5>\n<h5><span style=\"color: #808080\">EMPAQUE:</span> Presentación en bolsa de 10 packs.</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN:</span> 80% poliéster + 20% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-110677629\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4463\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_1000usos.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4464\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_1000usos-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_1000usos.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_1000usos-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 271,
+      "nombre": "Lava Autos",
+      "slug": "lava-autos",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-lava-autos/",
+      "sku": "81422",
+      "descripcion": "MICROFIBRAS\nLAVA AUTOS\nSuper absorbente • Ultra resistente • No raya • No deja vetas\nIdeal para el lavado y secado de la carrocería de tu auto. Gracias a su exclusiva composición remueve la suciedad y absorbe, dejando tu auto limpio con menos esfuerzo y sin dejar marcas.",
+      "specs": {
+        "CODIGO": "81422",
+        "MEDIDAS": "50X60cm",
+        "EAN13": "7790927814226",
+        "DUN14": "17790927814223",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_lava_autos.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_lava_autos.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroLavaAutos-solo-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>LAVA AUTOS</h2>\n<p>Super absorbente • Ultra resistente • No raya • No deja vetas<br />\nIdeal para el lavado y secado de la carrocería de tu auto. Gracias a su exclusiva composición remueve la suciedad y absorbe, dejando tu auto limpio con menos esfuerzo y sin dejar marcas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81422</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 50X60cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814226</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814223</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-716860523\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=6996\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_lava_autos.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4477\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroLavaAutos-solo-1.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroLavaAutos-solo-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 265,
+      "nombre": "Lustradora",
+      "slug": "lustradora",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-lustradora/",
+      "sku": "914060",
+      "descripcion": "MICROFIBRAS\nLUSTRADORA\nNo raya • No deja vetas\nDeja tus superficies de madera más brillantes sin esfuerzo. La microfibra atrapa las partículas de una sola pasada, haciendo la limpieza más fácil.",
+      "specs": {
+        "CODIGO": "914060",
+        "MEDIDAS": "40X40cm",
+        "EAN13": "7798136921438",
+        "DUN14": "37798136921439",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroLustradora.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroLustradora.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMuebles-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>LUSTRADORA</h2>\n<p>No raya • No deja vetas<br />\nDeja tus superficies de madera más brillantes sin esfuerzo. La microfibra atrapa las partículas de una sola pasada, haciendo la limpieza más fácil.</p>\n<h5><span style=\"color: #808080\">CÓDIGO </span>914060</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7798136921438</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 37798136921439</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-121912029\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19761\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroLustradora.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4481\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMuebles-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMuebles-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 264,
+      "nombre": "Multiuso",
+      "slug": "multiuso",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-multiuso/",
+      "sku": "81417",
+      "descripcion": "MICROFIBRAS\nMULTIUSO\nSuper absorbente •  No acumula olores •  Ultra resistente.\nImprescindible para tener siempre a mano tanto en la cocina como en el baño. Remueve la suciedad sólo con agua y es super absorbente.",
+      "specs": {
+        "CODIGO": "81417",
+        "MEDIDAS": "35X40cm",
+        "EAN13": "7790927814172",
+        "DUN14": "17790927814179",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroMultiuso.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroMultiuso-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMultiuso-solo-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>MULTIUSO</h2>\n<p>Super absorbente •  No acumula olores •  Ultra resistente.<br />\nImprescindible para tener siempre a mano tanto en la cocina como en el baño. Remueve la suciedad sólo con agua y es super absorbente.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81417</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 35X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814172</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814179</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN </span>80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1243338309\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4679\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroMultiuso-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4680\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMultiuso-solo-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroMultiuso-1.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMultiuso-solo-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 267,
+      "nombre": "Pisos",
+      "slug": "pisos",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-pisos/",
+      "sku": "81421",
+      "descripcion": "MICROFIBRAS\nPISOS\nNo deja rastros • No acumula olores • Ultra resistente\nTodas las virtudes de la microfibra en un tamaño ideal para limpiar el piso. Absorbe el agua de una sola pasada y remueve las manchas fácilmente.",
+      "specs": {
+        "CODIGO": "81421",
+        "MEDIDAS": "48X60cm",
+        "EAN13": "7790927814219",
+        "DUN14": "17790927814216",
+        "EMPAQUE": "Cajas de 5 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida."
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_pisos.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_pisos.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroPisos-solo-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>PISOS</h2>\n<p>No deja rastros • No acumula olores • Ultra resistente<br />\nTodas las virtudes de la microfibra en un tamaño ideal para limpiar el piso. Absorbe el agua de una sola pasada y remueve las manchas fácilmente.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81421</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 48X60cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814219</h5>\n<h5><span style=\"color: #808080\">DUN14 </span>17790927814216</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 5 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida.</h5>\n<div class=\"row row-small filadescargas\" id=\"row-745215015\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=6997\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_pisos.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4684\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroPisos-solo-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroPisos-solo-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "nombre": "Tecnológica",
+      "slug": "tecnologica",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-tecnologica/",
+      "sku": "81419",
+      "descripcion": "MICROFIBRAS\nTECNOLÓGICA\nMayor cuidado • No raya • Ultra resistente\nIdeal para la limpieza en seco de todo tipo de productos tecnológicos. La microfibra atrae las partículas por estática, sin rayar ni dejar vetas en las superficies..",
+      "specs": {
+        "CODIGO": "81419",
+        "MEDIDAS": "25X35cm",
+        "EAN13": "7790927814196",
+        "DUN14": "17790927814193",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroTecno.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroTecno-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroTecno-solo-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>TECNOLÓGICA</h2>\n<p>Mayor cuidado • No raya • Ultra resistente<br />\nIdeal para la limpieza en seco de todo tipo de productos tecnológicos. La microfibra atrae las partículas por estática, sin rayar ni dejar vetas en las superficies..</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81419</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 25X35cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814196</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814193</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-367673580\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4685\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroTecno-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4686\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroTecno-solo-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroTecno-1.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroTecno-solo-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 266,
+      "nombre": "Vidrios",
+      "slug": "vidrios",
+      "categoria": "MICROFIBRAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/microfibras-vidrios/",
+      "sku": "81416",
+      "descripcion": "MICROFIBRAS\nVIDRIOS\nUltra resistente • Sin Vetas • Sin esfuerzos • No raya\nIdeal para la limpieza de vidrios y superficies espejadas. La microfibra atrapa las partículas sin rayar ni dejar vetas.",
+      "specs": {
+        "CODIGO": "81416",
+        "MEDIDAS": "40X40cm",
+        "EAN13": "7790927814165",
+        "DUN14": "17790927814162",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_vidrios.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_vidrios.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroVidrios-solo-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>VIDRIOS</h2>\n<p>Ultra resistente • Sin Vetas • Sin esfuerzos • No raya<br />\nIdeal para la limpieza de vidrios y superficies espejadas. La microfibra atrapa las partículas sin rayar ni dejar vetas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81416</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span>  7790927814165</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814162</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-859402896\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=6998\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_vidrios.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4689\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroVidrios-solo-1.jpg\" /></a>\r\n\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n<p>&nbsp;</p>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroVidrios-solo-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 272,
+      "nombre": "Algodón Blanca",
+      "slug": "algodon-blanca",
+      "categoria": "MOPAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/mopa-algodon-blanco/",
+      "sku": "381902-212",
+      "descripcion": "MOPAS\nALGODÓN BLANCO\nFácil de usar • Ultra resistente •  Puro algodón\nLimpia hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.",
+      "specs": {
+        "CODIGO": "381902-212",
+        "MEDIDAS": "23cm",
+        "EAN13": "7798136921476",
+        "DUN14": "37798136921477",
+        "EMPAQUE": "12 unidades",
+        "COMPOSICION": "100 % algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MopaBlancaAlgodon.jpg",
+          "alt": ""
+        },
+        {
+          "file": "img_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MopaBlancaAlgodon-2.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaBlancaAlgodon.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/11/medianaranja_mopa-algodon-bca-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MOPAS</h1>\n<h2>ALGODÓN BLANCO</h2>\n<p>Fácil de usar • Ultra resistente •  Puro algodón<br />\nLimpia hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 381902-212</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 23cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7798136921476</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 37798136921477</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  12 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 100 % algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1047122149\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4490\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaBlancaAlgodon.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=622\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/11/medianaranja_mopa-algodon-bca-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaBlancaAlgodon.jpg"
+        }
+      ]
+    },
+    {
+      "id": 418,
+      "nombre": "Blanca Microfibra",
+      "slug": "blanca-microfibra",
+      "categoria": "MOPAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/mopa-microfibra/",
+      "sku": "381903-212",
+      "descripcion": "MOPAS\nMICROFIBRA\nFácil de usar • Ultra resistente\nLimpia sin esfuerzos hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.",
+      "specs": {
+        "CODIGO": "381903-212",
+        "MEDIDAS": "23cm",
+        "EAN13": "7798136921377",
+        "DUN14": "17798136921374",
+        "EMPAQUE": "12 unidades",
+        "COMPOSICION": "Microfibra blanca"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MOPAS</h1>\n<h2>MICROFIBRA</h2>\n<p>Fácil de usar • Ultra resistente<br />\nLimpia sin esfuerzos hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span>  381903-212</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 23cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7798136921377</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17798136921374</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  12 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> Microfibra blanca</h5>\n<div class=\"row row-small filadescargas\" id=\"row-498820482\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4491\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4491\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": []
+    },
+    {
+      "id": 263,
+      "nombre": "Pisos",
+      "slug": "pisos",
+      "categoria": "PAÑOS AMARILLOS",
+      "permalink": "https://www.medianaranja.com.ar/producto/panos-amarillos-piso/",
+      "sku": "81714",
+      "descripcion": "PAÑOS AMARILLOS\nPISOS\nSuper absorbente • Resistente • No deja pelusa.\nIdeal para pisos y grandes superficies. Lavable en el lavarropas.",
+      "specs": {
+        "CODIGO": "81714",
+        "MEDIDAS": "50X57cm",
+        "EAN13": "7790927817142",
+        "DUN14": "1779092787149",
+        "EMPAQUE": "Caja de 18 unidades",
+        "COMPOSICION": "70% viscosa + 20% polipropileno + 10% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_amarilloPisos.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarilloPisos-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/11/medianaranja_amarilloPisos-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>PAÑOS AMARILLOS</h1>\n<h2>PISOS</h2>\n<p>Super absorbente • Resistente • No deja pelusa.<br />\nIdeal para pisos y grandes superficies. Lavable en el lavarropas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81714</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 50X57cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927817142</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 1779092787149</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Caja de 18 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 70% viscosa + 20% polipropileno + 10% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1286644604\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4657\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarilloPisos-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=599\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/11/medianaranja_amarilloPisos-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarilloPisos-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 261,
+      "nombre": "x1",
+      "slug": "x1",
+      "categoria": "PAÑOS AMARILLOS",
+      "permalink": "https://www.medianaranja.com.ar/producto/panos-amarillos-x1/",
+      "sku": "81712",
+      "descripcion": "PAÑOS AMARILLOS\nPAÑO x1\nResistente • Abosbente • No deja pelusa.\nIdeal para la cocina y ambientes donde se utiliza mucha agua. Lavable en lavarropas.",
+      "specs": {
+        "CODIGO": "81712",
+        "MEDIDAS": "38X40cm",
+        "EAN13": "7790927817128",
+        "DUN14": "17790927817125",
+        "EMPAQUE": "Cajas de 30 unidades",
+        "COMPOSICION": "70% viscosa + 20% prolipropileno + 10% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_amarillox1.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarillox1-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_amarillox1-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>PAÑOS AMARILLOS</h1>\n<h2>PAÑO x1</h2>\n<p>Resistente • Abosbente • No deja pelusa.<br />\nIdeal para la cocina y ambientes donde se utiliza mucha agua. Lavable en lavarropas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81712</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 38X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927817128</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927817125</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 30 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 70% viscosa + 20% prolipropileno + 10% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-795492199\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4538\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarillox1-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4468\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_amarillox1-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarillox1-1.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_amarillox1-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 262,
+      "nombre": "x3",
+      "slug": "x3",
+      "categoria": "PAÑOS AMARILLOS",
+      "permalink": "https://www.medianaranja.com.ar/producto/panos-amarillos-x3/",
+      "sku": "81713",
+      "descripcion": "PAÑOS AMARILLOS\nPAÑOS x3\nResistente • Absorbente • No deja pelusa\nIdeal para cocina y ambientes donde se utiliza mucha agua. Lavable en lavarropas.",
+      "specs": {
+        "CODIGO": "81713",
+        "MEDIDAS": "38X40cm",
+        "EAN13": "7790927817135",
+        "DUN14": "717790927817132",
+        "EMPAQUE": "Cajas de 12 unidades",
+        "COMPOSICION": "70% viscosa + 20% polipropileno + 10% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_amarillox3.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarillox3.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_amarillox3-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>PAÑOS AMARILLOS</h1>\n<h2>PAÑOS x3</h2>\n<p>Resistente • Absorbente • No deja pelusa<br />\nIdeal para cocina y ambientes donde se utiliza mucha agua. Lavable en lavarropas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81713</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 38X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927817135</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 717790927817132</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 12 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 70% viscosa + 20% polipropileno + 10% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-272693873\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4470\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarillox3.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4471\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_amarillox3-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_amarillox3.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_amarillox3-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 258,
+      "nombre": "Americana",
+      "slug": "americana",
+      "categoria": "REJILLAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/rejilla-americana/",
+      "sku": "81116",
+      "descripcion": "REJILLAS\nAMERICANA\nTejido liviano.\nFácil de secar y escurrir. Ideal para superficies pequeñas y rincones difíciles.",
+      "specs": {
+        "CODIGO": "81116",
+        "MEDIDAS": "40X40cm",
+        "EAN13": "7790927811164",
+        "DUN14": "17790927811161",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/RejillaAmericana.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaAmericana.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaAmericana-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>REJILLAS</h1>\n<h2>AMERICANA</h2>\n<p>Tejido liviano.<br />\nFácil de secar y escurrir. Ideal para superficies pequeñas y rincones difíciles.</p>\n<h5><span style=\"color: #808080\">CÓDIGO </span>81116</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927811164</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927811161</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1250978030\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13389\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaAmericana.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4512\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaAmericana-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaAmericana.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaAmericana-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 256,
+      "nombre": "Doble Reforzada",
+      "slug": "doble-reforzada",
+      "categoria": "REJILLAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/rejilla-doble-reforzada/",
+      "sku": "81114",
+      "descripcion": "REJILLAS\nDOBLE REFORZADA\nUltra resistente\nDura más porque tiene sus bordes y centros reforzados. Ideal para uso diario.",
+      "specs": {
+        "CODIGO": "81114",
+        "MEDIDAS": "40X45cm",
+        "EAN13": "7790927811140",
+        "DUN14": "17790927811147",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/RejillaReforzada.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaReforzada.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaMultiuso-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>REJILLAS</h1>\n<h2>DOBLE REFORZADA</h2>\n<p>Ultra resistente<br />\nDura más porque tiene sus bordes y centros reforzados. Ideal para uso diario.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81114</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X45cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927811140</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927811147</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1321375396\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13396\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaReforzada.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4518\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaMultiuso-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaReforzada.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaMultiuso-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 257,
+      "nombre": "Lavacoche",
+      "slug": "lavacoche",
+      "categoria": "REJILLAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/rejilla-lavacoche/",
+      "sku": "81603",
+      "descripcion": "REJILLAS\nLAVACOCHE\nEspecial autos • Extra suave.\nAbsorbe más y seca sin dejar rayas.",
+      "specs": {
+        "CODIGO": "81603",
+        "MEDIDAS": "42X58cm",
+        "EAN13": "7790927816039",
+        "DUN14": "17790927816036",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/RejillaLavacoches.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaLavacoches.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaLavacoches-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>REJILLAS</h1>\n<h2>LAVACOCHE</h2>\n<p>Especial autos • Extra suave.<br />\nAbsorbe más y seca sin dejar rayas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81603</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 42X58cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927816039</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927816036</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-249604016\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13392\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaLavacoches.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4514\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaLavacoches-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaLavacoches.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaLavacoches-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 259,
+      "nombre": "Multiuso",
+      "slug": "multiuso",
+      "categoria": "REJILLAS",
+      "permalink": "https://www.medianaranja.com.ar/producto/rejilla-multiuso/",
+      "sku": "81100",
+      "descripcion": "REJILLAS\nMULTIUSO\nSuper absorbente • Resistente a la lavandina.\nIdeal para todo tipo de ambientes.",
+      "specs": {
+        "CODIGO": "81100",
+        "MEDIDAS": "40X45cm",
+        "EAN13": "7790927811003",
+        "DUN14": "17790927811000",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/RejillaMultiuso.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaMultiuso.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaMultiuso-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>REJILLAS</h1>\n<h2>MULTIUSO</h2>\n<p>Super absorbente • Resistente a la lavandina.<br />\nIdeal para todo tipo de ambientes.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81100</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X45cm</h5>\n<h5><span style=\"color: #808080\">EAN13 </span>7790927811003</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927811000</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1997053569\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13394\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaMultiuso.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4516\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaMultiuso-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_RejillaMultiuso.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_RejillaMultiuso-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 260,
+      "nombre": "Microfibra",
+      "slug": "microfibra",
+      "categoria": "REPASADORES",
+      "permalink": "https://www.medianaranja.com.ar/producto/repasadores-microfibra/",
+      "sku": "81409",
+      "descripcion": "REPASADORES\nMICROFIBRA\nSuper absorbente • Ultra resistente • Liviano • No deja vetas\nDiseñado especialmente para el cuidado de tu cocina.",
+      "specs": {
+        "CODIGO": "81409",
+        "MEDIDAS": "37X60cm",
+        "EAN13": "7790927814097",
+        "DUN14": "17790927814094",
+        "EMPAQUE": "Cajas de 30 unidades en 2 colores",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_repasador.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_repasador.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/11/Medianaranja_repasador-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>REPASADORES</h1>\n<h2>MICROFIBRA</h2>\n<p>Super absorbente • Ultra resistente • Liviano • No deja vetas<br />\nDiseñado especialmente para el cuidado de tu cocina.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81409</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 37X60cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814097</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814094</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 30 unidades en 2 colores</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1778538989\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4519\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_repasador.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=656\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/11/Medianaranja_repasador-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_repasador.jpg"
+        }
+      ]
+    },
+    {
+      "id": 421,
+      "nombre": "Doble Goma Grande",
+      "slug": "doble-goma-grande",
+      "categoria": "SECADORES",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-goma-grande/",
+      "sku": "81501-412",
+      "descripcion": "SECADORES DE PISO\nDOBLE GOMA GRANDE\nMayor calidad  • Facilidad de uso.\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.",
+      "specs": {
+        "CODIGO": "81501-412",
+        "MEDIDAS": "41cm",
+        "EAN13": "7790927815018",
+        "DUN14": "17790927815015",
+        "EMPAQUE": "Cajas de 12 unidades (3 colores surtidos)",
+        "COMPOSICION": "Doble goma"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_secadorG.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorG.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>SECADORES DE PISO</h1>\n<h2>DOBLE GOMA GRANDE</h2>\n<p>Mayor calidad  • Facilidad de uso.<br />\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span>  81501-412</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 41cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927815018</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927815015</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  Cajas de 12 unidades (3 colores surtidos)</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> Doble goma</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1187572750\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4520\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorG.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorG.jpg"
+        }
+      ]
+    },
+    {
+      "id": 420,
+      "nombre": "Doble Goma Mediano",
+      "slug": "doble-goma-mediano",
+      "categoria": "SECADORES",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-goma/",
+      "sku": "81500-412",
+      "descripcion": "SECADORES DE PISO\nDOBLE GOMA MEDIANO\nMayor calidad  • Facilidad de uso.\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.",
+      "specs": {
+        "CODIGO": "81500-412",
+        "MEDIDAS": "35cm",
+        "EAN13": "7790927815001",
+        "DUN14": "17790927815008",
+        "EMPAQUE": "Cajas de 12 unidades (3 colores surtidos)",
+        "COMPOSICION": "Doble goma"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_secadorM.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorM.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>SECADORES DE PISO</h1>\n<h2>DOBLE GOMA MEDIANO</h2>\n<p>Mayor calidad  • Facilidad de uso.<br />\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span>  81500-412</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 35cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927815001</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927815008</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  Cajas de 12 unidades (3 colores surtidos)</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> Doble goma</h5>\n<div class=\"row row-small filadescargas\" id=\"row-464362522\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4521\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorM.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorM.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19708,
+      "nombre": "Compacto blanco Grande",
+      "slug": "compacto-blanco-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/trapo-de-piso/",
+      "sku": "382602-250",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO BLANCO GRANDE\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382602-250",
+        "MEDIDAS": "58X60cm",
+        "EAN13": "7798136921766",
+        "DUN14": "57798136921761",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-G.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-G.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-blanco-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<h1>TRAPOS DE PISO</h1>\n<h2>COMPACTO BLANCO GRANDE</h2>\n<p>Super absorbente • Liviano<br />\nSe escurre sin esfuerzo.</p>\n<h5>CÓDIGO 382602-250</h5>\n<h5>MEDIDAS 58X60cm</h5>\n<h5>EAN13 7798136921766</h5>\n<h5>DUN14 57798136921761</h5>\n<h5>EMPAQUE Fardos de 50 unidades.</h5>\n<h5>COMPOSICIÓN 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-286506067\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19743\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-G.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4493\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-blanco-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n\n</div></div>\n\n\n\n\n\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-blanco-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19713,
+      "nombre": "Compacto blanco Mediano",
+      "slug": "compacto-blanco-mediano",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/compacto-blanco-mediano/",
+      "sku": "382601-250",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO BLANCO MEDIANO\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382601-250",
+        "MEDIDAS": "50X60cm",
+        "EAN13": "7798136921759",
+        "DUN14": "57798136921754",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-M.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-M-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-blanco-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<h1>TRAPOS DE PISO</h1>\n<h2>COMPACTO BLANCO MEDIANO</h2>\n<p>Super absorbente • Liviano<br />\nSe escurre sin esfuerzo.</p>\n<h5>CÓDIGO 382601-250</h5>\n<h5>MEDIDAS 50X60cm</h5>\n<h5>EAN13 7798136921759</h5>\n<h5>DUN14 57798136921754</h5>\n<h5>EMPAQUE Fardos de 50 unidades.</h5>\n<h5>COMPOSICIÓN 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-2080367008\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19739\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-M-1.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4493\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-blanco-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n\n</div></div>\n\n\n\n\n\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-blanco-M-1.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-blanco-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19715,
+      "nombre": "Compacto Gris Grande",
+      "slug": "compacto-gris-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/compacto-gris-grande/",
+      "sku": "382602-150",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO GRIS GRANDE\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382602-150",
+        "MEDIDAS": "58X60cm",
+        "EAN13": "7798136921742",
+        "DUN14": "57798136921747",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-G.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-G.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<h1>TRAPOS DE PISO</h1>\n<h2>COMPACTO GRIS GRANDE</h2>\n<p>Super absorbente • Liviano<br />\nSe escurre sin esfuerzo.</p>\n<h5>CÓDIGO 382602-150</h5>\n<h5>MEDIDAS 58X60cm</h5>\n<h5>EAN13 7798136921742</h5>\n<h5>DUN14 57798136921747</h5>\n<h5>EMPAQUE Fardos de 50 unidades.</h5>\n<h5>COMPOSICIÓN 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1244965874\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19768\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-G.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4495\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<span style=\"font-weight: 400\"><a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a></span>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19714,
+      "nombre": "Compacto Gris Mediano",
+      "slug": "compacto-gris-mediano",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/compacto-gris-mediano/",
+      "sku": "382601-150",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO GRIS MEDIANO\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382601-150",
+        "MEDIDAS": "50X60cm",
+        "EAN13": "7798136921735",
+        "DUN14": "57798136921730",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M-1.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<h1>TRAPOS DE PISO</h1>\n<h2>COMPACTO GRIS MEDIANO</h2>\n<p>Super absorbente • Liviano<br />\nSe escurre sin esfuerzo.</p>\n<h5>CÓDIGO 382601-150</h5>\n<h5>MEDIDAS 50X60cm</h5>\n<h5>EAN13 7798136921735</h5>\n<h5>DUN14 57798136921730</h5>\n<h5>EMPAQUE Fardos de 50 unidades.</h5>\n<h5>COMPOSICIÓN 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1481000977\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19767\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4495\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M-1.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 253,
+      "nombre": "Doble Reforzado Bicolor Grande",
+      "slug": "doble-reforzado-bicolor-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-bicolor-grande/",
+      "sku": "81297",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BICOLOR GRANDE\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81297",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812970",
+        "DUN14": "17790927812977",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-bicolor-G.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Bicolo-rG.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-bicolor-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO BICOLOR GRANDE</h2>\n<p>Super absorbente • Ultra resistente<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81297</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 58X60cm (Profesional)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812970</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812977</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1479621361\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13364\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Bicolo-rG.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4498\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-bicolor-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Bicolo-rG.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-bicolor-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 250,
+      "nombre": "Doble Reforzado Bicolor Mediano",
+      "slug": "doble-reforzado-bicolor-mediano",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-bicolor-mediano/",
+      "sku": "81296",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BICOLOR MEDIANO\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81296",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812963",
+        "DUN14": "17790927812960",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-bicolor-M.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Bicolor-M.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-bicolor-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO BICOLOR MEDIANO</h2>\n<p>Super absorbente • Ultra resistente<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81296</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 48X60cm (Clásico)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812963</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812960</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-477828512\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13369\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Bicolor-M.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4498\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-bicolor-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Bicolor-M.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-bicolor-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 243,
+      "nombre": "Doble Reforzado Blanco Extra Grande",
+      "slug": "doble-reforzado-blanco-extra-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-blanco-extra-grande/",
+      "sku": "81295",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO EXTRA GRANDE\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81295",
+        "MEDIDAS": "60X80cm (Consorcio)",
+        "EAN13": "7790927812956",
+        "DUN14": "17790927812953",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-blanco-XG.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-XG.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO BLANCO EXTRA GRANDE</h2>\n<p>Super absorbente • Livano • Se escurre sin esfuerzo.<br />\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81295</h5>\n<h5><span style=\"color: #808080\">MEDIDAS </span>60X80cm (Consorcio)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812956</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812953</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1638997174\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13377\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-XG.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4501\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-XG.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 240,
+      "nombre": "Doble Reforzado Blanco Grande",
+      "slug": "doble-reforzado-blanco-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-blanco-grande/",
+      "sku": "81295",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO GRANDE\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81295",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812949",
+        "DUN14": "17790927812946",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-blanco-G.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-G.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO BLANCO GRANDE</h2>\n<p>Super absorbente • Livano • Se escurre sin esfuerzo.<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81295</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 58X60cm (Profesional)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812949</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812946</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1588579623\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13371\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-G.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4501\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-G.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 238,
+      "nombre": "Doble Reforzado Blanco Mediano",
+      "slug": "doble-reforzado-blanco-mediano",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-blanco-mediano/",
+      "sku": "81293",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO MEDIANO\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81293",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812932",
+        "DUN14": "17790927812939",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6 % poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-blanco-M.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-M.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO BLANCO MEDIANO</h2>\n<p>Super absorbente • Livano • Se escurre sin esfuerzo.<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81293</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 48X60cm (Clásico)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812932</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812939</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6 % poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1668870882\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13374\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-M.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4501\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-M.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 249,
+      "nombre": "Doble Reforzado Gris Extra Grande",
+      "slug": "doble-reforzado-gris-extra-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-gris-extra-grande/",
+      "sku": "81292",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO GRIS EXTRA GRANDE\nSuper absorbente • Ultra resistente.\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81292",
+        "MEDIDAS": "60X80cm (Consorcio)",
+        "EAN13": "7790927812925",
+        "DUN14": "17790927812922",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-gris-XG.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-XG.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-gris-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO GRIS EXTRA GRANDE</h2>\n<p>Super absorbente • Ultra resistente.<br />\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81292</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 60X80cm (Consorcio)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812925</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812922</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-169628013\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13383\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-XG.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4505\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-gris-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-XG.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-gris-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 248,
+      "nombre": "Doble Reforzado Gris Grande",
+      "slug": "doble-reforzado-gris-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-gris-grande/",
+      "sku": "81291",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO GRIS GRANDE\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81291",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812918",
+        "DUN14": "17790927812915",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-gris-G.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-G.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-gris-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO GRIS GRANDE</h2>\n<p>Super absorbente • Ultra resistente<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81291</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 58X60cm (Profesional)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812918</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812915</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1304310691\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13379\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-G.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4505\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-gris-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-G.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-gris-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 244,
+      "nombre": "Doble Reforzado Gris Mediano",
+      "slug": "doble-reforzado-gris-mediano",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-gris-mediano/",
+      "sku": "81290",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO GRIS MEDIANO\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81290",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812901",
+        "DUN14": "17790927812908",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-gris-M.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-M.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO GRIS MEDIANO</h2>\n<p>Super absorbente • Ultra resistente<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81290</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 48X60cm (Clásico)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812901</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812908</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-536209575\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13381\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-M.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4495\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Gris-M.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 228,
+      "nombre": "Doble Reforzado Multicolor Grande",
+      "slug": "doble-reforzado-multicolor-grande",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/trapo-de-piso-doble-reforzado-multicolor-grande/",
+      "sku": "81299",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO MULTICOLOR GRANDE\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81299",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812994",
+        "DUN14": "17790927812991",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-multicolor-G.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Multicolor-G.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-multicolor-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO MULTICOLOR GRANDE</h2>\n<p>Super absorbente • Ultra resistente<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81299</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 58X60cm (Profesional)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812994</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812991</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-961438419\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13385\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Multicolor-G.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4510\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-multicolor-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Multicolor-G.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-multicolor-solo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "nombre": "Doble Reforzado Multicolor Mediano",
+      "slug": "doble-reforzado-multicolor-mediano",
+      "categoria": "TRAPOS DE PISO",
+      "permalink": "https://www.medianaranja.com.ar/producto/trapo-de-piso-doble-reforzado-multicolor-mediano/",
+      "sku": "81298",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO MULTICOLOR MEDIANO\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81298",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812987",
+        "DUN14": "17790927812984",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "precio": "0",
+      "imagenes": [
+        {
+          "file": "img_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-multicolor-M.jpg",
+          "alt": ""
+        }
+      ],
+      "imagenes_embebidas": [
+        "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Multicolor-M.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-multicolor-solo.jpg",
+        "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+      ],
+      "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO MULTICOLOR MEDIANO</h2>\n<p>Super absorbente • Ultra resistente<br />\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81298</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 48X60cm (Clásico)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812987</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812984</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1750589443\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13387\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Multicolor-M.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4510\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-multicolor-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+      "fichas_tecnicas": [
+        {
+          "file": "ficha_1.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Multicolor-M.jpg"
+        },
+        {
+          "file": "ficha_2.jpg",
+          "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-multicolor-solo.jpg"
+        }
+      ]
+    }
+  ]
+}

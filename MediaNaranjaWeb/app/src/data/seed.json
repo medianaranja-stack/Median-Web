@@ -1,0 +1,1352 @@
+{
+  "categorias": [
+    {
+      "linea": "limpieza",
+      "slug": "baldes",
+      "label": "Baldes"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "cabos",
+      "label": "Cabos"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "franelas",
+      "label": "Franelas"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "microfibras",
+      "label": "Microfibras"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "mopas",
+      "label": "Mopas"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "panos-amarillos",
+      "label": "Paños Amarillos"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "rejillas",
+      "label": "Rejillas"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "repasadores",
+      "label": "Repasadores"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "secadores",
+      "label": "Secadores"
+    },
+    {
+      "linea": "limpieza",
+      "slug": "trapos-de-piso",
+      "label": "Trapos de Piso"
+    },
+    {
+      "linea": "hogar",
+      "slug": "alfombras",
+      "label": "Alfombras"
+    },
+    {
+      "linea": "hogar",
+      "slug": "toallas",
+      "label": "Toallas y Toallones"
+    },
+    {
+      "linea": "hogar",
+      "slug": "repasadores",
+      "label": "Repasadores"
+    },
+    {
+      "linea": "hogar",
+      "slug": "acolchados",
+      "label": "Acolchados"
+    },
+    {
+      "linea": "hogar",
+      "slug": "cubrecama",
+      "label": "Cubrecamas"
+    },
+    {
+      "linea": "hogar",
+      "slug": "frazadas",
+      "label": "Frazadas"
+    },
+    {
+      "linea": "hogar",
+      "slug": "mantas",
+      "label": "Mantas"
+    },
+    {
+      "linea": "hogar",
+      "slug": "sabanas",
+      "label": "Sábanas"
+    }
+  ],
+  "productos": [
+    {
+      "id": "limpieza-balde-escurridor",
+      "linea": "limpieza",
+      "categoria": "baldes",
+      "categoriaLabel": "Baldes",
+      "nombre": "Balde escurridor",
+      "slug": "balde-escurridor",
+      "descripcion": "BALDE CON ESCURRIDOR\nSúper resistente · Práctico y cómodo\nCon escurridor de mopas\nLimpiá sin necesidad de agacharte ni ensuciarte las manos.\nCAPACIDAD 16 litros\nEAN 7790927819054",
+      "specs": {
+        "CODIGO": "81905-406",
+        "DUN14": "17790927819051",
+        "EMPAQUE": "6 unidades"
+      },
+      "imagenes": [
+        "/productos/limpieza/baldes/balde-escurridor/01.jpg",
+        "/productos/limpieza/baldes/balde-escurridor/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 0
+    },
+    {
+      "id": "limpieza-cabo",
+      "linea": "limpieza",
+      "categoria": "cabos",
+      "categoriaLabel": "Cabos",
+      "nombre": "Cabo",
+      "slug": "cabo",
+      "descripcion": "CABO METÁLICO RECUBIERTO\nIdeal para sujetar mopas y secadores\nPráctico gancho de colgar\nPosee rosca standard inferior\nEAN 7790927815025",
+      "specs": {
+        "CODIGO": "81502-412",
+        "MEDIDAS": "120 cm (Standard)",
+        "DUN14": "17790927815029",
+        "EMPAQUE": "12 unidades"
+      },
+      "imagenes": [
+        "/productos/limpieza/cabos/cabo/01.jpg",
+        "/productos/limpieza/cabos/cabo/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 1
+    },
+    {
+      "id": "limpieza-triple-frisado",
+      "linea": "limpieza",
+      "categoria": "franelas",
+      "categoriaLabel": "Franelas",
+      "nombre": "Triple Frisado",
+      "slug": "triple-frisado",
+      "descripcion": "FRANELAS\nTRIPLE FRISADO\nAtrapa mejor la suciedad.\nRecomendado para darle brillo a muebles y objetos de cuero.",
+      "specs": {
+        "CODIGO": "81324",
+        "MEDIDAS": "45X50cm",
+        "EAN13": "7790927813243",
+        "DUN14": "17790927813240",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "98.5% algodón + 1.5% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/franelas/triple-frisado/01.jpg",
+        "/productos/limpieza/franelas/triple-frisado/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 2
+    },
+    {
+      "id": "limpieza-1000usos",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "1000USOS",
+      "slug": "1000usos",
+      "descripcion": "MICROFIBRAS\n1000USOS\nUn paño para cada ambiente • Máxima suavidad.\nLa misma calidad de siempre en un pack económico que contiene 3 microfibras, brindan la capacidad de limpiar sólo con agua y sin dejar pelusa.",
+      "specs": {
+        "CODIGO": "81423",
+        "MEDIDAS": "30X30cm (c/u)",
+        "EAN13": "7790927814233",
+        "DUN14": "17790927814230",
+        "EMPAQUE": "Presentación en bolsa de 10 packs.",
+        "COMPOSICION": "80% poliéster + 20% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/1000usos/01.jpg",
+        "/productos/limpieza/microfibras/1000usos/02.jpg",
+        "/productos/limpieza/microfibras/1000usos/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 3
+    },
+    {
+      "id": "limpieza-lava-autos",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "Lava Autos",
+      "slug": "lava-autos",
+      "descripcion": "MICROFIBRAS\nLAVA AUTOS\nSuper absorbente • Ultra resistente • No raya • No deja vetas\nIdeal para el lavado y secado de la carrocería de tu auto. Gracias a su exclusiva composición remueve la suciedad y absorbe, dejando tu auto limpio con menos esfuerzo y sin dejar marcas.",
+      "specs": {
+        "CODIGO": "81422",
+        "MEDIDAS": "50X60cm",
+        "EAN13": "7790927814226",
+        "DUN14": "17790927814223",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/lava-autos/01.jpg",
+        "/productos/limpieza/microfibras/lava-autos/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 4
+    },
+    {
+      "id": "limpieza-lustradora",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "Lustradora",
+      "slug": "lustradora",
+      "descripcion": "MICROFIBRAS\nLUSTRADORA\nNo raya • No deja vetas\nDeja tus superficies de madera más brillantes sin esfuerzo. La microfibra atrapa las partículas de una sola pasada, haciendo la limpieza más fácil.",
+      "specs": {
+        "CODIGO": "914060",
+        "MEDIDAS": "40X40cm",
+        "EAN13": "7798136921438",
+        "DUN14": "37798136921439",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/lustradora/01.jpg",
+        "/productos/limpieza/microfibras/lustradora/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 5
+    },
+    {
+      "id": "limpieza-multiuso",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "Multiuso",
+      "slug": "multiuso",
+      "descripcion": "MICROFIBRAS\nMULTIUSO\nSuper absorbente •  No acumula olores •  Ultra resistente.\nImprescindible para tener siempre a mano tanto en la cocina como en el baño. Remueve la suciedad sólo con agua y es super absorbente.",
+      "specs": {
+        "CODIGO": "81417",
+        "MEDIDAS": "35X40cm",
+        "EAN13": "7790927814172",
+        "DUN14": "17790927814179",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/multiuso/01.jpg",
+        "/productos/limpieza/microfibras/multiuso/02.jpg",
+        "/productos/limpieza/microfibras/multiuso/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 6
+    },
+    {
+      "id": "limpieza-pisos",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "Pisos",
+      "slug": "pisos",
+      "descripcion": "MICROFIBRAS\nPISOS\nNo deja rastros • No acumula olores • Ultra resistente\nTodas las virtudes de la microfibra en un tamaño ideal para limpiar el piso. Absorbe el agua de una sola pasada y remueve las manchas fácilmente.",
+      "specs": {
+        "CODIGO": "81421",
+        "MEDIDAS": "48X60cm",
+        "EAN13": "7790927814219",
+        "DUN14": "17790927814216",
+        "EMPAQUE": "Cajas de 5 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida."
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/pisos/01.jpg",
+        "/productos/limpieza/microfibras/pisos/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 7
+    },
+    {
+      "id": "limpieza-tecnologica",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "Tecnológica",
+      "slug": "tecnologica",
+      "descripcion": "MICROFIBRAS\nTECNOLÓGICA\nMayor cuidado • No raya • Ultra resistente\nIdeal para la limpieza en seco de todo tipo de productos tecnológicos. La microfibra atrae las partículas por estática, sin rayar ni dejar vetas en las superficies..",
+      "specs": {
+        "CODIGO": "81419",
+        "MEDIDAS": "25X35cm",
+        "EAN13": "7790927814196",
+        "DUN14": "17790927814193",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/tecnologica/01.jpg",
+        "/productos/limpieza/microfibras/tecnologica/02.jpg",
+        "/productos/limpieza/microfibras/tecnologica/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 8
+    },
+    {
+      "id": "limpieza-vidrios",
+      "linea": "limpieza",
+      "categoria": "microfibras",
+      "categoriaLabel": "Microfibras",
+      "nombre": "Vidrios",
+      "slug": "vidrios",
+      "descripcion": "MICROFIBRAS\nVIDRIOS\nUltra resistente • Sin Vetas • Sin esfuerzos • No raya\nIdeal para la limpieza de vidrios y superficies espejadas. La microfibra atrapa las partículas sin rayar ni dejar vetas.",
+      "specs": {
+        "CODIGO": "81416",
+        "MEDIDAS": "40X40cm",
+        "EAN13": "7790927814165",
+        "DUN14": "17790927814162",
+        "EMPAQUE": "Cajas de 10 unidades",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "imagenes": [
+        "/productos/limpieza/microfibras/vidrios/01.jpg",
+        "/productos/limpieza/microfibras/vidrios/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 9
+    },
+    {
+      "id": "limpieza-algodon-blanca",
+      "linea": "limpieza",
+      "categoria": "mopas",
+      "categoriaLabel": "Mopas",
+      "nombre": "Algodón Blanca",
+      "slug": "algodon-blanca",
+      "descripcion": "MOPAS\nALGODÓN BLANCO\nFácil de usar • Ultra resistente •  Puro algodón\nLimpia hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.",
+      "specs": {
+        "CODIGO": "381902-212",
+        "MEDIDAS": "23cm",
+        "EAN13": "7798136921476",
+        "DUN14": "37798136921477",
+        "EMPAQUE": "12 unidades",
+        "COMPOSICION": "100 % algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/mopas/algodon-blanca/01.jpg",
+        "/productos/limpieza/mopas/algodon-blanca/02.jpg",
+        "/productos/limpieza/mopas/algodon-blanca/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 10
+    },
+    {
+      "id": "limpieza-blanca-microfibra",
+      "linea": "limpieza",
+      "categoria": "mopas",
+      "categoriaLabel": "Mopas",
+      "nombre": "Blanca Microfibra",
+      "slug": "blanca-microfibra",
+      "descripcion": "MOPAS\nMICROFIBRA\nFácil de usar • Ultra resistente\nLimpia sin esfuerzos hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.",
+      "specs": {
+        "CODIGO": "381903-212",
+        "MEDIDAS": "23cm",
+        "EAN13": "7798136921377",
+        "DUN14": "17798136921374",
+        "EMPAQUE": "12 unidades",
+        "COMPOSICION": "Microfibra blanca"
+      },
+      "imagenes": [
+        "/productos/limpieza/mopas/blanca-microfibra/01.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 11
+    },
+    {
+      "id": "limpieza-pisos",
+      "linea": "limpieza",
+      "categoria": "panos-amarillos",
+      "categoriaLabel": "Paños Amarillos",
+      "nombre": "Pisos",
+      "slug": "pisos",
+      "descripcion": "PAÑOS AMARILLOS\nPISOS\nSuper absorbente • Resistente • No deja pelusa.\nIdeal para pisos y grandes superficies. Lavable en el lavarropas.",
+      "specs": {
+        "CODIGO": "81714",
+        "MEDIDAS": "50X57cm",
+        "EAN13": "7790927817142",
+        "DUN14": "1779092787149",
+        "EMPAQUE": "Caja de 18 unidades",
+        "COMPOSICION": "70% viscosa + 20% polipropileno + 10% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/panos-amarillos/pisos/01.jpg",
+        "/productos/limpieza/panos-amarillos/pisos/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 12
+    },
+    {
+      "id": "limpieza-x1",
+      "linea": "limpieza",
+      "categoria": "panos-amarillos",
+      "categoriaLabel": "Paños Amarillos",
+      "nombre": "x1",
+      "slug": "x1",
+      "descripcion": "PAÑOS AMARILLOS\nPAÑO x1\nResistente • Abosbente • No deja pelusa.\nIdeal para la cocina y ambientes donde se utiliza mucha agua. Lavable en lavarropas.",
+      "specs": {
+        "CODIGO": "81712",
+        "MEDIDAS": "38X40cm",
+        "EAN13": "7790927817128",
+        "DUN14": "17790927817125",
+        "EMPAQUE": "Cajas de 30 unidades",
+        "COMPOSICION": "70% viscosa + 20% prolipropileno + 10% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/panos-amarillos/x1/01.jpg",
+        "/productos/limpieza/panos-amarillos/x1/02.jpg",
+        "/productos/limpieza/panos-amarillos/x1/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 13
+    },
+    {
+      "id": "limpieza-x3",
+      "linea": "limpieza",
+      "categoria": "panos-amarillos",
+      "categoriaLabel": "Paños Amarillos",
+      "nombre": "x3",
+      "slug": "x3",
+      "descripcion": "PAÑOS AMARILLOS\nPAÑOS x3\nResistente • Absorbente • No deja pelusa\nIdeal para cocina y ambientes donde se utiliza mucha agua. Lavable en lavarropas.",
+      "specs": {
+        "CODIGO": "81713",
+        "MEDIDAS": "38X40cm",
+        "EAN13": "7790927817135",
+        "DUN14": "717790927817132",
+        "EMPAQUE": "Cajas de 12 unidades",
+        "COMPOSICION": "70% viscosa + 20% polipropileno + 10% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/panos-amarillos/x3/01.jpg",
+        "/productos/limpieza/panos-amarillos/x3/02.jpg",
+        "/productos/limpieza/panos-amarillos/x3/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 14
+    },
+    {
+      "id": "limpieza-americana",
+      "linea": "limpieza",
+      "categoria": "rejillas",
+      "categoriaLabel": "Rejillas",
+      "nombre": "Americana",
+      "slug": "americana",
+      "descripcion": "REJILLAS\nAMERICANA\nTejido liviano.\nFácil de secar y escurrir. Ideal para superficies pequeñas y rincones difíciles.",
+      "specs": {
+        "CODIGO": "81116",
+        "MEDIDAS": "40X40cm",
+        "EAN13": "7790927811164",
+        "DUN14": "17790927811161",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/rejillas/americana/01.jpg",
+        "/productos/limpieza/rejillas/americana/02.jpg",
+        "/productos/limpieza/rejillas/americana/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 15
+    },
+    {
+      "id": "limpieza-doble-reforzada",
+      "linea": "limpieza",
+      "categoria": "rejillas",
+      "categoriaLabel": "Rejillas",
+      "nombre": "Doble Reforzada",
+      "slug": "doble-reforzada",
+      "descripcion": "REJILLAS\nDOBLE REFORZADA\nUltra resistente\nDura más porque tiene sus bordes y centros reforzados. Ideal para uso diario.",
+      "specs": {
+        "CODIGO": "81114",
+        "MEDIDAS": "40X45cm",
+        "EAN13": "7790927811140",
+        "DUN14": "17790927811147",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/rejillas/doble-reforzada/01.jpg",
+        "/productos/limpieza/rejillas/doble-reforzada/02.jpg",
+        "/productos/limpieza/rejillas/doble-reforzada/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 16
+    },
+    {
+      "id": "limpieza-lavacoche",
+      "linea": "limpieza",
+      "categoria": "rejillas",
+      "categoriaLabel": "Rejillas",
+      "nombre": "Lavacoche",
+      "slug": "lavacoche",
+      "descripcion": "REJILLAS\nLAVACOCHE\nEspecial autos • Extra suave.\nAbsorbe más y seca sin dejar rayas.",
+      "specs": {
+        "CODIGO": "81603",
+        "MEDIDAS": "42X58cm",
+        "EAN13": "7790927816039",
+        "DUN14": "17790927816036",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/rejillas/lavacoche/01.jpg",
+        "/productos/limpieza/rejillas/lavacoche/02.jpg",
+        "/productos/limpieza/rejillas/lavacoche/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 17
+    },
+    {
+      "id": "limpieza-multiuso",
+      "linea": "limpieza",
+      "categoria": "rejillas",
+      "categoriaLabel": "Rejillas",
+      "nombre": "Multiuso",
+      "slug": "multiuso",
+      "descripcion": "REJILLAS\nMULTIUSO\nSuper absorbente • Resistente a la lavandina.\nIdeal para todo tipo de ambientes.",
+      "specs": {
+        "CODIGO": "81100",
+        "MEDIDAS": "40X45cm",
+        "EAN13": "7790927811003",
+        "DUN14": "17790927811000",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/rejillas/multiuso/01.jpg",
+        "/productos/limpieza/rejillas/multiuso/02.jpg",
+        "/productos/limpieza/rejillas/multiuso/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 18
+    },
+    {
+      "id": "limpieza-microfibra",
+      "linea": "limpieza",
+      "categoria": "repasadores",
+      "categoriaLabel": "Repasadores",
+      "nombre": "Microfibra",
+      "slug": "microfibra",
+      "descripcion": "REPASADORES\nMICROFIBRA\nSuper absorbente • Ultra resistente • Liviano • No deja vetas\nDiseñado especialmente para el cuidado de tu cocina.",
+      "specs": {
+        "CODIGO": "81409",
+        "MEDIDAS": "37X60cm",
+        "EAN13": "7790927814097",
+        "DUN14": "17790927814094",
+        "EMPAQUE": "Cajas de 30 unidades en 2 colores",
+        "COMPOSICION": "80% poliéster + 20% poliamida"
+      },
+      "imagenes": [
+        "/productos/limpieza/repasadores/microfibra/01.jpg",
+        "/productos/limpieza/repasadores/microfibra/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 19
+    },
+    {
+      "id": "limpieza-doble-goma-grande",
+      "linea": "limpieza",
+      "categoria": "secadores",
+      "categoriaLabel": "Secadores",
+      "nombre": "Doble Goma Grande",
+      "slug": "doble-goma-grande",
+      "descripcion": "SECADORES DE PISO\nDOBLE GOMA GRANDE\nMayor calidad  • Facilidad de uso.\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.",
+      "specs": {
+        "CODIGO": "81501-412",
+        "MEDIDAS": "41cm",
+        "EAN13": "7790927815018",
+        "DUN14": "17790927815015",
+        "EMPAQUE": "Cajas de 12 unidades (3 colores surtidos)",
+        "COMPOSICION": "Doble goma"
+      },
+      "imagenes": [
+        "/productos/limpieza/secadores/doble-goma-grande/01.jpg",
+        "/productos/limpieza/secadores/doble-goma-grande/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 20
+    },
+    {
+      "id": "limpieza-doble-goma-mediano",
+      "linea": "limpieza",
+      "categoria": "secadores",
+      "categoriaLabel": "Secadores",
+      "nombre": "Doble Goma Mediano",
+      "slug": "doble-goma-mediano",
+      "descripcion": "SECADORES DE PISO\nDOBLE GOMA MEDIANO\nMayor calidad  • Facilidad de uso.\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.",
+      "specs": {
+        "CODIGO": "81500-412",
+        "MEDIDAS": "35cm",
+        "EAN13": "7790927815001",
+        "DUN14": "17790927815008",
+        "EMPAQUE": "Cajas de 12 unidades (3 colores surtidos)",
+        "COMPOSICION": "Doble goma"
+      },
+      "imagenes": [
+        "/productos/limpieza/secadores/doble-goma-mediano/01.jpg",
+        "/productos/limpieza/secadores/doble-goma-mediano/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 21
+    },
+    {
+      "id": "limpieza-compacto-blanco-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Compacto blanco Grande",
+      "slug": "compacto-blanco-grande",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO BLANCO GRANDE\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382602-250",
+        "MEDIDAS": "58X60cm",
+        "EAN13": "7798136921766",
+        "DUN14": "57798136921761",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/compacto-blanco-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/compacto-blanco-grande/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 22
+    },
+    {
+      "id": "limpieza-compacto-blanco-mediano",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Compacto blanco Mediano",
+      "slug": "compacto-blanco-mediano",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO BLANCO MEDIANO\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382601-250",
+        "MEDIDAS": "50X60cm",
+        "EAN13": "7798136921759",
+        "DUN14": "57798136921754",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/compacto-blanco-mediano/01.jpg",
+        "/productos/limpieza/trapos-de-piso/compacto-blanco-mediano/02.jpg",
+        "/productos/limpieza/trapos-de-piso/compacto-blanco-mediano/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 23
+    },
+    {
+      "id": "limpieza-compacto-gris-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Compacto Gris Grande",
+      "slug": "compacto-gris-grande",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO GRIS GRANDE\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382602-150",
+        "MEDIDAS": "58X60cm",
+        "EAN13": "7798136921742",
+        "DUN14": "57798136921747",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/compacto-gris-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/compacto-gris-grande/02.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 24
+    },
+    {
+      "id": "limpieza-compacto-gris-mediano",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Compacto Gris Mediano",
+      "slug": "compacto-gris-mediano",
+      "descripcion": "TRAPOS DE PISO\nCOMPACTO GRIS MEDIANO\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+      "specs": {
+        "CODIGO": "382601-150",
+        "MEDIDAS": "50X60cm",
+        "EAN13": "7798136921735",
+        "DUN14": "57798136921730",
+        "EMPAQUE": "Fardos de 50 unidades.",
+        "COMPOSICION": "100% algodón"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/compacto-gris-mediano/01.jpg",
+        "/productos/limpieza/trapos-de-piso/compacto-gris-mediano/02.jpg",
+        "/productos/limpieza/trapos-de-piso/compacto-gris-mediano/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 25
+    },
+    {
+      "id": "limpieza-doble-reforzado-bicolor-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Bicolor Grande",
+      "slug": "doble-reforzado-bicolor-grande",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BICOLOR GRANDE\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81297",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812970",
+        "DUN14": "17790927812977",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-bicolor-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-bicolor-grande/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-bicolor-grande/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 26
+    },
+    {
+      "id": "limpieza-doble-reforzado-bicolor-mediano",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Bicolor Mediano",
+      "slug": "doble-reforzado-bicolor-mediano",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BICOLOR MEDIANO\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81296",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812963",
+        "DUN14": "17790927812960",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-bicolor-mediano/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-bicolor-mediano/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-bicolor-mediano/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 27
+    },
+    {
+      "id": "limpieza-doble-reforzado-blanco-extra-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Blanco Extra Grande",
+      "slug": "doble-reforzado-blanco-extra-grande",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO EXTRA GRANDE\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81295",
+        "MEDIDAS": "60X80cm (Consorcio)",
+        "EAN13": "7790927812956",
+        "DUN14": "17790927812953",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-extra-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-extra-grande/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-extra-grande/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 28
+    },
+    {
+      "id": "limpieza-doble-reforzado-blanco-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Blanco Grande",
+      "slug": "doble-reforzado-blanco-grande",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO GRANDE\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81295",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812949",
+        "DUN14": "17790927812946",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-grande/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-grande/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 29
+    },
+    {
+      "id": "limpieza-doble-reforzado-blanco-mediano",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Blanco Mediano",
+      "slug": "doble-reforzado-blanco-mediano",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO MEDIANO\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81293",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812932",
+        "DUN14": "17790927812939",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6 % poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-mediano/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-mediano/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-blanco-mediano/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 30
+    },
+    {
+      "id": "limpieza-doble-reforzado-gris-extra-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Gris Extra Grande",
+      "slug": "doble-reforzado-gris-extra-grande",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO GRIS EXTRA GRANDE\nSuper absorbente • Ultra resistente.\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81292",
+        "MEDIDAS": "60X80cm (Consorcio)",
+        "EAN13": "7790927812925",
+        "DUN14": "17790927812922",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-extra-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-extra-grande/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-extra-grande/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 31
+    },
+    {
+      "id": "limpieza-doble-reforzado-gris-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Gris Grande",
+      "slug": "doble-reforzado-gris-grande",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO GRIS GRANDE\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81291",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812918",
+        "DUN14": "17790927812915",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-grande/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-grande/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 32
+    },
+    {
+      "id": "limpieza-doble-reforzado-gris-mediano",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Gris Mediano",
+      "slug": "doble-reforzado-gris-mediano",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO GRIS MEDIANO\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81290",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812901",
+        "DUN14": "17790927812908",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-mediano/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-mediano/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-gris-mediano/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 33
+    },
+    {
+      "id": "limpieza-doble-reforzado-multicolor-grande",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Multicolor Grande",
+      "slug": "doble-reforzado-multicolor-grande",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO MULTICOLOR GRANDE\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81299",
+        "MEDIDAS": "58X60cm (Profesional)",
+        "EAN13": "7790927812994",
+        "DUN14": "17790927812991",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-multicolor-grande/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-multicolor-grande/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-multicolor-grande/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 34
+    },
+    {
+      "id": "limpieza-doble-reforzado-multicolor-mediano",
+      "linea": "limpieza",
+      "categoria": "trapos-de-piso",
+      "categoriaLabel": "Trapos de Piso",
+      "nombre": "Doble Reforzado Multicolor Mediano",
+      "slug": "doble-reforzado-multicolor-mediano",
+      "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO MULTICOLOR MEDIANO\nSuper absorbente • Ultra resistente\nDura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+      "specs": {
+        "CODIGO": "81298",
+        "MEDIDAS": "48X60cm (Clásico)",
+        "EAN13": "7790927812987",
+        "DUN14": "17790927812984",
+        "EMPAQUE": "Fardos de 50 unidades",
+        "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+      },
+      "imagenes": [
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-multicolor-mediano/01.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-multicolor-mediano/02.jpg",
+        "/productos/limpieza/trapos-de-piso/doble-reforzado-multicolor-mediano/03.jpg"
+      ],
+      "comprarUrl": "https://www.medianaranja.store",
+      "orden": 35
+    },
+    {
+      "id": "hogar-alfombra-band-50x90cm-linea-essentials",
+      "linea": "hogar",
+      "categoria": "alfombras",
+      "categoriaLabel": "Alfombras",
+      "nombre": "Alfombra Band (50x90cm) - Línea Essentials",
+      "slug": "alfombra-band-50x90cm-linea-essentials",
+      "descripcion": "Alfombra Band\nlínea Essentials\nAlfombra de baño. Renová tu hogar con nuestra alfombra Lines confeccionada 100% en microfibra, de alta calidad. Su diseño mullido y base antideslizante la convierten en el complemento ideal para el confort y seguridad de tu baño.\n→ Textil súper absorbente\n→ Base antideslizante\n→ Suave, mullida y resistente\nUna alfombra que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "Único: 50x90cm",
+        "colores": "Blanco, Gris, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/alfombras/alfombra-band-50x90cm-linea-essentials/01.webp",
+        "/productos/hogar/alfombras/alfombra-band-50x90cm-linea-essentials/02.webp",
+        "/productos/hogar/alfombras/alfombra-band-50x90cm-linea-essentials/03.webp",
+        "/productos/hogar/alfombras/alfombra-band-50x90cm-linea-essentials/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/alfombra-band-50x90cm-linea-essentials/",
+      "orden": 36
+    },
+    {
+      "id": "hogar-alfombra-lines-40x60cm-linea-essentials",
+      "linea": "hogar",
+      "categoria": "alfombras",
+      "categoriaLabel": "Alfombras",
+      "nombre": "Alfombra Lines (40x60cm) - Línea Essentials",
+      "slug": "alfombra-lines-40x60cm-linea-essentials",
+      "descripcion": "Alfombra Lines\nlínea Essentials\nAlfombra de baño rayada. Renová tu hogar con nuestra alfombra Lines confeccionada en chenille, de estilo bicolor. Su diseño mullido y base antideslizante la convierten en el complemento ideal para el confort y seguridad de tu baño.\n→ Textil absorbente\n→ Base antideslizante\n→ Suave, mullida y resistente\nUna alfombra que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "Único: 40x60cm",
+        "colores": "Gris claro, Gris oscuro, Lila"
+      },
+      "imagenes": [
+        "/productos/hogar/alfombras/alfombra-lines-40x60cm-linea-essentials/01.webp",
+        "/productos/hogar/alfombras/alfombra-lines-40x60cm-linea-essentials/02.webp",
+        "/productos/hogar/alfombras/alfombra-lines-40x60cm-linea-essentials/03.webp",
+        "/productos/hogar/alfombras/alfombra-lines-40x60cm-linea-essentials/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/alfombra-lines-40x60cm-linea-essentials/",
+      "orden": 37
+    },
+    {
+      "id": "hogar-toallon-infinite-500-gr-m-linea-excellence-q60ct",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toallón Infinite 500 gr/m²- Línea Excellence",
+      "slug": "toallon-infinite-500-gr-m-linea-excellence-q60ct",
+      "descripcion": "Toallón Infinite 500 gr/m²\nlínea Excellence\nLos toallones de baño Infinite se destacan por su mayor cuerpo de absorbcion.\nConfeccionados con 100% algodón y un gramaje de 500 GR/M2. Brindan un equilibrio ideal entre confort, suavidad y rendimiento.\nMedida: 70 x 140cm.\n¡Complementalo con la Toalla Infinite!\n→ Mas cuerpo, mas confort.\n→ Confección de 500 gr/m² - 100% algodón.\n→ Suavidad extra en cada contacto.\nUn toallón que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado Ringspun: calidad asegurada (proceso especial de hilar Algodón)\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toallón: 70 x 140cm",
+        "colores": "Azul, Blanco, Bordó, Tormenta"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toallon-infinite-500-gr-m-linea-excellence-q60ct/01.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toallon-infinite-500-gr-m-linea-excellence-q60ct/",
+      "orden": 38
+    },
+    {
+      "id": "hogar-toalla-infinite-500-gr-m-linea-excellence-ih8r4",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toalla Infinite 500 gr/m² - Línea Excellence",
+      "slug": "toalla-infinite-500-gr-m-linea-excellence-ih8r4",
+      "descripcion": "Toalla Infinite 500 gr/m²\nlínea Excellence\nLas Toallas de rostro Infinite están confeccionadas con 100% algodón, con un gramaje de 500 GR/M2.\nOfrecen una textura más suave y envolvente, con excelente capacidad de absorción para una experiencia superior en cada uso.\nMedida: 45 x 80 cm\n¡Complementalo con la Toallón Infinite!\n→ Mas cuerpo, mas confort.\n→ Confección de 500 gr/m² - 100% algodón.\n→ Suavidad extra en cada contacto.\nUna toalla que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado Ringspun: calidad asegurada (proceso especial de hilar Algodón)\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toalla: 45 x 80cm",
+        "colores": "Azul, Blanco, Bordó, Tormenta"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toalla-infinite-500-gr-m-linea-excellence-ih8r4/01.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toalla-infinite-500-gr-m-linea-excellence-ih8r4/",
+      "orden": 39
+    },
+    {
+      "id": "hogar-toalla-hotelera-deluxe-630-gr-m-linea-excellence",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toalla Hotelera Deluxe 630 gr/m² - Línea Excellence",
+      "slug": "toalla-hotelera-deluxe-630-gr-m-linea-excellence",
+      "descripcion": "Toalla Hotelera Deluxe 630 gr/m²\nlínea Excellence\nToalla de rostro hotelera luxury. Disfrutá la suavidad y absorción real de nuestra Toalla Deluxe. Confeccionada con hilado Ringspun + 100% Algodón Real ofrece: mayor resistencia, suavidad y extra absorción superior.\nSu gramaje de 630 GSM (gramos por metro cuadrado) aporta una densidad luxury propia de la hotelería de lujo: toalla más gruesa, suave y altamente absorbente, que transforma cada uso en una experiencia de spa auténtica.\n¡Complementala con el Toallón Deluxe!\n→ Calidad hotelera luxury\n→ Confección de 630 gr/m² - 100% algodón\n→ Absorbente, suave y duradera\nUna toalla que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado Ringspun: calidad asegurada (proceso especial de hilar Algodón)\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toalla: 50x90cm",
+        "colores": "Blanco, Negro, Tormenta, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toalla-hotelera-deluxe-630-gr-m-linea-excellence/01.webp",
+        "/productos/hogar/toallas/toalla-hotelera-deluxe-630-gr-m-linea-excellence/02.webp",
+        "/productos/hogar/toallas/toalla-hotelera-deluxe-630-gr-m-linea-excellence/03.webp",
+        "/productos/hogar/toallas/toalla-hotelera-deluxe-630-gr-m-linea-excellence/04.webp",
+        "/productos/hogar/toallas/toalla-hotelera-deluxe-630-gr-m-linea-excellence/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toalla-hotelera-deluxe-630-gr-m-linea-excellence/",
+      "orden": 40
+    },
+    {
+      "id": "hogar-toallon-galaxy-400-gr-m-linea-essentials-9r9dc",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toallón Galaxy 400 gr/m² - Línea Essentials",
+      "slug": "toallon-galaxy-400-gr-m-linea-essentials-9r9dc",
+      "descripcion": "Toallón Galaxy 400 gr/m²\nlínea Essentials\nLos Toallones de baño Galaxy son ligeros y absorbentes. Con 100% algodón y un gramaje de 400 GR/M2.\nBrindan un balance entre tamaño práctico y absorción eficiente, pensados para el día a día.\nMedida 70 x 140cm\n¡Complementalo con la Toalla Galaxy!\n→ Calidad premium de uso diario\n→ Confección de 400 gr/m² - 100% algodón\n→ Práctico, absorbente y duradero\nUn toallón que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado: calidad asegurada.\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toallón: 70 x 140cm",
+        "colores": "Azulino, Blanco, Rosa, Tormenta, Verde"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toallon-galaxy-400-gr-m-linea-essentials-9r9dc/01.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toallon-galaxy-400-gr-m-linea-essentials-9r9dc/",
+      "orden": 41
+    },
+    {
+      "id": "hogar-toalla-premium-royale-600-gr-m-linea-essentials",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toalla Premium Royale 600 gr/m² - Línea Essentials",
+      "slug": "toalla-premium-royale-600-gr-m-linea-essentials",
+      "descripcion": "Toalla Premium Royale 600 gr/m²\nlínea Essentials\nToalla de rostro premium. Disfrutá la practicidad, suavidad y absorción de nuestra Toalla Royale. Confeccionada con hilado Ringspun + 100% Algodón Real asegura: resistencia, suavidad y absorción superior.\nSu gramaje de 600 GSM (gramos por metro cuadrado) aporta una densidad premium propia para el uso diario: toalla duradera, suave y altamente absorbente, que transforma cada uso en una experiencia de Lujo Real.\n¡Complementala con el Toallón Royale!\n→ Calidad premium de uso diario\n→ Confección de 600 gr/m² - 100% algodón\n→ Práctica, absorbente y duradera\nUna toalla que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado Ringspun: calidad asegurada (proceso especial de hilar Algodón)\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toalla: 50x80cm",
+        "colores": "Blanco, Negro, Tormenta, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toalla-premium-royale-600-gr-m-linea-essentials/01.webp",
+        "/productos/hogar/toallas/toalla-premium-royale-600-gr-m-linea-essentials/02.webp",
+        "/productos/hogar/toallas/toalla-premium-royale-600-gr-m-linea-essentials/03.webp",
+        "/productos/hogar/toallas/toalla-premium-royale-600-gr-m-linea-essentials/04.webp",
+        "/productos/hogar/toallas/toalla-premium-royale-600-gr-m-linea-essentials/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toalla-premium-royale-600-gr-m-linea-essentials/",
+      "orden": 42
+    },
+    {
+      "id": "hogar-toallon-premium-royale-600-gr-m-linea-essentials",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toallón Premium Royale 600 gr/m² - Línea Essentials",
+      "slug": "toallon-premium-royale-600-gr-m-linea-essentials",
+      "descripcion": "Toallón Premium Royale 600 gr/m²\nlínea Essentials\nToallón de baño premium. Disfrutá la practicidad, suavidad y absorción de nuestro Toallón Royale. Confeccionado con hilado Ringspun + 100% Algodón Real asegura: resistencia, suavidad y absorción superior.\nSu gramaje de 600 GSM (gramos por metro cuadrado) aporta una densidad premium propia para el uso diario: toallón duradero, suave y altamente absorbente, que transforma cada uso en una experiencia de Lujo Real.\n¡Complementalo con la Toalla Royale!\n→ Calidad premium de uso diario\n→ Confección de 600 gr/m² - 100% algodón\n→ Práctico, absorbente y duradero\nUn toallón que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado Ringspun: calidad asegurada (proceso especial de hilar Algodón)\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toallón: 78x140cm",
+        "colores": "Blanco, Negro, Tormenta, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toallon-premium-royale-600-gr-m-linea-essentials/01.webp",
+        "/productos/hogar/toallas/toallon-premium-royale-600-gr-m-linea-essentials/02.webp",
+        "/productos/hogar/toallas/toallon-premium-royale-600-gr-m-linea-essentials/03.webp",
+        "/productos/hogar/toallas/toallon-premium-royale-600-gr-m-linea-essentials/04.webp",
+        "/productos/hogar/toallas/toallon-premium-royale-600-gr-m-linea-essentials/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toallon-premium-royale-600-gr-m-linea-essentials/",
+      "orden": 43
+    },
+    {
+      "id": "hogar-toalla-galaxy-400-gr-m-linea-essentials-jammk",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toalla Galaxy 400 gr/m² - Línea Essentials",
+      "slug": "toalla-galaxy-400-gr-m-linea-essentials-jammk",
+      "descripcion": "Toalla Galaxy 400 gr/m²\nlínea Essentials\nLas Toallas de rostro Galaxy están confeccionadas con 100% algodón, con un gramaje de 400 GR/M2.\nSon livianas, suaves y absorbentes, ideales para el uso diario y una rutina práctica y confortable.\nMedida 45 x 80cm\n¡Complementalo con la Toallón Galaxy!\n→ Calidad premium de uso diario\n→ Confección de 400 gr/m² - 100% algodón\n→ Práctico, absorbente y duradero\nUna toalla que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado: calidad asegurada.\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toalla: 45 x 80cm",
+        "colores": "Azulino, Blanco, Rosa, Tormenta, Verde"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toalla-galaxy-400-gr-m-linea-essentials-jammk/01.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toalla-galaxy-400-gr-m-linea-essentials-jammk/",
+      "orden": 44
+    },
+    {
+      "id": "hogar-toallon-hotelero-deluxe-630-gr-m-linea-excellence",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toallón Hotelero Deluxe 630 gr/m²- Línea Excellence",
+      "slug": "toallon-hotelero-deluxe-630-gr-m-linea-excellence",
+      "descripcion": "Toallón Hotelero Deluxe 630 gr/m²\nlínea Excellence\nToallón de baño hotelero luxury. Disfrutá la suavidad y absorción real de nuestro Toallón Deluxe. Confeccionado con hilado Ringspun + 100% Algodón Real ofrece: mayor resistencia, suavidad y extra absorción superior.\nSu gramaje de 630 GSM (gramos por metro cuadrado) aporta una densidad luxury propia de la hotelería de lujo: toallón más grueso, suave y altamente absorbente, que transforma cada uso en una experiencia de spa auténtica.\n¡Complementalo con la Toalla Deluxe!\n→ Calidad hotelera luxury\n→ Confección de 630 gr/m² - 100% algodón\n→ Absorbente, suave y duradero\nUn toallón que merece ser tu Media Naranja ?\n- Fotos illustrativas -\nHilado Ringspun: calidad asegurada (proceso especial de hilar Algodón)\n- Mayor resistencia: duran más y se desgastan menos.\n- Textura extra suave: delicadeza al tacto, sin imperfecciones.\n- Absorción superior: fibras más compactas que retienen mejor la humedad.\nAlgodón 100% Real: lujo auténtico\n- Absorción máxima: captura y retiene la humedad con eficacia.\n- Suavidad absoluta: confort asegurado en cada contacto.\n- Durabilidad superior: más firmeza y resistencia para acompañarte por años.",
+      "specs": {
+        "talles": "Toallón: 85x165cm",
+        "colores": "Blanco, Negro, Tormenta, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toallon-hotelero-deluxe-630-gr-m-linea-excellence/01.webp",
+        "/productos/hogar/toallas/toallon-hotelero-deluxe-630-gr-m-linea-excellence/02.webp",
+        "/productos/hogar/toallas/toallon-hotelero-deluxe-630-gr-m-linea-excellence/03.webp",
+        "/productos/hogar/toallas/toallon-hotelero-deluxe-630-gr-m-linea-excellence/04.webp",
+        "/productos/hogar/toallas/toallon-hotelero-deluxe-630-gr-m-linea-excellence/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toallon-hotelero-deluxe-630-gr-m-linea-excellence/",
+      "orden": 45
+    },
+    {
+      "id": "hogar-toallon-dryfit-secado-rapido-linea-essentials",
+      "linea": "hogar",
+      "categoria": "toallas",
+      "categoriaLabel": "Toallas y Toallones",
+      "nombre": "Toallón Dryfit Secado Rápido - Línea Essentials",
+      "slug": "toallon-dryfit-secado-rapido-linea-essentials",
+      "descripcion": "Toallón Dryfit Secado Rápido\nlínea Essentials\nToallón de microfibra premium. Revolucioná tu rutina de secado con nuestro toallón Dryfit confeccionado 100% en microfibra de alta calidad. Su diseño de secado rápido, liviano y resistente lo convierte en el complemento ideal para entrenamientos físicos, viajes y/o días de playa.\n→ Secado rápido de alta absorción\n→ Textura suave, ideal para piel delicada\n→ Liviano, compacto y duradero\nUn toallón que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "Único: 70x150cm",
+        "colores": "Gris"
+      },
+      "imagenes": [
+        "/productos/hogar/toallas/toallon-dryfit-secado-rapido-linea-essentials/01.webp",
+        "/productos/hogar/toallas/toallon-dryfit-secado-rapido-linea-essentials/02.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/toallon-dryfit-secado-rapido-linea-essentials/",
+      "orden": 46
+    },
+    {
+      "id": "hogar-repasador-stelar-linea-essentials",
+      "linea": "hogar",
+      "categoria": "repasadores",
+      "categoriaLabel": "Repasadores",
+      "nombre": "Repasador Stelar - Línea Essentials",
+      "slug": "repasador-stelar-linea-essentials",
+      "descripcion": "Repasador Stelar\nlínea Essentials\nRepasador de cocina. Renová tu hogar con nuestro repasador Stelar confeccionado 88% algodón y 12% poliéster. Su diseño liviano y absorbente lo convierten en el complemento ideal para la practicidad del día a día.\n→ Costuras reforzadas\n→ Calidad súper resistente y absorbente\n→ Práctico, liviano y funcional\nUn repasador que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "Único: 44x65cm",
+        "colores": "Blanco, Chocolate, Gris, Negro"
+      },
+      "imagenes": [
+        "/productos/hogar/repasadores/repasador-stelar-linea-essentials/01.webp",
+        "/productos/hogar/repasadores/repasador-stelar-linea-essentials/02.webp",
+        "/productos/hogar/repasadores/repasador-stelar-linea-essentials/03.webp",
+        "/productos/hogar/repasadores/repasador-stelar-linea-essentials/04.webp",
+        "/productos/hogar/repasadores/repasador-stelar-linea-essentials/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/repasador-stelar-linea-essentials/",
+      "orden": 47
+    },
+    {
+      "id": "hogar-acolchado-comfort-linea-excellence",
+      "linea": "hogar",
+      "categoria": "acolchados",
+      "categoriaLabel": "Acolchados",
+      "nombre": "Acolchado Comfort - Línea Excellence",
+      "slug": "acolchado-comfort-linea-excellence",
+      "descripcion": "Acolchado Comfort\nlínea Excellence\nSet de acolchado con fundas premium. Sumergite en la comodidad diaria con nuestro acolchado Comfort de microfibra prelavada. Su textura súper mullida y extra suave lo convierte en la opción ideal para un descanso reparador todos los días.\n→ Calidad premium\n→ Textura súper suave y mullida\n→ Relleno de fibra sintética\nUn acolchado que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King: 280x250cm, Queen: 240x240cm, Twin: 180x240cm",
+        "colores": "Blanco, Cemento, Gris, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/acolchados/acolchado-comfort-linea-excellence/01.webp",
+        "/productos/hogar/acolchados/acolchado-comfort-linea-excellence/02.webp",
+        "/productos/hogar/acolchados/acolchado-comfort-linea-excellence/03.webp",
+        "/productos/hogar/acolchados/acolchado-comfort-linea-excellence/04.webp",
+        "/productos/hogar/acolchados/acolchado-comfort-linea-excellence/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/acolchado-comfort-linea-excellence/",
+      "orden": 48
+    },
+    {
+      "id": "hogar-acolchado-double-linea-essentials",
+      "linea": "hogar",
+      "categoria": "acolchados",
+      "categoriaLabel": "Acolchados",
+      "nombre": "Acolchado Double - Línea Essentials",
+      "slug": "acolchado-double-linea-essentials",
+      "descripcion": "Acolchado Double\nlínea Essentials\nSet de acolchado bitono reversible. Disfrutá el confort diario con nuestro acolchado Double de microfibra super soft. Su textura suave, peso liviano y diseño bicolor lo convierte en la opción ideal para renovar el descanso de cada día.\n→ Color bitono reversible\n→ Suave, abrigado y liviano\n→ Relleno de microfibra\nUn acolchado que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King: 280x250cm, Queen: 220x240cm, Twin: 160x240cm",
+        "colores": "Azul, Blanco, Gris, Lila"
+      },
+      "imagenes": [
+        "/productos/hogar/acolchados/acolchado-double-linea-essentials/01.webp",
+        "/productos/hogar/acolchados/acolchado-double-linea-essentials/02.webp",
+        "/productos/hogar/acolchados/acolchado-double-linea-essentials/03.webp",
+        "/productos/hogar/acolchados/acolchado-double-linea-essentials/04.webp",
+        "/productos/hogar/acolchados/acolchado-double-linea-essentials/05.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/acolchado-double-linea-essentials/",
+      "orden": 49
+    },
+    {
+      "id": "hogar-cubrecama-cloud-linea-essentials",
+      "linea": "hogar",
+      "categoria": "cubrecama",
+      "categoriaLabel": "Cubrecamas",
+      "nombre": "Cubrecama Cloud - Línea Essentials",
+      "slug": "cubrecama-cloud-linea-essentials",
+      "descripcion": "Cubrecama Cloud\nlínea Essentials\nSet de cubrecama con fundas. Renová tu descanso con nuestro cover Cloud confeccionado en microfibra soft. Su diseño de secado rápido, liviano y resistente lo convierte en el complemento ideal para la practicidad del día a día.\n→ Secado rápido antiarrugas\n→ Suave y resistente\n→ Microfibra soft\nUn cover que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King: 280x250cm, Queen: 240x240cm, Twin: 170x240",
+        "colores": "Blanco, Gris, Lila"
+      },
+      "imagenes": [
+        "/productos/hogar/cubrecama/cubrecama-cloud-linea-essentials/01.webp",
+        "/productos/hogar/cubrecama/cubrecama-cloud-linea-essentials/02.webp",
+        "/productos/hogar/cubrecama/cubrecama-cloud-linea-essentials/03.webp",
+        "/productos/hogar/cubrecama/cubrecama-cloud-linea-essentials/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/cubrecama-cloud-linea-essentials/",
+      "orden": 50
+    },
+    {
+      "id": "hogar-cubrecama-cozy-linea-excellence",
+      "linea": "hogar",
+      "categoria": "cubrecama",
+      "categoriaLabel": "Cubrecamas",
+      "nombre": "Cubrecama Cozy - Línea Excellence",
+      "slug": "cubrecama-cozy-linea-excellence",
+      "descripcion": "Cubrecama Cozy\nlínea Excellence\nSet de cubrecama con fundas premium. Cuidá el descanso con la calidez de nuestro cover Cozy de microfibra prelavada súper soft. Su diseño liviano y extra suave lo convierte en el complemento ideal para el descanso de todos los días.\n→ Calidad premium\n→ Suave y liviano\n→ Microfibra super soft\nUn cover que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King: 280x250cm, Queen: 240x240cm, Twin: 170x240cm",
+        "colores": "Blanco, Gris, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/cubrecama/cubrecama-cozy-linea-excellence/01.webp",
+        "/productos/hogar/cubrecama/cubrecama-cozy-linea-excellence/02.webp",
+        "/productos/hogar/cubrecama/cubrecama-cozy-linea-excellence/03.webp",
+        "/productos/hogar/cubrecama/cubrecama-cozy-linea-excellence/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/cubrecama-cozy-linea-excellence/",
+      "orden": 51
+    },
+    {
+      "id": "hogar-frazada-corderito-square-linea-essentials",
+      "linea": "hogar",
+      "categoria": "frazadas",
+      "categoriaLabel": "Frazadas",
+      "nombre": "Frazada Corderito Square - Línea Essentials",
+      "slug": "frazada-corderito-square-linea-essentials",
+      "descripcion": "Frazada Square\nlínea Essentials\nFrazada de invierno. Cuidá el descanso con la calidez de nuestra frazada Square confeccionada 100% en corderito, con interior tipo sherpa y exterior con textura jacquard. Su diseño suave, cálido y mullido lo convierte en el complemento ideal para el descanso invernal.\n→ Calidez y abrigo asegurado\n→ Confección 100% corderito\n→ Suave, liviano y mullido\nUna frazada que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King: 240x270cm, Queen: 220x240cm, Twin: 160x240cm",
+        "colores": "Gris, Natural, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/frazadas/frazada-corderito-square-linea-essentials/01.webp",
+        "/productos/hogar/frazadas/frazada-corderito-square-linea-essentials/02.webp",
+        "/productos/hogar/frazadas/frazada-corderito-square-linea-essentials/03.webp",
+        "/productos/hogar/frazadas/frazada-corderito-square-linea-essentials/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/frazada-corderito-square-linea-essentials/",
+      "orden": 52
+    },
+    {
+      "id": "hogar-manta-tejida-acrilica-dots-linea-excellence",
+      "linea": "hogar",
+      "categoria": "mantas",
+      "categoriaLabel": "Mantas",
+      "nombre": "Manta Tejida Acrílica Dots - Línea Excellence",
+      "slug": "manta-tejida-acrilica-dots-linea-excellence",
+      "descripcion": "Manta Dots\nlínea Excellence\nManta premium. Decorá tu hogar con nuestra manta Dots confeccionada en tejido 100% acrílico de alta calidad. Su diseño premium y versátil la convierten en el complemento ideal para cada rincón de la casa.\n→ Ideal para pie de cama y sillones\n→ Confección 100% tejido acrílico\n→ Suave, cálido y resistente\nUna manta que merece ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "Natural, Visón",
+        "colores": ""
+      },
+      "imagenes": [
+        "/productos/hogar/mantas/manta-tejida-acrilica-dots-linea-excellence/01.webp",
+        "/productos/hogar/mantas/manta-tejida-acrilica-dots-linea-excellence/02.webp",
+        "/productos/hogar/mantas/manta-tejida-acrilica-dots-linea-excellence/03.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/manta-tejida-acrilica-dots-linea-excellence/",
+      "orden": 53
+    },
+    {
+      "id": "hogar-sabanas-percal-200-hilos-100-algodon-linea-essentials",
+      "linea": "hogar",
+      "categoria": "sabanas",
+      "categoriaLabel": "Sábanas",
+      "nombre": "Sábanas Percal 200 Hilos 100% Algodón - Línea Essentials",
+      "slug": "sabanas-percal-200-hilos-100-algodon-linea-essentials",
+      "descripcion": "Sábanas Percal 200 Hilos 100% Algodón\nlínea Essentials\nSet de sábanas con fundas. Disfrutá el descanso que mereces con nuestras Sábanas Percal de 200 Hilos confeccionadas 100% en algodón. Su textura suave y calidad duradera las convierten en la opción ideal para un descanso reparador del día a día.\n→ Calidad premium\n→ Confección de 200 Hilos - 100% algodón\n→ Frescas y resistentes\nUnas sábanas que merecen ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King, Queen, Twin",
+        "colores": "Blanco, Gris, Lila"
+      },
+      "imagenes": [
+        "/productos/hogar/sabanas/sabanas-percal-200-hilos-100-algodon-linea-essentials/01.webp",
+        "/productos/hogar/sabanas/sabanas-percal-200-hilos-100-algodon-linea-essentials/02.webp",
+        "/productos/hogar/sabanas/sabanas-percal-200-hilos-100-algodon-linea-essentials/03.webp",
+        "/productos/hogar/sabanas/sabanas-percal-200-hilos-100-algodon-linea-essentials/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/sabanas-percal-200-hilos-100-algodon-linea-essentials/",
+      "orden": 54
+    },
+    {
+      "id": "hogar-sabanas-saten-600-hilos-100-algodon-linea-excellence",
+      "linea": "hogar",
+      "categoria": "sabanas",
+      "categoriaLabel": "Sábanas",
+      "nombre": "Sábanas Satén 600 Hilos 100% Algodón - Línea Excellence",
+      "slug": "sabanas-saten-600-hilos-100-algodon-linea-excellence",
+      "descripcion": "Sábanas Satén 600 Hilos 100% Algodón\nlínea Excellence\nSet de sábanas con fundas luxury. Disfrutá el descanso que mereces con nuestras Sábanas Satén de 600 Hilos confeccionadas 100% en algodón de calidad única hotelera. Su textura sedosa, confección liviana y calidad premium las convierten en la opción ideal para un descanso de excelencia.\n→ Calidad luxury\n→ Confección de 600 Hilos - 100% algodón\n→ Suaves y duraderas\nUnas sábanas que merecen ser tu Media Naranja ?\n- Fotos illustrativas -",
+      "specs": {
+        "talles": "King, Queen, Twin",
+        "colores": "Blanco, Gris, Visón"
+      },
+      "imagenes": [
+        "/productos/hogar/sabanas/sabanas-saten-600-hilos-100-algodon-linea-excellence/01.webp",
+        "/productos/hogar/sabanas/sabanas-saten-600-hilos-100-algodon-linea-excellence/02.webp",
+        "/productos/hogar/sabanas/sabanas-saten-600-hilos-100-algodon-linea-excellence/03.webp",
+        "/productos/hogar/sabanas/sabanas-saten-600-hilos-100-algodon-linea-excellence/04.webp"
+      ],
+      "comprarUrl": "https://www.medianaranja.store/productos/sabanas-saten-600-hilos-100-algodon-linea-excellence/",
+      "orden": 55
+    }
+  ]
+}

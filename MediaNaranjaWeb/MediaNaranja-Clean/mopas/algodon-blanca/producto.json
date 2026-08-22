@@ -1,0 +1,42 @@
+{
+  "id": 272,
+  "nombre": "Algodón Blanca",
+  "slug": "algodon-blanca",
+  "categoria": "MOPAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/mopa-algodon-blanco/",
+  "sku": "381902-212",
+  "descripcion": "MOPAS\nALGODÓN BLANCO\nFácil de usar • Ultra resistente •  Puro algodón\nLimpia hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.",
+  "specs": {
+    "CODIGO": "381902-212",
+    "MEDIDAS": "23cm",
+    "EAN13": "7798136921476",
+    "DUN14": "37798136921477",
+    "EMPAQUE": "12 unidades",
+    "COMPOSICION": "100 % algodón"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MopaBlancaAlgodon.jpg",
+      "alt": ""
+    },
+    {
+      "file": "img_2.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MopaBlancaAlgodon-2.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaBlancaAlgodon.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/11/medianaranja_mopa-algodon-bca-solo.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MOPAS</h1>\n<h2>ALGODÓN BLANCO</h2>\n<p>Fácil de usar • Ultra resistente •  Puro algodón<br />\nLimpia hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 381902-212</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 23cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7798136921476</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 37798136921477</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  12 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 100 % algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1047122149\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4490\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaBlancaAlgodon.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=622\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/11/medianaranja_mopa-algodon-bca-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaBlancaAlgodon.jpg"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": 421,
+  "nombre": "Doble Goma Grande",
+  "slug": "doble-goma-grande",
+  "categoria": "SECADORES",
+  "permalink": "https://www.medianaranja.com.ar/producto/doble-goma-grande/",
+  "sku": "81501-412",
+  "descripcion": "SECADORES DE PISO\nDOBLE GOMA GRANDE\nMayor calidad  • Facilidad de uso.\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.",
+  "specs": {
+    "CODIGO": "81501-412",
+    "MEDIDAS": "41cm",
+    "EAN13": "7790927815018",
+    "DUN14": "17790927815015",
+    "EMPAQUE": "Cajas de 12 unidades (3 colores surtidos)",
+    "COMPOSICION": "Doble goma"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_secadorG.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorG.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>SECADORES DE PISO</h1>\n<h2>DOBLE GOMA GRANDE</h2>\n<p>Mayor calidad  • Facilidad de uso.<br />\nSu doble goma y detalle lateral hace que necesites menos pasadas para realizar la limpieza.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span>  81501-412</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 41cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927815018</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927815015</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  Cajas de 12 unidades (3 colores surtidos)</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> Doble goma</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1187572750\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4520\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorG.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_secadorG.jpg"
+    }
+  ]
+}

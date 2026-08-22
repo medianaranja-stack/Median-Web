@@ -1,0 +1,41 @@
+{
+  "id": 268,
+  "nombre": "Tecnológica",
+  "slug": "tecnologica",
+  "categoria": "MICROFIBRAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/microfibras-tecnologica/",
+  "sku": "81419",
+  "descripcion": "MICROFIBRAS\nTECNOLÓGICA\nMayor cuidado • No raya • Ultra resistente\nIdeal para la limpieza en seco de todo tipo de productos tecnológicos. La microfibra atrae las partículas por estática, sin rayar ni dejar vetas en las superficies..",
+  "specs": {
+    "CODIGO": "81419",
+    "MEDIDAS": "25X35cm",
+    "EAN13": "7790927814196",
+    "DUN14": "17790927814193",
+    "EMPAQUE": "Cajas de 10 unidades",
+    "COMPOSICION": "80% poliéster + 20% poliamida"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroTecno.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroTecno-1.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroTecno-solo-1.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>TECNOLÓGICA</h2>\n<p>Mayor cuidado • No raya • Ultra resistente<br />\nIdeal para la limpieza en seco de todo tipo de productos tecnológicos. La microfibra atrae las partículas por estática, sin rayar ni dejar vetas en las superficies..</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81419</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 25X35cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814196</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814193</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-367673580\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4685\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroTecno-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4686\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroTecno-solo-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n&nbsp;\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MicroTecno-1.jpg"
+    },
+    {
+      "file": "ficha_2.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroTecno-solo-1.jpg"
+    }
+  ]
+}

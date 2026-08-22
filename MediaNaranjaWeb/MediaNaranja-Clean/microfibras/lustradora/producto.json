@@ -1,0 +1,37 @@
+{
+  "id": 265,
+  "nombre": "Lustradora",
+  "slug": "lustradora",
+  "categoria": "MICROFIBRAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/microfibras-lustradora/",
+  "sku": "914060",
+  "descripcion": "MICROFIBRAS\nLUSTRADORA\nNo raya • No deja vetas\nDeja tus superficies de madera más brillantes sin esfuerzo. La microfibra atrapa las partículas de una sola pasada, haciendo la limpieza más fácil.",
+  "specs": {
+    "CODIGO": "914060",
+    "MEDIDAS": "40X40cm",
+    "EAN13": "7798136921438",
+    "DUN14": "37798136921439",
+    "EMPAQUE": "Cajas de 10 unidades",
+    "COMPOSICION": "80% poliéster + 20% poliamida"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroLustradora.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroLustradora.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMuebles-solo.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>LUSTRADORA</h2>\n<p>No raya • No deja vetas<br />\nDeja tus superficies de madera más brillantes sin esfuerzo. La microfibra atrapa las partículas de una sola pasada, haciendo la limpieza más fácil.</p>\n<h5><span style=\"color: #808080\">CÓDIGO </span>914060</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7798136921438</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 37798136921439</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-121912029\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19761\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_MicroLustradora.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4481\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMuebles-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroMuebles-solo.jpg"
+    }
+  ]
+}

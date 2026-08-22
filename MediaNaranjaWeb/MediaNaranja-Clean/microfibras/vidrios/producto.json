@@ -1,0 +1,37 @@
+{
+  "id": 266,
+  "nombre": "Vidrios",
+  "slug": "vidrios",
+  "categoria": "MICROFIBRAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/microfibras-vidrios/",
+  "sku": "81416",
+  "descripcion": "MICROFIBRAS\nVIDRIOS\nUltra resistente • Sin Vetas • Sin esfuerzos • No raya\nIdeal para la limpieza de vidrios y superficies espejadas. La microfibra atrapa las partículas sin rayar ni dejar vetas.",
+  "specs": {
+    "CODIGO": "81416",
+    "MEDIDAS": "40X40cm",
+    "EAN13": "7790927814165",
+    "DUN14": "17790927814162",
+    "EMPAQUE": "Cajas de 10 unidades",
+    "COMPOSICION": "80% poliéster + 20% poliamida"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_vidrios.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_vidrios.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroVidrios-solo-1.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>VIDRIOS</h2>\n<p>Ultra resistente • Sin Vetas • Sin esfuerzos • No raya<br />\nIdeal para la limpieza de vidrios y superficies espejadas. La microfibra atrapa las partículas sin rayar ni dejar vetas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81416</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 40X40cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span>  7790927814165</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814162</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-859402896\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=6998\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_vidrios.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4689\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroVidrios-solo-1.jpg\" /></a>\r\n\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n<p>&nbsp;</p>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroVidrios-solo-1.jpg"
+    }
+  ]
+}

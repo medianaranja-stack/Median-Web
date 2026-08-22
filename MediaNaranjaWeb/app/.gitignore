@@ -1,0 +1,18 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.local
+.env.*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.memsearch/
+*.memsearch*
+milvus.db
+npm-debug.log*
+yarn-error.log*
+
+# Local Netlify folder
+.netlify

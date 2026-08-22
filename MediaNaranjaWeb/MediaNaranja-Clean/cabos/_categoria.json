@@ -1,0 +1,30 @@
+[
+  {
+    "id": 419,
+    "nombre": "Cabo",
+    "slug": "cabo",
+    "categoria": "CABOS",
+    "permalink": "https://www.medianaranja.com.ar/producto/cabo/",
+    "sku": "81502-412",
+    "descripcion": "CABO METÁLICO RECUBIERTO\nIdeal para sujetar mopas y secadores\nPráctico gancho de colgar\nPosee rosca standard inferior\nEAN 7790927815025",
+    "specs": {
+      "CODIGO": "81502-412",
+      "MEDIDAS": "120 cm (Standard)",
+      "DUN14": "17790927815029",
+      "EMPAQUE": "12 unidades"
+    },
+    "precio": "0",
+    "imagenes": [
+      {
+        "file": "img_1.jpg",
+        "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_cabo.jpg",
+        "alt": ""
+      }
+    ],
+    "imagenes_embebidas": [
+      "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_cabo-7.jpg",
+      "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+    ],
+    "descripcion_html_original": "<h2>CABO METÁLICO RECUBIERTO</h2>\n<p>Ideal para sujetar mopas y secadores<br />\nPráctico gancho de colgar<br />\nPosee rosca standard inferior</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81502-412</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 120 cm (Standard)</h5>\n<h5><span style=\"color: #808080\">EAN</span> 7790927815025</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927815029</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  12 unidades</h5>\n<div class=\"row row-small filadescargas\" id=\"row-995560499\">\r\n\r\n<div class=\"col medium-5 small-4 large-5\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4473\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_cabo-7.jpg\" /></a><i class=\"fa fa-download \"></i>\r\n\r\n</div></div>\r\n<div class=\"col medium-2 small-12 large-2\"><div class=\"col-inner\">\r\n\r\n</div></div>\r\n<div class=\"col medium-1 small-4 large-1\"><div class=\"col-inner text-center\">\r\n\r\n\r\n\r\n</div></div>\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>"
+  }
+]

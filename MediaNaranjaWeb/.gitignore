@@ -1,0 +1,12 @@
+# Memsearch — privado, local por máquina, nunca pushear
+.memsearch/
+*.memsearch*
+milvus.db
+
+# Node / build
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+.DS_Store

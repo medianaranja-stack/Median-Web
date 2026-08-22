@@ -1,0 +1,41 @@
+{
+  "id": 243,
+  "nombre": "Doble Reforzado Blanco Extra Grande",
+  "slug": "doble-reforzado-blanco-extra-grande",
+  "categoria": "TRAPOS DE PISO",
+  "permalink": "https://www.medianaranja.com.ar/producto/doble-reforzado-blanco-extra-grande/",
+  "sku": "81295",
+  "descripcion": "TRAPOS DE PISO\nDOBLE REFORZADO BLANCO EXTRA GRANDE\nSuper absorbente • Livano • Se escurre sin esfuerzo.\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.",
+  "specs": {
+    "CODIGO": "81295",
+    "MEDIDAS": "60X80cm (Consorcio)",
+    "EAN13": "7790927812956",
+    "DUN14": "17790927812953",
+    "EMPAQUE": "Fardos de 50 unidades",
+    "COMPOSICION": "97,4% algodón + 2,6% poliéster"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_piso-reforzado-blanco-XG.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-XG.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>TRAPOS DE PISO</h1>\n<h2>DOBLE REFORZADO BLANCO EXTRA GRANDE</h2>\n<p>Super absorbente • Livano • Se escurre sin esfuerzo.<br />\nEl más grande del mercado. Dura más porque trae un exclusivo refuerzo central en la zona más expuesta al desgaste.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81295</h5>\n<h5><span style=\"color: #808080\">MEDIDAS </span>60X80cm (Consorcio)</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927812956</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927812953</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Fardos de 50 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 97,4% algodón + 2,6% poliéster</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1638997174\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=13377\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-XG.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4501\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2021/07/MediaNaranja_Piso-Reforzado-Blanco-XG.jpg"
+    },
+    {
+      "file": "ficha_2.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-reforzado-blanco-solo.jpg"
+    }
+  ]
+}

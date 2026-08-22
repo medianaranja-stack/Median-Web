@@ -1,0 +1,32 @@
+{
+  "id": 418,
+  "nombre": "Blanca Microfibra",
+  "slug": "blanca-microfibra",
+  "categoria": "MOPAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/mopa-microfibra/",
+  "sku": "381903-212",
+  "descripcion": "MOPAS\nMICROFIBRA\nFácil de usar • Ultra resistente\nLimpia sin esfuerzos hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.",
+  "specs": {
+    "CODIGO": "381903-212",
+    "MEDIDAS": "23cm",
+    "EAN13": "7798136921377",
+    "DUN14": "17798136921374",
+    "EMPAQUE": "12 unidades",
+    "COMPOSICION": "Microfibra blanca"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MOPAS</h1>\n<h2>MICROFIBRA</h2>\n<p>Fácil de usar • Ultra resistente<br />\nLimpia sin esfuerzos hasta los rincones más difíciles sin la necesidad de agacharte ni ensuciarte las manos.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span>  381903-212</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 23cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7798136921377</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17798136921374</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span>  12 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> Microfibra blanca</h5>\n<div class=\"row row-small filadescargas\" id=\"row-498820482\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4491\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4491\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_MopaMicrofibra.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": []
+}

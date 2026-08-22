@@ -1,0 +1,41 @@
+{
+  "id": 19714,
+  "nombre": "Compacto Gris Mediano",
+  "slug": "compacto-gris-mediano",
+  "categoria": "TRAPOS DE PISO",
+  "permalink": "https://www.medianaranja.com.ar/producto/compacto-gris-mediano/",
+  "sku": "382601-150",
+  "descripcion": "TRAPOS DE PISO\nCOMPACTO GRIS MEDIANO\nSuper absorbente • Liviano\nSe escurre sin esfuerzo.",
+  "specs": {
+    "CODIGO": "382601-150",
+    "MEDIDAS": "50X60cm",
+    "EAN13": "7798136921735",
+    "DUN14": "57798136921730",
+    "EMPAQUE": "Fardos de 50 unidades.",
+    "COMPOSICION": "100% algodón"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M-1.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<h1>TRAPOS DE PISO</h1>\n<h2>COMPACTO GRIS MEDIANO</h2>\n<p>Super absorbente • Liviano<br />\nSe escurre sin esfuerzo.</p>\n<h5>CÓDIGO 382601-150</h5>\n<h5>MEDIDAS 50X60cm</h5>\n<h5>EAN13 7798136921735</h5>\n<h5>DUN14 57798136921730</h5>\n<h5>EMPAQUE Fardos de 50 unidades.</h5>\n<h5>COMPOSICIÓN 100% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-1481000977\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=19767\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M-1.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4495\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4522\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2022/03/MediaNaranja_piso-compacto-gris-M-1.jpg"
+    },
+    {
+      "file": "ficha_2.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_piso-compacto-gris-solo.jpg"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": 271,
+  "nombre": "Lava Autos",
+  "slug": "lava-autos",
+  "categoria": "MICROFIBRAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/microfibras-lava-autos/",
+  "sku": "81422",
+  "descripcion": "MICROFIBRAS\nLAVA AUTOS\nSuper absorbente • Ultra resistente • No raya • No deja vetas\nIdeal para el lavado y secado de la carrocería de tu auto. Gracias a su exclusiva composición remueve la suciedad y absorbe, dejando tu auto limpio con menos esfuerzo y sin dejar marcas.",
+  "specs": {
+    "CODIGO": "81422",
+    "MEDIDAS": "50X60cm",
+    "EAN13": "7790927814226",
+    "DUN14": "17790927814223",
+    "EMPAQUE": "Cajas de 10 unidades",
+    "COMPOSICION": "80% poliéster + 20% poliamida"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_lava_autos.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_lava_autos.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroLavaAutos-solo-1.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>LAVA AUTOS</h2>\n<p>Super absorbente • Ultra resistente • No raya • No deja vetas<br />\nIdeal para el lavado y secado de la carrocería de tu auto. Gracias a su exclusiva composición remueve la suciedad y absorbe, dejando tu auto limpio con menos esfuerzo y sin dejar marcas.</p>\n<h5><span style=\"color: #808080\">CÓDIGO</span> 81422</h5>\n<h5><span style=\"color: #808080\">MEDIDAS</span> 50X60cm</h5>\n<h5><span style=\"color: #808080\">EAN13</span> 7790927814226</h5>\n<h5><span style=\"color: #808080\">DUN14</span> 17790927814223</h5>\n<h5><span style=\"color: #808080\">EMPAQUE</span> Cajas de 10 unidades</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN</span> 80% poliéster + 20% poliamida</h5>\n<div class=\"row row-small filadescargas\" id=\"row-716860523\">\n\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=6996\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/11/MediaNaranja_microfibra_lava_autos.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4477\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroLavaAutos-solo-1.jpg\" /></a>\n\n</div></div>\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\n\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\n<p>&nbsp;</p>\n\n</div></div>\n\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_MicroLavaAutos-solo-1.jpg"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 269,
+  "nombre": "1000USOS",
+  "slug": "1000usos",
+  "categoria": "MICROFIBRAS",
+  "permalink": "https://www.medianaranja.com.ar/producto/microfibras-1000usos/",
+  "sku": "81423",
+  "descripcion": "MICROFIBRAS\n1000USOS\nUn paño para cada ambiente • Máxima suavidad.\nLa misma calidad de siempre en un pack económico que contiene 3 microfibras, brindan la capacidad de limpiar sólo con agua y sin dejar pelusa.",
+  "specs": {
+    "CODIGO": "81423",
+    "MEDIDAS": "30X30cm (c/u)",
+    "EAN13": "7790927814233",
+    "DUN14": "17790927814230",
+    "EMPAQUE": "Presentación en bolsa de 10 packs.",
+    "COMPOSICION": "80% poliéster + 20% algodón"
+  },
+  "precio": "0",
+  "imagenes": [
+    {
+      "file": "img_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2017/10/MediaNaranja_1000usos-1.jpg",
+      "alt": ""
+    }
+  ],
+  "imagenes_embebidas": [
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_1000usos.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_1000usos-solo.jpg",
+    "http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg"
+  ],
+  "descripcion_html_original": "<div class=\"textoproductos\">\n<h1>MICROFIBRAS</h1>\n<h2>1000USOS</h2>\n<p>Un paño para cada ambiente • Máxima suavidad.<br />\nLa misma calidad de siempre en un pack económico que contiene 3 microfibras, brindan la capacidad de limpiar sólo con agua y sin dejar pelusa.</p>\n<h5><span style=\"color: #808080\">CÓDIGO:</span> 81423</h5>\n<h5><span style=\"color: #808080\">MEDIDAS:</span> 30X30cm (c/u)</h5>\n<h5><span style=\"color: #808080\">EAN13:</span> 7790927814233</h5>\n<h5><span style=\"color: #808080\">DUN14:</span> 17790927814230</h5>\n<h5><span style=\"color: #808080\">EMPAQUE:</span> Presentación en bolsa de 10 packs.</h5>\n<h5><span style=\"color: #808080\">COMPOSICIÓN:</span> 80% poliéster + 20% algodón</h5>\n<div class=\"row row-small filadescargas\" id=\"row-110677629\">\r\n\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4463\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_1000usos.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=4464\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_1000usos-solo.jpg\" /></a>\r\n\r\n</div></div>\r\n<div class=\"col medium-3 small-4 large-3\"><div class=\"col-inner text-center\">\r\n\r\n<a href=\"https://www.medianaranja.com.ar/?media_dl=465\"><img src=\"http://www.medianaranja.com.ar/wp-content/uploads/2017/10/descarga-logo.jpg\" /></a>\r\n\r\n</div></div>\r\n\r\n\n\n\n\n</div>\n</div>",
+  "fichas_tecnicas": [
+    {
+      "file": "ficha_1.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/MediaNaranja_1000usos.jpg"
+    },
+    {
+      "file": "ficha_2.jpg",
+      "src": "https://www.medianaranja.com.ar/wp-content/uploads/2020/08/medianaranja_1000usos-solo.jpg"
+    }
+  ]
+}
