@@ -12,12 +12,15 @@ import ProductModal from '../components/ProductModal.jsx'
 
 const YELLOW = '#FFD400', RED = '#E30613', INK = '#1c1a17'
 
-// Alto del banner. Antes era 52vh, que en un iPhone daba un recorte casi
-// cuadrado (0,89:1) y en un monitor 2K uno larguísimo (4,13:1): una misma foto
-// no podía quedar bien en los dos. Con proporciones fijas por breakpoint el
-// rango se achica mucho, así que una sola imagen sirve para todos.
+// Alto del banner, en proporciones fijas por breakpoint. Antes era 52vh, que en
+// un iPhone daba un recorte casi cuadrado y en un monitor 2K uno larguísimo: una
+// misma foto no podía quedar bien en los dos.
+// Es una franja apaisada a propósito: ocupa menos pantalla, deja los accesos y
+// los productos más arriba, y hay menos superficie esperando a que cargue.
+// El costo es recorte vertical — de una foto 2,4:1 se ve el 80% del alto en
+// notebook. Para eso está el punto de encuadre en el panel.
 // El aspect-ratio además reserva el alto antes de que cargue la foto (sin CLS).
-const BANNER_ALTO = 'aspect-[4/3] sm:aspect-[16/9] lg:aspect-[12/5] max-h-[660px]'
+const BANNER_ALTO = 'aspect-[3/2] sm:aspect-[21/9] lg:aspect-[3/1] max-h-[560px]'
 
 // Secciones del navbar. El id tiene que existir como <section id="…"> abajo.
 const NAV = [
