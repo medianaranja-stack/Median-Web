@@ -5,14 +5,14 @@ import {
   Package, Images, ChevronUp, ChevronDown, Star, Eye, EyeOff, Info, AlertTriangle, Crop,
   Pencil, X, Check, UploadCloud, BarChart3, Archive, Download, Gauge,
 } from 'lucide-react'
-import { isSupabaseEnabled } from '../lib/supabase.js'
+import { isSupabaseEnabled } from '../lib/supabase-env.js'
 import { useAuth, signIn, signOut } from '../lib/auth.jsx'
-import { getAllProducts, createProduct, updateProduct, deleteProduct } from '../lib/products.js'
+import { getAllProducts, createProduct, updateProduct, deleteProduct } from '../lib/productosAdmin.js'
 import { uploadImage, uploadBannerImage, slugify, esDeStorage, borrarImagenesProducto } from '../lib/storage.js'
 import {
-  getAllBanners, createBanner, deleteBanner, updateBanner,
-  saveOrden, moverBanner, hacerPrincipal, importarRespaldo, RESPALDO,
-} from '../lib/banners.js'
+  getAllBanners, createBanner, deleteBanner, updateBanner, saveOrden, importarRespaldo,
+} from '../lib/bannersAdmin.js'
+import { moverBanner, hacerPrincipal, RESPALDO } from '../lib/banners.js'
 import { fotosEnRepo, pendientesDeMigrar, totalFotosEnRepo, migrarProducto } from '../lib/migracion.js'
 import { optimizar, pesoCorto, miniatura } from '../lib/imagen.js'
 import { reoptimizarBanners, reoptimizarProductos } from '../lib/reoptimizar.js'

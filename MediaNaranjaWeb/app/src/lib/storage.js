@@ -1,16 +1,9 @@
 import { supabase } from './supabase'
+import { esDeStorage, rutaEnBucket, slugify, urlServida } from './urls'
 
 const BUCKET = 'productos'
 const BANNERS_BUCKET = 'banners'
 
-function slugify(s) {
-  return s
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/gi, '-')
-    .replace(/^-+|-+$/g, '')
-    .toLowerCase()
-}
 
 /**
  * Sube una imagen al bucket de productos y devuelve la URL pública.
@@ -42,38 +35,11 @@ function hashString(str) {
   return h
 }
 
-export { slugify }
+export { slugify, esDeStorage, rutaEnBucket, urlServida }
 
-const MARCA_STORAGE = '/storage/v1/object/public/'
 
-/**
- * Reescribe una URL de Supabase Storage para que salga por nuestro dominio.
- *
- * En el plan gratuito Supabase responde `cache-control: no-cache` y no hay forma
- * de cambiarlo desde el codigo: cada visita volvia a bajar todas las imagenes.
- * El proxy de Netlify (`/img/*` en netlify.toml) sirve el mismo archivo pero con
- * cache de un ano, y desde un CDN mas cercano.
- *
- * En desarrollo no hay proxy, asi que se deja la URL original.
- */
-export function urlServida(url) {
-  if (!esDeStorage(url)) return url
-  if (import.meta.env.DEV) return url
-  const i = url.indexOf(MARCA_STORAGE)
-  return `/img/${url.slice(i + MARCA_STORAGE.length)}`
-}
 
-/** ¿La URL apunta a Supabase Storage, o a un archivo suelto del repo? */
-export function esDeStorage(url) {
-  return typeof url === 'string' && url.includes(MARCA_STORAGE)
-}
 
-/** Ruta dentro del bucket, para poder borrar el archivo. null si no es de Storage. */
-export function rutaEnBucket(url, bucket) {
-  const marca = `${MARCA_STORAGE}${bucket}/`
-  const i = (url || '').indexOf(marca)
-  return i === -1 ? null : decodeURIComponent(url.slice(i + marca.length))
-}
 
 /**
  * Borra del bucket de productos las imágenes que sean de Storage.

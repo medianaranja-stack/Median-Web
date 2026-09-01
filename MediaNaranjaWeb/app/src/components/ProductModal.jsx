@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Download, DownloadCloud, Check } from 'lucide-react'
 import { registrarProducto, registrarDescarga } from '../lib/analytics.js'
-import { urlServida } from '../lib/storage.js'
+import { urlServida } from '../lib/urls.js'
 import { downloadImage, downloadAll, filenameFor } from '../lib/download.js'
 
 export default function ProductModal({ producto, onClose }) {

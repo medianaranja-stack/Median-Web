@@ -8,10 +8,11 @@
 // la original. Recomprimir un JPG ya comprimido degrada la imagen sin ganar
 // peso, y hacerlo repetidamente la arruina.
 import { optimizar, miniatura } from './imagen'
-import { uploadImage, uploadBannerImage, esDeStorage, rutaEnBucket } from './storage'
+import { uploadImage, uploadBannerImage } from './storage'
+import { esDeStorage, rutaEnBucket } from './urls'
 import { supabase } from './supabase'
-import { updateBanner } from './banners'
-import { updateProduct } from './products'
+import { updateBanner } from './bannersAdmin'
+import { updateProduct } from './productosAdmin'
 
 const MEJORA_MINIMA = 0.15
 

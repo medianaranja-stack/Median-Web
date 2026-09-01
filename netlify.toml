@@ -31,6 +31,13 @@
   status = 301
   force = true
 
+# Inyecta los datos del home y el preload de la portada en el HTML, para que
+# el navegador empiece a bajar la foto durante el parseo en vez de esperar a
+# que corra el JS y responda la base.
+[[edge_functions]]
+  function = "datos-iniciales"
+  path = "/"
+
 # Las imagenes de Supabase se sirven por nuestro dominio en vez de directo.
 # Motivo: en el plan gratuito Supabase responde con `sb-gateway-mode: direct` y
 # fuerza `cache-control: no-cache` ignorando el que se manda al subir, asi que
