@@ -8,8 +8,11 @@
 // cliente no tiene por qué saber de formatos: sube lo que le dé su herramienta
 // y el panel se encarga.
 
-const ANCHO_MAX = 2400
-const CALIDAD = 0.82
+// El banner se muestra como una franja de 560px de alto como máximo. Una foto
+// de 2400px estaba muy sobredimensionada para eso: 1800 alcanza para verse
+// nítida hasta en pantallas grandes y pesa la mitad.
+const ANCHO_MAX = 1800
+const CALIDAD = 0.72
 
 /** Formatos que ya vienen comprimidos y no conviene volver a tocar si son chicos. */
 const YA_LIVIANO = 400 * 1024
@@ -63,8 +66,9 @@ export async function optimizar(file) {
     ctx.imageSmoothingQuality = 'high'
     ctx.drawImage(img, 0, 0, w, h)
 
-    let salida = await aBlob(canvas, 'image/webp', CALIDAD)
-    // Safari viejo puede no soportar WebP en toBlob: cae a JPEG.
+    // WebP primero: pesa ~30% menos que JPEG a igual calidad. Safari devuelve un
+    // PNG en vez de fallar cuando no lo soporta, de ahí la comprobación del tipo.
+    let salida = soportaWebp() ? await aBlob(canvas, 'image/webp', CALIDAD) : null
     if (!salida || salida.type !== 'image/webp') {
       salida = await aBlob(canvas, 'image/jpeg', CALIDAD)
     }
@@ -83,6 +87,17 @@ export async function optimizar(file) {
   } catch {
     return { blob: file, nombre: file.name, ahorro: 0 }
   }
+}
+
+let _webp = null
+/** ¿El navegador puede CODIFICAR webp? (poder mostrarlo no implica poder crearlo) */
+function soportaWebp() {
+  if (_webp === null) {
+    const c = document.createElement('canvas')
+    c.width = c.height = 1
+    _webp = c.toDataURL('image/webp').startsWith('data:image/webp')
+  }
+  return _webp
 }
 
 export function pesoCorto(bytes) {

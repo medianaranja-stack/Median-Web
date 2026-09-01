@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Download, DownloadCloud, Check } from 'lucide-react'
 import { registrarProducto, registrarDescarga } from '../lib/analytics.js'
+import { urlServida } from '../lib/storage.js'
 import { downloadImage, downloadAll, filenameFor } from '../lib/download.js'
 
 export default function ProductModal({ producto, onClose }) {
@@ -78,7 +79,7 @@ export default function ProductModal({ producto, onClose }) {
             <div className="bg-[#f4f1ec] p-4 sm:p-6">
               <div className="aspect-square w-full overflow-hidden rounded-2xl bg-white">
                 <img
-                  src={imgs[active]}
+                  src={urlServida(imgs[active])}
                   alt={`${producto.nombre} — foto ${active + 1}`}
                   className="h-full w-full object-cover"
                 />
@@ -94,7 +95,7 @@ export default function ProductModal({ producto, onClose }) {
                       style={{ borderColor: i === active ? 'var(--accent)' : 'transparent' }}
                       aria-label={`Foto ${i + 1}`}
                     >
-                      <img src={src} alt="" className="h-full w-full object-cover" />
+                      <img src={urlServida(src)} alt="" className="h-full w-full object-cover" />
                     </button>
                   ))}
                 </div>

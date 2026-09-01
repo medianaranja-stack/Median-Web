@@ -46,6 +46,23 @@ export { slugify }
 
 const MARCA_STORAGE = '/storage/v1/object/public/'
 
+/**
+ * Reescribe una URL de Supabase Storage para que salga por nuestro dominio.
+ *
+ * En el plan gratuito Supabase responde `cache-control: no-cache` y no hay forma
+ * de cambiarlo desde el codigo: cada visita volvia a bajar todas las imagenes.
+ * El proxy de Netlify (`/img/*` en netlify.toml) sirve el mismo archivo pero con
+ * cache de un ano, y desde un CDN mas cercano.
+ *
+ * En desarrollo no hay proxy, asi que se deja la URL original.
+ */
+export function urlServida(url) {
+  if (!esDeStorage(url)) return url
+  if (import.meta.env.DEV) return url
+  const i = url.indexOf(MARCA_STORAGE)
+  return `/img/${url.slice(i + MARCA_STORAGE.length)}`
+}
+
 /** ¿La URL apunta a Supabase Storage, o a un archivo suelto del repo? */
 export function esDeStorage(url) {
   return typeof url === 'string' && url.includes(MARCA_STORAGE)
