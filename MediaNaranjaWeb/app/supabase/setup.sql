@@ -166,7 +166,11 @@ create table if not exists public.banners (
   created_at timestamptz not null default now()
 );
 
--- Para proyectos donde la tabla ya existía sin esta columna.
+-- Vista previa borrosa en base64 (~1 KB). Viaja con la fila, asi que se puede
+-- mostrar algo apenas responde la consulta, sin esperar a que baje la foto real.
+alter table public.banners add column if not exists blur text;
+
+-- Para proyectos donde la tabla ya existía sin estas columnas.
 alter table public.banners add column if not exists foco text not null default '50% 50%';
 
 create index if not exists banners_orden_idx on public.banners (orden);

@@ -104,3 +104,30 @@ export function pesoCorto(bytes) {
   if (bytes >= 1048576) return `${(bytes / 1048576).toFixed(1)} MB`
   return `${Math.round(bytes / 1024)} KB`
 }
+
+/**
+ * Miniatura borrosa en base64, para mostrar algo mientras baja la foto real.
+ *
+ * Pesa ~1 KB, asi que viaja dentro de la misma consulta que trae el banner y
+ * aparece sin pedir nada extra. Sin esto el visitante mira un hueco durante
+ * todo lo que tarda la imagen: el ancho de banda no es el problema, el problema
+ * es que la peticion de la imagen no puede ni empezar hasta que responde la base.
+ *
+ * 24px de ancho alcanza: se muestra estirada y desenfocada por CSS.
+ */
+export async function miniatura(file) {
+  try {
+    const img = await cargarImagen(file)
+    const w = 24
+    const h = Math.max(1, Math.round((img.naturalHeight / img.naturalWidth) * w))
+    const canvas = document.createElement('canvas')
+    canvas.width = w
+    canvas.height = h
+    canvas.getContext('2d').drawImage(img, 0, 0, w, h)
+    const uri = canvas.toDataURL('image/jpeg', 0.5)
+    // Si por lo que sea salio grande, no vale la pena guardarla en la fila.
+    return uri.length > 4000 ? null : uri
+  } catch {
+    return null
+  }
+}

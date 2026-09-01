@@ -14,7 +14,7 @@ import {
   saveOrden, moverBanner, hacerPrincipal, importarRespaldo, RESPALDO,
 } from '../lib/banners.js'
 import { fotosEnRepo, pendientesDeMigrar, totalFotosEnRepo, migrarProducto } from '../lib/migracion.js'
-import { optimizar, pesoCorto } from '../lib/imagen.js'
+import { optimizar, pesoCorto, miniatura } from '../lib/imagen.js'
 import { reoptimizarBanners, reoptimizarProductos } from '../lib/reoptimizar.js'
 import { cargarMetricas, numero, duracion, fechaCorta } from '../lib/metricas.js'
 import { Tarjeta, Barras, LineaTiempo, SERIE } from '../components/Graficos.jsx'
@@ -800,7 +800,9 @@ function PanelBanners() {
         // eslint-disable-next-line no-await-in-loop
         const url = await uploadBannerImage(blob, nombre)
         // eslint-disable-next-line no-await-in-loop
-        await createBanner({ url }, orden++)
+        const blur = await miniatura(blob)
+        // eslint-disable-next-line no-await-in-loop
+        await createBanner({ url, blur }, orden++)
       }
 
       const optimizadas = ahorroTotal > 0 ? ` Se optimizaron: ${pesoCorto(ahorroTotal)} menos de descarga.` : ''

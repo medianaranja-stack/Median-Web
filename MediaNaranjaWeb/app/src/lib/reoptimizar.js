@@ -7,7 +7,7 @@
 // Es conservador: si la versión nueva no es al menos un 15% más liviana, deja
 // la original. Recomprimir un JPG ya comprimido degrada la imagen sin ganar
 // peso, y hacerlo repetidamente la arruina.
-import { optimizar } from './imagen'
+import { optimizar, miniatura } from './imagen'
 import { uploadImage, uploadBannerImage, esDeStorage, rutaEnBucket } from './storage'
 import { supabase } from './supabase'
 import { updateBanner } from './banners'
@@ -46,12 +46,23 @@ export async function reoptimizarBanners(items, onCada) {
       const archivo = await bajarComoArchivo(b.url)
       // eslint-disable-next-line no-await-in-loop
       const { blob, nombre } = await optimizar(archivo)
-      if (blob.size > archivo.size * (1 - MEJORA_MINIMA)) continue
+      if (blob.size > archivo.size * (1 - MEJORA_MINIMA)) {
+        // Ya pesaba bien, pero puede faltarle la vista previa borrosa.
+        if (!b.blur) {
+          // eslint-disable-next-line no-await-in-loop
+          const soloBlur = await miniatura(archivo)
+          // eslint-disable-next-line no-await-in-loop
+          if (soloBlur) await updateBanner(b.id, { blur: soloBlur })
+        }
+        continue
+      }
 
       // eslint-disable-next-line no-await-in-loop
       const nuevaUrl = await uploadBannerImage(blob, nombre)
       // eslint-disable-next-line no-await-in-loop
-      await updateBanner(b.id, { url: nuevaUrl })
+      const blur = await miniatura(blob)
+      // eslint-disable-next-line no-await-in-loop
+      await updateBanner(b.id, { url: nuevaUrl, blur })
       // eslint-disable-next-line no-await-in-loop
       await borrarDe('banners', b.url)
       ahorro += archivo.size - blob.size
