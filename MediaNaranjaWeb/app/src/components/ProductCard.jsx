@@ -1,4 +1,5 @@
 import { Download, ArrowUpRight } from 'lucide-react'
+import { urlServida } from '../lib/storage.js'
 
 export default function ProductCard({ producto, index = 0, onOpen }) {
   const img = producto.imagenes[0]
