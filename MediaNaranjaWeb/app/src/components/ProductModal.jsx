@@ -1,10 +1,14 @@
 import { useEffect, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Download, DownloadCloud, ShoppingBag, Check } from 'lucide-react'
+import { X, Download, DownloadCloud, Check } from 'lucide-react'
+import { registrarProducto, registrarDescarga } from '../lib/analytics.js'
 import { downloadImage, downloadAll, filenameFor } from '../lib/download.js'
 
 export default function ProductModal({ producto, onClose }) {
+  // Una apertura de ficha por vez que se abre el modal.
+  useEffect(() => { registrarProducto(producto.slug) }, [producto.slug])
+
   const [active, setActive] = useState(0)
   const [busy, setBusy] = useState(false)
   const [done, setDone] = useState(false)
@@ -28,11 +32,13 @@ export default function ProductModal({ producto, onClose }) {
   const handleOne = async () => {
     setBusy(true)
     await downloadImage(imgs[active], filenameFor(producto, active))
+    registrarDescarga(producto.slug)
     setBusy(false)
   }
   const handleAll = async () => {
     setBusy(true)
     await downloadAll(producto)
+    registrarDescarga(producto.slug)
     setBusy(false)
     setDone(true)
     setTimeout(() => setDone(false), 2000)
@@ -119,14 +125,6 @@ export default function ProductModal({ producto, onClose }) {
               )}
 
               <div className="mt-auto space-y-2.5 pt-6">
-                <a
-                  href={producto.comprarUrl}
-                  target="_blank"
-                  rel="noopener"
-                  className="btn btn-primary w-full"
-                >
-                  <ShoppingBag size={17} /> Comprar en la tienda
-                </a>
                 <div className="flex gap-2.5">
                   <button type="button" onClick={handleOne} disabled={busy} className="btn btn-ghost flex-1 disabled:opacity-50">
                     <Download size={16} /> Esta foto

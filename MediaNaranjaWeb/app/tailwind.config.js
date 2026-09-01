@@ -4,29 +4,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        // Display fonts per world
         archivo: ['"Archivo"', 'system-ui', 'sans-serif'],
-        fraunces: ['"Fraunces"', 'Georgia', 'serif'],
         body: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        // Brand — Limpieza
+        // Brand
         limpieza: {
           yellow: '#FFD400',
           'yellow-soft': '#FFE666',
           red: '#E30613',
           'red-dark': '#B00410',
           ink: '#141210',
-        },
-        // Brand — Hogar
-        hogar: {
-          sand: '#FAF5F0',
-          greige: '#A8A29E',
-          taupe: '#78716C',
-          terracotta: '#C08552',
-          'terracotta-dark': '#A56C3D',
-          ink: '#2B2724',
         },
       },
       boxShadow: {
