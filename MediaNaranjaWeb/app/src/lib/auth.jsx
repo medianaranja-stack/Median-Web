@@ -1,5 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { supabase, isSupabaseEnabled } from './supabase'
+import { isSupabaseEnabled } from './supabase-env'
+
+// El cliente de Supabase pesa 210 KB y solo hace falta para la sesion del
+// panel. Se carga bajo demanda: el visitante del sitio publico nunca lo baja.
+let clientePromesa = null
+function cliente() {
+  if (!clientePromesa) clientePromesa = import('./supabase').then((m) => m.supabase)
+  return clientePromesa
+}
 
 const AuthContext = createContext({ session: null, isAdmin: false, loading: true })
 
@@ -8,7 +16,7 @@ const AuthContext = createContext({ session: null, isAdmin: false, loading: true
 // que no puede guardar nada.
 async function checkAdmin(session) {
   if (!session) return false
-  const { data, error } = await supabase.rpc('is_admin')
+  const { data, error } = await (await cliente()).rpc('is_admin')
   if (error) return false
   return data === true
 }
@@ -33,11 +41,21 @@ export function AuthProvider({ children }) {
       setLoading(false)
     }
 
-    supabase.auth.getSession().then(({ data }) => apply(data.session))
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => apply(s))
+    // El sitio publico no necesita sesion: sin esto cada visitante cargaria el
+    // cliente de Supabase solo para preguntar por una sesion que no existe.
+    if (!window.location.pathname.startsWith('/admin')) {
+      setLoading(false)
+      return () => { alive = false }
+    }
+    let sub = null
+    cliente().then((sb) => {
+      if (!alive) return
+      sb.auth.getSession().then(({ data }) => apply(data.session))
+      sub = sb.auth.onAuthStateChange((_e, s) => apply(s)).data
+    })
     return () => {
       alive = false
-      sub.subscription.unsubscribe()
+      sub?.subscription.unsubscribe()
     }
   }, [])
 
@@ -47,10 +65,10 @@ export function AuthProvider({ children }) {
 export const useAuth = () => useContext(AuthContext)
 
 export async function signIn(email, password) {
-  const { error } = await supabase.auth.signInWithPassword({ email, password })
+  const { error } = await (await cliente()).auth.signInWithPassword({ email, password })
   if (error) throw error
 }
 
 export async function signOut() {
-  await supabase.auth.signOut()
+  await (await cliente()).auth.signOut()
 }

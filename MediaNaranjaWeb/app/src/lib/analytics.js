@@ -7,7 +7,7 @@
 // navegador y queda guardado ahí. O sea que "visitante único" en realidad
 // significa "navegador distinto": si alguien entra del celular y de la compu
 // cuenta dos veces, y si borra los datos del navegador vuelve a contar como nuevo.
-import { supabase, isSupabaseEnabled } from './supabase'
+import { hayApi } from './api'
 
 const CLAVE_VISITANTE = 'mn-v'
 const CLAVE_SESION = 'mn-s'
@@ -51,7 +51,7 @@ function haySesionAdmin() {
 }
 
 function medible() {
-  if (!isSupabaseEnabled) return false
+  if (!hayApi) return false
   if (typeof window === 'undefined') return false
   if (navigator.doNotTrack === '1' || window.doNotTrack === '1') return false
   if (window.location.pathname.startsWith('/admin')) return false

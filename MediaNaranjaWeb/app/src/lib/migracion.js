@@ -7,8 +7,9 @@
 // todas las fotos de producto se manejen desde un solo lugar.
 //
 // Es idempotente: las que ya están en Storage se saltan.
-import { uploadImage, esDeStorage } from './storage'
-import { updateProduct } from './products'
+import { uploadImage } from './storage'
+import { esDeStorage } from './urls'
+import { updateProduct } from './productosAdmin'
 
 /** Fotos de un producto que todavía no están en Storage. */
 export function fotosEnRepo(p) {
