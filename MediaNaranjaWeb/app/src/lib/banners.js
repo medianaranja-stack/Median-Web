@@ -6,6 +6,7 @@
 // entrar. Si todavía no hay ninguno cargado, cae a estas fotos del repo para
 // que el home nunca quede vacío. El panel las muestra como "de respaldo" para
 // que no parezca que el carrusel salió de la nada.
+import { isSupabaseEnabled } from './supabase-env'
 import { leer, tomarPrecargado } from './api'
 
 export const RESPALDO = [
@@ -45,13 +46,3 @@ export function hacerPrincipal(lista, id) {
   return [b, ...lista.filter((x) => x.id !== id)]
 }
 
-/**
- * Convierte las fotos de respaldo en banners de verdad: las sube al bucket y
- * crea las filas. Recién ahí se pueden reordenar, ocultar, encuadrar y borrar,
- * porque pasan a ser datos y no rutas escritas en el código.
- *
- * Sube una copia al Storage en vez de apuntar al archivo del repo: así el
- * carrusel queda entero dentro de Supabase y borrar un banner no depende de
- * tocar el repo. Los originales siguen en public/fabrica, que los usa la
- * sección Nosotros.
- */

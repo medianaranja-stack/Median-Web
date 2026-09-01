@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X } from 'lucide-react'
-import { getPublicBanners } from '../lib/banners.js'
+import { getPublicBanners, RESPALDO } from '../lib/banners.js'
 import { getCatalog } from '../lib/products.js'
 import { urlServida } from '../lib/urls.js'
 import { medirSecciones } from '../lib/analytics.js'
@@ -238,41 +238,57 @@ function PageBg() {
 function Banner() {
   const [slides, setSlides] = useState([])
   const [idx, setIdx] = useState(0)
-  // La primera imagen decide cuándo se va el loader. Tener la URL no alcanza:
-  // recién cuando termina de bajar hay algo que mostrar.
-  const [lista, setLista] = useState(false)
+  // Primera foto que termino de bajar, e indices que fallaron. Con eso el
+  // carrusel sabe que mostrar aunque la portada no cargue.
+  const [cargada, setCargada] = useState(null)
+  const [fallidas, setFallidas] = useState([])
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const lista = cargada !== null
+  const todasFallaron = slides.length > 0 && fallidas.length >= slides.length
 
   useEffect(() => {
     let vivo = true
-    getPublicBanners().then((bs) => vivo && setSlides(bs))
+    getPublicBanners()
+      .then((bs) => vivo && setSlides(bs))
+      // Sin este catch, un error deja slides vacio y el loader gira para siempre.
+      .catch(() => vivo && setSlides(RESPALDO))
     return () => { vivo = false }
   }, [])
 
+  // El carrusel no arranca hasta que haya algo visible. Antes rotaba durante la
+  // carga: como solo se monta la foto actual y la siguiente, la portada se
+  // desmontaba antes de terminar de bajar, su onLoad no llegaba nunca y el
+  // loader quedaba colgado mientras los puntitos seguian avanzando.
   useEffect(() => {
-    if (reduce || slides.length < 2) return
+    if (reduce || !lista || slides.length < 2) return
     const t = setInterval(() => setIdx((i) => (i + 1) % slides.length), 5000)
     return () => clearInterval(t)
-  }, [reduce, slides.length])
+  }, [reduce, lista, slides.length])
+
+  // Que foto se muestra. Mientras no cargo ninguna se apunta a la primera que
+  // todavia no fallo: si la portada no llega, se pasa sola a la siguiente en
+  // vez de dejar al visitante mirando el loader.
+  const primeraViable = slides.findIndex((_, i) => !fallidas.includes(i))
+  const visible = lista ? idx : Math.max(0, primeraViable)
 
   return (
     <section id="top" aria-label="Destacados" aria-roledescription="carrusel" className={`relative z-10 w-full ${BANNER_ALTO}`}>
       {/* Vista previa borrosa: viene dentro de la misma consulta que trae el
           banner (~1 KB en la fila), así que se ve apenas responde la base, sin
           esperar a que baje la foto real. */}
-      {!lista && slides[0]?.blur && (
+      {!lista && !todasFallaron && slides[visible]?.blur && (
         <img
-          src={slides[0].blur}
+          src={slides[visible].blur}
           alt=""
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: slides[0].foco || '50% 50%', filter: 'blur(24px)', transform: 'scale(1.06)' }}
+          style={{ objectPosition: slides[visible].foco || '50% 50%', filter: 'blur(24px)', transform: 'scale(1.06)' }}
         />
       )}
 
       {/* Si no hay miniatura (banners de respaldo), late el logo. Sin nada de
           esto el banner es un rectángulo vacío y la página parece colgada. */}
-      {!lista && !slides[0]?.blur && (
+      {!lista && !todasFallaron && !slides[visible]?.blur && (
         <div
           className="absolute inset-0 grid place-items-center"
           style={{ background: 'var(--bg)' }}
@@ -297,15 +313,15 @@ function Banner() {
           <div
             key={s.id}
             className="absolute inset-0 transition-opacity duration-[900ms] ease-out"
-            style={{ opacity: i === idx ? 1 : 0 }}
-            aria-hidden={i !== idx}
+            style={{ opacity: i === visible ? 1 : 0 }}
+            aria-hidden={i !== visible}
           >
             {/* Sólo se pide la actual y la siguiente. Antes se renderizaban las
                 cuatro <img> juntas: como están todas dentro del mismo contenedor
                 absoluto, el navegador las considera visibles y loading="lazy" no
                 las difiere — bajaba las cuatro en paralelo y la primera tardaba
                 el triple por competir con las otras tres por el ancho de banda. */}
-            {(i === idx || i === (idx + 1) % slides.length) && (
+            {(i === visible || i === (visible + 1) % slides.length) && (
             <SafeImg
               src={urlServida(s.url)}
               alt={s.titulo || ''}
@@ -313,8 +329,8 @@ function Banner() {
               style={{ objectPosition: s.foco || '50% 50%' }}
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchPriority={i === 0 ? 'high' : undefined}
-              onLoad={i === 0 ? () => setLista(true) : undefined}
-              onError={i === 0 ? () => setLista(true) : undefined}
+              onLoad={() => setCargada((c) => (c === null ? i : c))}
+              onError={() => setFallidas((f) => (f.includes(i) ? f : [...f, i]))}
             />
             )}
           </div>
@@ -322,11 +338,11 @@ function Banner() {
       </div>
 
       {/* El título va fuera de la máscara: si no, se desvanece con la imagen. */}
-      {slides[idx]?.titulo && (
+      {slides[visible]?.titulo && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/60 to-transparent pb-14 pt-20">
           <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
             <h2 className="max-w-2xl font-archivo text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-sm sm:text-4xl">
-              {slides[idx].titulo}
+              {slides[visible].titulo}
             </h2>
           </div>
         </div>
@@ -340,14 +356,14 @@ function Banner() {
               type="button"
               onClick={() => setIdx(i)}
               aria-label={`Ver imagen ${i + 1} de ${slides.length}`}
-              aria-current={i === idx ? 'true' : undefined}
+              aria-current={i === visible ? 'true' : undefined}
               className="grid h-11 w-6 place-items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c1a17]"
             >
               <span
                 className="h-2 rounded-full transition-all duration-300"
                 style={{
-                  width: i === idx ? 22 : 8,
-                  background: i === idx ? INK : 'rgba(28,26,23,.3)',
+                  width: i === visible ? 22 : 8,
+                  background: i === visible ? INK : 'rgba(28,26,23,.3)',
                 }}
               />
             </button>
