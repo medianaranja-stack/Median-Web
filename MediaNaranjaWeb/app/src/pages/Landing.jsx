@@ -1,486 +1,582 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useReducedMotion } from 'framer-motion'
-import {
-  ArrowRight, ArrowUpRight, Leaf, Factory, Recycle, Download,
-  Mail, Instagram, Facebook, MapPin, Menu, X, ShoppingBag, MessageCircle, ChevronDown,
-} from 'lucide-react'
-import seed from '../data/seed.json'
+import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X } from 'lucide-react'
+import { getPublicBanners } from '../lib/banners.js'
+import { getCatalog } from '../lib/products.js'
+import { medirSecciones } from '../lib/analytics.js'
+import { SITE } from '../lib/site.js'
 import Logo from '../components/Logo.jsx'
-import { SITE, waLink } from '../lib/site.js'
+import SafeImg from '../components/SafeImg.jsx'
+import ProductCard from '../components/ProductCard.jsx'
+import ProductModal from '../components/ProductModal.jsx'
 
-const peek = (linea, n = 4) =>
-  seed.productos.filter((p) => p.linea === linea && p.imagenes.length).slice(0, n).map((p) => p.imagenes[0])
+const YELLOW = '#FFD400', RED = '#E30613', INK = '#1c1a17'
 
-const catNames = (linea) => [...new Set(seed.productos.filter((p) => p.linea === linea).map((p) => p.categoriaLabel))]
-const countOf = (linea) => seed.productos.filter((p) => p.linea === linea).length
+// Alto del banner. Antes era 52vh, que en un iPhone daba un recorte casi
+// cuadrado (0,89:1) y en un monitor 2K uno larguísimo (4,13:1): una misma foto
+// no podía quedar bien en los dos. Con proporciones fijas por breakpoint el
+// rango se achica mucho, así que una sola imagen sirve para todos.
+// El aspect-ratio además reserva el alto antes de que cargue la foto (sin CLS).
+const BANNER_ALTO = 'aspect-[4/3] sm:aspect-[16/9] lg:aspect-[12/5] max-h-[660px]'
 
+// Secciones del navbar. El id tiene que existir como <section id="…"> abajo.
 const NAV = [
-  { href: '#lineas', label: 'Líneas' },
-  { href: '#nosotros', label: 'Nosotros' },
-  { href: '#revendedores', label: 'Revendedores' },
-  { href: '#contacto', label: 'Contacto' },
+  { id: 'productos', label: 'Productos' },
+  { id: 'historia', label: 'Nosotros' },
+  { id: 'contacto', label: 'Contacto' },
+]
+
+const MODULES = [
+  { icon: BookOpen, title: 'Nosotros', desc: 'Fabricamos en Catamarca desde 1975.', href: '#historia' },
+  { icon: Package, title: 'Productos', desc: 'Trapos, microfibras, rejillas y más.', href: '#productos' },
+  { icon: Mail, title: 'Contacto', desc: 'Consultas, mayoristas y ventas.', href: '#contacto' },
+]
+
+// Zonas cuyo uso se mide. El id tiene que coincidir con el <section id="…">.
+const ZONAS = [
+  { id: 'top' }, { id: 'modulos' }, { id: 'productos' }, { id: 'historia' }, { id: 'contacto' },
 ]
 
 export default function Landing() {
+  const [selected, setSelected] = useState(null)
+  // Se monta después del primer render para que las secciones ya existan.
+  useEffect(() => medirSecciones(ZONAS), [])
   return (
-    <main className="grain min-h-dvh bg-[var(--bg)] text-[var(--ink)]">
-      <a href="#lineas" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-[#0c0c0d] focus:px-4 focus:py-2 focus:text-white">
-        Saltar al contenido
-      </a>
-      <h1 className="sr-only">Media Naranja — Limpieza y Hogar. Calidad argentina desde 1975.</h1>
-      <Nav />
-      <Hero />
-      <Lineas />
-      <Nosotros />
-      <Sustentabilidad />
-      <Planta />
-      <Revendedores />
-      <Contacto />
-      <Footer />
+    <main className="relative min-h-dvh bg-[var(--bg)] font-body text-[var(--ink)]">
+      <a href="#modulos" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-[#1c1a17] focus:px-4 focus:py-2 focus:text-white">Saltar al contenido</a>
+      <h1 className="sr-only">Media Naranja Limpieza — productos de limpieza hechos en Argentina desde 1975.</h1>
+      <PageBg />
+      <div className="relative z-10">
+        <Header />
+        <Banner />
+        <Modules />
+        <Productos onOpen={setSelected} />
+        <Historia />
+        <Contacto />
+        <Footer />
+      </div>
+      {selected && <ProductModal producto={selected} onClose={() => setSelected(null)} />}
+      <style>{PAGE_CSS}</style>
     </main>
   )
 }
 
-/* ------------------------------- NAV ------------------------------- */
-function Nav() {
-  const [open, setOpen] = useState(false)
-  const [solid, setSolid] = useState(false)
+const PAGE_CSS = `
+@keyframes v5drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(6vw,4vw)}}
+@keyframes v5drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-5vw,-3vw)}}
+@keyframes v5drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(3vw,-5vw)}}
+.v5-glow{animation:v5drift1 20s ease-in-out infinite}
+.v5-glow2{animation:v5drift2 26s ease-in-out infinite}
+.v5-glow3{animation:v5drift3 32s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.v5-glow,.v5-glow2,.v5-glow3{animation:none}}
+
+/* Loader del banner: el logo late mientras llega la primera imagen. */
+@keyframes mn-latido{
+  0%,100%{transform:scale(.92);opacity:.55}
+  50%{transform:scale(1.06);opacity:1}
+}
+.mn-latido{animation:mn-latido 1.4s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.mn-latido{animation:none;opacity:.75}}
+
+/* Banner sin recuadro: la imagen se desvanece contra el fondo en los cuatro
+   bordes, así no se lee como una caja recortada sino como algo continuo. */
+.mn-banner-mask{
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 12%, #000 78%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(to bottom, transparent 0, #000 12%, #000 78%, transparent 100%);
+  mask-composite: intersect;
+}
+@media (max-width: 640px){
+  .mn-banner-mask{
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 80%, transparent 100%);
+  }
+}
+`
+
+// Marca cuál de las secciones se está viendo, para resaltarla en el navbar.
+function useSeccionActiva() {
+  const [activa, setActiva] = useState(null)
   useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const nodos = NAV.map((n) => document.getElementById(n.id)).filter(Boolean)
+    if (!nodos.length) return
+    const obs = new IntersectionObserver(
+      (entradas) => {
+        const visible = entradas
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible) setActiva(visible.target.id)
+      },
+      // El header tapa 56px: descontarlos evita que marque la sección de arriba.
+      { rootMargin: '-56px 0px -55% 0px', threshold: [0.1, 0.5] },
+    )
+    nodos.forEach((n) => obs.observe(n))
+    return () => obs.disconnect()
+  }, [])
+  return activa
+}
+
+function Header() {
+  const [abierto, setAbierto] = useState(false)
+  const activa = useSeccionActiva()
+  const burgerRef = useRef(null)
+
+  const cerrar = useCallback(() => {
+    setAbierto(false)
+    burgerRef.current?.focus()
   }, [])
 
-  return (
-    <header className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${solid ? 'border-b border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-xl' : ''}`}>
-      <div className="container-x flex h-16 items-center justify-between">
-        <a href="#top" aria-label="Media Naranja — inicio"><Logo /></a>
+  // Con el panel abierto: Escape lo cierra y el fondo no scrollea.
+  useEffect(() => {
+    if (!abierto) return
+    const onKey = (e) => e.key === 'Escape' && cerrar()
+    document.addEventListener('keydown', onKey)
+    const previo = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = previo
+    }
+  }, [abierto, cerrar])
 
-        <nav className="hidden items-center gap-1 md:flex">
-          {NAV.map((l) => (
-            <a key={l.href} href={l.href} className="mono-label rounded-full px-3.5 py-2 text-[var(--muted)] transition-colors hover:bg-black/[0.04] hover:text-[var(--ink)]">
-              {l.label}
-            </a>
-          ))}
-          <a href={SITE.tienda} target="_blank" rel="noopener" className="ml-2 inline-flex items-center gap-1.5 rounded-full bg-[#E30613] px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">
-            <ShoppingBag size={15} /> Comprar
-          </a>
+  return (
+    <header className="sticky top-0 z-40 border-b border-black/5" style={{ background: YELLOW }}>
+      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-6 px-5 sm:px-8">
+        <a href="#top" aria-label="Media Naranja Limpieza — ir al inicio" className="shrink-0 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1c1a17]">
+          <Logo />
+        </a>
+
+        {/* Escritorio */}
+        <nav aria-label="Secciones" className="hidden flex-1 md:block">
+          <ul className="flex items-center gap-1">
+            {NAV.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  aria-current={activa === id ? 'true' : undefined}
+                  className="relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-semibold text-[#5c4a00] transition-colors duration-200 hover:bg-black/[0.06] hover:text-[#1c1a17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c1a17] aria-[current]:text-[#1c1a17]"
+                >
+                  {label}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-3.5 -bottom-px h-0.5 origin-left rounded-full transition-transform duration-200"
+                    style={{ background: RED, transform: `scaleX(${activa === id ? 1 : 0})` }}
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
-        <button className="grid h-10 w-10 place-items-center rounded-full md:hidden" onClick={() => setOpen((v) => !v)} aria-label={open ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={open}>
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="ml-auto flex items-center gap-1">
+          <a href={SITE.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-full text-[#5c4a00] transition-colors hover:bg-black/[0.06] hover:text-[#1c1a17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a17]"><Facebook size={18} /></a>
+          <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-full text-[#5c4a00] transition-colors hover:bg-black/[0.06] hover:text-[#1c1a17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a17]"><Instagram size={18} /></a>
+
+          {/* Móvil */}
+          <button
+            ref={burgerRef}
+            type="button"
+            onClick={() => setAbierto((v) => !v)}
+            aria-expanded={abierto}
+            aria-controls="menu-movil"
+            aria-label={abierto ? 'Cerrar menú' : 'Abrir menú'}
+            className="grid h-11 w-11 place-items-center rounded-full text-[#1c1a17] transition-colors hover:bg-black/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a17] md:hidden"
+          >
+            {abierto ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
-      {open && (
-        <div className="border-t border-[var(--border)] bg-[var(--bg)] md:hidden">
-          <div className="container-x flex flex-col py-2">
-            {NAV.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="mono-label rounded-lg px-2 py-3.5 text-[var(--muted)] hover:bg-black/[0.04] hover:text-[var(--ink)]">
-                {l.label}
-              </a>
+      {/* Panel móvil */}
+      <div
+        id="menu-movil"
+        hidden={!abierto}
+        className="border-t border-black/10 md:hidden"
+        style={{ background: YELLOW }}
+      >
+        <nav aria-label="Secciones" className="mx-auto w-full max-w-5xl px-5 pb-3 pt-1 sm:px-8">
+          <ul>
+            {NAV.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  onClick={cerrar}
+                  aria-current={activa === id ? 'true' : undefined}
+                  className="flex min-h-[48px] items-center justify-between border-b border-black/[0.07] text-base font-semibold text-[#5c4a00] transition-colors last:border-0 hover:text-[#1c1a17] aria-[current]:text-[#1c1a17]"
+                >
+                  {label}
+                  <ArrowRight size={17} aria-hidden />
+                </a>
+              </li>
             ))}
-            <a href={SITE.tienda} target="_blank" rel="noopener" className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-[var(--ink)] px-4 py-3 text-sm font-semibold text-white">
-              <ShoppingBag size={16} /> Comprar en la tienda
-            </a>
-          </div>
-        </div>
-      )}
+          </ul>
+        </nav>
+      </div>
     </header>
   )
 }
 
-/* ------------------------------- HERO ------------------------------ */
-function Hero() {
-  const reduce = useReducedMotion()
-  const ref = useRef(null)
-
-  const onMove = useCallback((e) => {
-    if (reduce || !ref.current) return
-    const r = ref.current.getBoundingClientRect()
-    ref.current.style.setProperty('--mx', `${e.clientX - r.left}px`)
-    ref.current.style.setProperty('--my', `${e.clientY - r.top}px`)
-  }, [reduce])
-
-  const year = new Date().getFullYear()
-
+function PageBg() {
   return (
-    <section id="top" ref={ref} onMouseMove={onMove} className="relative flex min-h-dvh flex-col overflow-hidden">
-      {/* grilla técnica */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 tech-grid opacity-70" />
-      {/* glows atmosféricos de marca (profundidad) */}
-      <div aria-hidden className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-[#FFD400] opacity-25 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute right-1/3 top-0 h-64 w-64 rounded-full bg-[#E30613] opacity-[0.07] blur-3xl" />
-      {/* spotlight cálido que sigue el cursor */}
-      {!reduce && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 hidden md:block"
-          style={{ background: 'radial-gradient(360px circle at var(--mx,70%) var(--my,35%), rgba(227,6,19,0.06), transparent 70%)' }}
-        />
-      )}
-      <div className="container-x relative z-10 flex flex-1 flex-col justify-center pb-12 pt-24 sm:pt-28">
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          className="mono-label flex items-center gap-2 text-[#E30613]"
-        >
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#E30613]" /> Media Naranja — {SITE.planta.ciudad}
-        </motion.div>
-
-        <motion.h2
-          initial={reduce ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }}
-          className="mt-6 max-w-[15ch] font-archivo text-[clamp(2.75rem,9vw,7rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-balance"
-        >
-          Tu casa,{' '}
-          <span className="relative inline-block whitespace-nowrap">
-            <span className="relative z-10">más fácil.</span>
-            <span aria-hidden className="absolute inset-x-[-6px] bottom-[0.1em] z-0 h-[0.34em] -rotate-1 bg-[#FFD400]" />
-          </span>
-        </motion.h2>
-
-        <div className="mt-8 grid gap-6 border-t border-[var(--border)] pt-8 md:grid-cols-[1fr_auto] md:items-end">
-          <motion.p
-            initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.15 }}
-            className="max-w-md text-lg leading-relaxed text-[var(--muted)]"
-          >
-            {year - SITE.fundacion} años desarrollando productos de calidad para la limpieza y el hogar.
-            Dos líneas, un mismo compromiso con vos.
-          </motion.p>
-          <div className="flex flex-wrap items-center gap-3">
-            <a href="#lineas" className="inline-flex items-center gap-2 rounded-full bg-[#E30613] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_rgba(227,6,19,0.5)] transition-transform hover:-translate-y-0.5">
-              Ver los productos <ArrowRight size={16} />
-            </a>
-            <a href="#nosotros" className="inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/15 px-6 py-3 text-sm font-semibold transition-colors hover:border-[var(--ink)]">
-              La marca
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* pista de scroll */}
-      <a href="#lineas" className="absolute bottom-[68px] left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1 text-[var(--muted)] transition-colors hover:text-[var(--ink)] md:flex" aria-label="Bajar a las líneas">
-        <span className="mono-label">Deslizá</span>
-        <ChevronDown size={16} className="animate-bounce" />
-      </a>
-
-      <Ticker />
-    </section>
-  )
-}
-
-function Ticker() {
-  const reduce = useReducedMotion()
-  const items = [...catNames('limpieza'), '●', ...catNames('hogar')]
-  const row = [...items, ...items]
-  return (
-    <div className="overflow-hidden border-y border-[#141210]/10 bg-[#FFD400] py-3">
-      <div className={`flex w-max gap-8 ${reduce ? '' : 'animate-marquee'}`}>
-        {row.map((t, i) => (
-          <span key={i} className="mono-label text-[#141210]">{t}</span>
-        ))}
-      </div>
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      <div className="tech-grid absolute inset-0 opacity-60" />
+      <div className="v5-glow absolute h-[38vw] w-[38vw] rounded-full bg-[#FFD400] opacity-25 blur-[90px]" style={{ top: '4%', left: '2%' }} />
+      <div className="v5-glow2 absolute h-[34vw] w-[34vw] rounded-full bg-[#E30613] opacity-[0.09] blur-[90px]" style={{ top: '38%', right: '4%' }} />
+      <div className="v5-glow3 absolute h-[32vw] w-[32vw] rounded-full bg-[#FFD400] opacity-[0.16] blur-[90px]" style={{ bottom: '2%', left: '38%' }} />
     </div>
   )
 }
 
-/* ------------------------------- LÍNEAS ---------------------------- */
-/* Sección neutral: dos filas tipo índice. El color de cada mundo      */
-/* aparece sutil al hover (nada de bloques de color que corten).        */
-function Lineas() {
-  return (
-    <section id="lineas" className="scroll-mt-16 border-t border-[var(--border)] bg-[var(--surface)]">
-      <div className="container-x py-16 md:py-24">
-        <SectionTitle index="[ SELECT ]" kicker="Nuestras líneas" title="Elegí tu mundo" />
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          <LineModule
-            to="/limpieza" index="01" name="Limpieza" accent="#E30613"
-            desc="Trapos, microfibras, rejillas, secadores. Hechos en nuestra planta textil."
-            images={peek('limpieza', 4)} cats={catNames('limpieza').length} prods={countOf('limpieza')}
-          />
-          <LineModule
-            to="/hogar" index="02" name="Hogar" accent="#C08552"
-            desc="Toallas, sábanas, acolchados, mantas. Suavidad premium para tu descanso."
-            images={peek('hogar', 4)} cats={catNames('hogar').length} prods={countOf('hogar')}
-          />
-        </div>
-      </div>
-    </section>
-  )
-}
+function Banner() {
+  const [slides, setSlides] = useState([])
+  const [idx, setIdx] = useState(0)
+  // La primera imagen decide cuándo se va el loader. Tener la URL no alcanza:
+  // recién cuando termina de bajar hay algo que mostrar.
+  const [lista, setLista] = useState(false)
+  const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function LineModule({ to, index, name, desc, images, accent, cats, prods }) {
-  const reduce = useReducedMotion()
-  const ref = useRef(null)
-  const onMove = useCallback((e) => {
-    if (reduce || !ref.current) return
-    const r = ref.current.getBoundingClientRect()
-    const px = (e.clientX - r.left) / r.width - 0.5
-    const py = (e.clientY - r.top) / r.height - 0.5
-    ref.current.style.setProperty('--rx', `${(-py * 5).toFixed(2)}deg`)
-    ref.current.style.setProperty('--ry', `${(px * 7).toFixed(2)}deg`)
-  }, [reduce])
-  const onLeave = useCallback(() => {
-    if (!ref.current) return
-    ref.current.style.setProperty('--rx', '0deg')
-    ref.current.style.setProperty('--ry', '0deg')
+  useEffect(() => {
+    let vivo = true
+    getPublicBanners().then((bs) => vivo && setSlides(bs))
+    return () => { vivo = false }
   }, [])
 
+  useEffect(() => {
+    if (reduce || slides.length < 2) return
+    const t = setInterval(() => setIdx((i) => (i + 1) % slides.length), 5000)
+    return () => clearInterval(t)
+  }, [reduce, slides.length])
+
   return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      style={{ perspective: '1200px' }}
-    >
-      <Link
-        ref={ref}
-        to={to}
-        onMouseMove={onMove}
-        onMouseLeave={onLeave}
-        className="line-module group relative block overflow-hidden rounded-3xl p-7 sm:p-8"
-        style={{ '--acc': accent }}
-        aria-label={`Entrar a la línea ${name}`}
+    <section id="top" aria-label="Destacados" aria-roledescription="carrusel" className={`relative z-10 w-full ${BANNER_ALTO}`}>
+      {/* Mientras baja la primera foto, el logo late en su lugar. Sin esto el
+          banner es un rectángulo vacío y la página parece colgada. */}
+      {!lista && (
+        <div
+          className="absolute inset-0 grid place-items-center"
+          style={{ background: 'var(--bg)' }}
+          role="status"
+          aria-label="Cargando"
+        >
+          <img
+            src="/logo-clean.png"
+            alt=""
+            width={300}
+            height={252}
+            className="mn-latido h-16 w-auto sm:h-20"
+          />
+        </div>
+      )}
+
+      <div
+        className="mn-banner-mask absolute inset-0 transition-opacity duration-500"
+        style={{ opacity: lista ? 1 : 0 }}
       >
-        <span aria-hidden className="line-scan pointer-events-none absolute inset-0" />
-        <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20" style={{ background: accent }} />
+        {slides.map((s, i) => (
+          <div
+            key={s.id}
+            className="absolute inset-0 transition-opacity duration-[900ms] ease-out"
+            style={{ opacity: i === idx ? 1 : 0 }}
+            aria-hidden={i !== idx}
+          >
+            {/* Sólo se pide la actual y la siguiente. Antes se renderizaban las
+                cuatro <img> juntas: como están todas dentro del mismo contenedor
+                absoluto, el navegador las considera visibles y loading="lazy" no
+                las difiere — bajaba las cuatro en paralelo y la primera tardaba
+                el triple por competir con las otras tres por el ancho de banda. */}
+            {(i === idx || i === (idx + 1) % slides.length) && (
+            <SafeImg
+              src={s.url}
+              alt={s.titulo || ''}
+              className="h-full w-full object-cover"
+              style={{ objectPosition: s.foco || '50% 50%' }}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : undefined}
+              onLoad={i === 0 ? () => setLista(true) : undefined}
+              onError={i === 0 ? () => setLista(true) : undefined}
+            />
+            )}
+          </div>
+        ))}
+      </div>
 
-        <div className="relative z-10 flex items-center justify-between">
-          <span className="mono-label text-[var(--muted)]">Line {index}</span>
-          <span className="pulse-dot h-2 w-2 rounded-full" style={{ background: accent, boxShadow: `0 0 10px ${accent}66` }} />
+      {/* El título va fuera de la máscara: si no, se desvanece con la imagen. */}
+      {slides[idx]?.titulo && (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/60 to-transparent pb-14 pt-20">
+          <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
+            <h2 className="max-w-2xl font-archivo text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-sm sm:text-4xl">
+              {slides[idx].titulo}
+            </h2>
+          </div>
         </div>
+      )}
 
-        <h3 className="relative z-10 mt-4 font-archivo text-6xl font-extrabold leading-none tracking-tight sm:text-7xl" style={{ color: 'var(--ink)' }}>{name}</h3>
-        <p className="relative z-10 mt-3 max-w-sm text-[15px] text-[var(--muted)]">{desc}</p>
-
-        {/* readouts */}
-        <div className="relative z-10 mt-5 flex gap-4">
-          <Readout label="Categorías" value={String(cats).padStart(2, '0')} />
-          <Readout label="Productos" value={String(prods).padStart(2, '0')} />
-        </div>
-
-        {/* thumbs */}
-        <div className="relative z-10 mt-6 flex gap-2.5">
-          {images.map((src) => (
-            <div key={src} className="h-16 w-16 overflow-hidden rounded-xl bg-white ring-1 ring-[var(--border)] shadow-sm sm:h-[74px] sm:w-[74px]">
-              <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            </div>
+      {slides.length > 1 && (
+        <div className="absolute inset-x-0 bottom-4 z-10 mx-auto flex w-full max-w-5xl justify-center gap-2 px-5 sm:px-8">
+          {slides.map((s, i) => (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => setIdx(i)}
+              aria-label={`Ver imagen ${i + 1} de ${slides.length}`}
+              aria-current={i === idx ? 'true' : undefined}
+              className="grid h-11 w-6 place-items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c1a17]"
+            >
+              <span
+                className="h-2 rounded-full transition-all duration-300"
+                style={{
+                  width: i === idx ? 22 : 8,
+                  background: i === idx ? INK : 'rgba(28,26,23,.3)',
+                }}
+              />
+            </button>
           ))}
         </div>
+      )}
+    </section>
+  )
+}
 
-        <div className="relative z-10 mt-7 flex items-center justify-between">
-          <span className="mono-label" style={{ color: accent }}>Ver productos</span>
-          <span className="grid h-12 w-12 place-items-center rounded-full text-white transition-transform duration-500 ease-out-expo group-hover:translate-x-1.5" style={{ background: accent, boxShadow: `0 10px 26px -8px ${accent}80` }}>
-            <ArrowRight size={20} strokeWidth={2.5} />
-          </span>
+function Modules() {
+  return (
+    <section id="modulos" className="relative z-10 mx-auto w-full max-w-5xl px-5 pb-8 pt-6 sm:px-8">
+      {/* min-w-0: las columnas 1fr no bajan del ancho mínimo de su contenido,
+          así el grid nunca puede desbordar en pantallas angostas. */}
+      <div className="grid grid-cols-3 gap-3 sm:gap-4">
+        {MODULES.map(({ icon: Icon, title, desc, href }) => (
+          <a key={title} href={href} className="group flex min-w-0 flex-col rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:p-6">
+            <span className="grid h-10 w-10 place-items-center rounded-full sm:h-12 sm:w-12" style={{ background: YELLOW }}><Icon size={20} className="text-[#1c1a17]" /></span>
+            <h3 className="mt-3 font-archivo text-lg font-extrabold sm:text-xl">{title}</h3>
+            <p className="mt-1 hidden text-sm text-[var(--muted)] sm:block">{desc}</p>
+            <span className="mt-auto hidden items-center gap-1 pt-3 text-sm font-semibold sm:inline-flex" style={{ color: RED }}>Ver <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" /></span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function Productos({ onOpen }) {
+  // Sale de la base, no de un archivo del repo: lo que el cliente carga o edita
+  // en el panel tiene que verse acá sin volver a desplegar.
+  const [all, setAll] = useState([])
+  const [cargando, setCargando] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    let vivo = true
+    getCatalog('limpieza')
+      .then((d) => vivo && setAll(d.productos))
+      .catch((e) => vivo && setError(e.message))
+      .finally(() => vivo && setCargando(false))
+    return () => { vivo = false }
+  }, [])
+
+  const featured = all.slice(0, 12)
+  return (
+    <section id="productos" className="scroll-mt-16 border-t border-[var(--border)]">
+      <div className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="font-archivo text-2xl font-extrabold sm:text-3xl">Nuestros productos</h2>
+            <p className="mt-1 text-[15px] text-[var(--muted)]">Tocá un producto para ver la ficha y descargar las fotos.</p>
+          </div>
+          <Link to="/limpieza" className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5" style={{ background: INK }}>
+            Ver todos{all.length ? ` (${all.length})` : ''} <ArrowRight size={15} />
+          </Link>
         </div>
-      </Link>
-    </motion.div>
+        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {cargando
+            ? Array.from({ length: 8 }, (_, i) => (
+                // Reserva el lugar mientras carga, para que no salte el layout.
+                <div key={i} className="aspect-[3/4] animate-pulse rounded-2xl bg-black/[0.06]" />
+              ))
+            : featured.map((p, i) => <ProductCard key={p.id} producto={p} index={i} onOpen={onOpen} />)}
+        </div>
+        {!cargando && !all.length && (
+          <p className="mt-6 text-[15px] text-[var(--muted)]">
+            {error ? 'No pudimos cargar los productos en este momento.' : 'Todavía no hay productos publicados.'}
+          </p>
+        )}
+      </div>
+    </section>
   )
 }
 
-function Readout({ label, value }) {
-  return (
-    <div className="rounded-xl border border-[var(--border)] bg-[var(--bg)] px-3.5 py-2">
-      <div className="mono-label text-[var(--muted)]">{label}</div>
-      <div className="font-archivo text-2xl font-extrabold leading-none" style={{ color: 'var(--ink)' }}>{value}</div>
-    </div>
-  )
-}
+/* Contenido tomado del sitio original medianaranja.com.ar/nosotros.
+   Dos ajustes sobre el texto de origen, marcados a propósito:
+   · decía "más de 40 años"; en 2025 la marca cumplió 50, así que se actualizó.
+   · el tercer párrafo terminaba cortado ("…con el respaldo") también en el sitio
+     viejo. Se corta la frase incompleta en vez de inventarle un final. */
+const HITOS = [
+  { anio: '2013', src: '/fabrica/hist-2013.jpg' },
+  { anio: '2015', src: '/fabrica/hist-2015.jpg' },
+  { anio: '2017', src: '/fabrica/hist-2017.jpg' },
+]
 
-/* ------------------------------ NOSOTROS --------------------------- */
-function Nosotros() {
-  const year = new Date().getFullYear()
+const DATOS_PLANTA = [
+  { valor: '25.000', unidad: 'm² cubiertos' },
+  { valor: '1.700.000', unidad: 'trapos de piso por mes' },
+  { valor: '6 × 24', unidad: 'días por semana, las 24 h' },
+]
+
+function Historia() {
   return (
-    <section id="nosotros" className="scroll-mt-16 border-t border-[var(--border)] bg-[var(--surface)]">
-      <div className="container-x grid gap-12 py-20 md:grid-cols-[1fr_1.05fr] md:py-28">
-        <div>
-          <SectionTitle index="00" kicker="Nosotros" title={<>Más de 40 años<br />haciéndote la vida<br />más fácil.</>} />
-          <div className="mt-10 grid grid-cols-3 gap-3">
-            {[
-              { n: `+${year - SITE.fundacion}`, l: 'años' },
-              { n: '#1', l: 'en la categoría' },
-              { n: '02', l: 'líneas' },
-            ].map((s) => (
-              <div key={s.l} className="rounded-xl border border-[var(--border)] p-4">
-                <div className="font-archivo text-3xl font-extrabold text-[#E30613]">{s.n}</div>
-                <div className="mono-label mt-1 text-[var(--muted)]">{s.l}</div>
+    <section id="historia" className="scroll-mt-16 border-t border-[var(--border)]">
+      <div className="mx-auto w-full max-w-5xl px-5 py-14 sm:px-8">
+        <p className="mono-label" style={{ color: RED }}>● Desde 1975</p>
+        <h2 className="mt-2 font-archivo text-2xl font-extrabold sm:text-3xl">Nosotros</h2>
+
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[var(--ink)] sm:text-xl">
+          En 1975 nacimos para que vos puedas tener en tu hogar un aliado para ayudarte a hacer
+          más fácil la tarea de la limpieza. Es así como desarrollamos productos de alta calidad
+          para que puedas preocuparte de otras cosas y no de la limpieza.
+        </p>
+
+        <div className="mt-6 grid gap-x-10 gap-y-4 text-[15px] leading-relaxed text-[var(--muted)] md:grid-cols-2">
+          <p>
+            En poco tiempo llegamos a convertirnos en los líderes de la categoría, permitiéndonos
+            conocerte de cerca. Día a día cambiamos junto a vos, renovando nuestra imagen,
+            modificando nuestras etiquetas y lanzando productos a la medida de tus necesidades.
+          </p>
+          <p>
+            Hoy, después de 50 años en el mercado, estamos a la vanguardia de las últimas
+            tendencias mundiales en limpieza. Porque vos evolucionás, nosotros evolucionamos
+            con vos.
+          </p>
+        </div>
+
+        {/* Evolución de la marca */}
+        <ul className="mt-10 grid gap-3 sm:grid-cols-3">
+          {HITOS.map(({ anio, src }) => (
+            <li key={anio} className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-card">
+              <SafeImg
+                src={src}
+                alt={`Imagen de campaña de Media Naranja en ${anio}`}
+                loading="lazy"
+                width={823}
+                height={326}
+                className="aspect-[823/326] w-full object-cover"
+              />
+              <p className="mono-label px-4 py-3 text-[var(--muted)]">{anio}</p>
+            </li>
+          ))}
+        </ul>
+
+        {/* Medio ambiente */}
+        <div className="mt-12 grid items-start gap-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-card sm:p-8 md:grid-cols-[220px_1fr]">
+          <SafeImg
+            src="/fabrica/medioambiente.jpg"
+            alt="Trapo de piso tejido con retazos de algodón reutilizados"
+            loading="lazy"
+            width={300}
+            height={300}
+            className="aspect-square w-full max-w-[220px] rounded-xl object-cover"
+          />
+          <div>
+            <h3 className="font-archivo text-xl font-extrabold sm:text-2xl">Cuidamos el medio ambiente</h3>
+            <div className="mt-3 grid gap-x-8 gap-y-3 text-[15px] leading-relaxed text-[var(--muted)] lg:grid-cols-2">
+              <p>
+                Todos los trapos de piso tejidos que desarrollamos surgen a partir de la
+                reutilización de retazos de nuestra planta textil. De esta forma aprovechamos al
+                máximo nuestra producción, sin generar desperdicios innecesarios y ofrecemos al
+                mercado un producto de calidad hecho de algodón.
+              </p>
+              <p>
+                Por otro lado, contamos con la línea de microfibras que por su composición puede
+                utilizarse para limpiar superficies sólo con agua, sin la necesidad de utilizar
+                productos químicos nocivos para el medio ambiente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Planta */}
+        <div className="mt-12">
+          <h3 className="font-archivo text-xl font-extrabold sm:text-2xl">Nuestra planta</h3>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[var(--muted)]">
+            La línea textil se fabrica en nuestra planta ubicada en Valle Viejo, Catamarca, con más
+            de 25.000 m² de superficie cubierta y capacidad productiva de hasta 1.700.000 unidades
+            de trapos de piso mensuales, funcionando 6 días a la semana las 24 hs.
+          </p>
+
+          <dl className="mt-6 grid gap-3 sm:grid-cols-3">
+            {DATOS_PLANTA.map(({ valor, unidad }) => (
+              <div key={unidad} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-card">
+                <dt className="sr-only">{unidad}</dt>
+                <dd>
+                  <span className="block font-archivo text-2xl font-extrabold tabular-nums sm:text-3xl">{valor}</span>
+                  <span className="mt-1 block text-sm text-[var(--muted)]">{unidad}</span>
+                </dd>
               </div>
             ))}
-          </div>
-        </div>
-        <div className="space-y-4 text-[17px] leading-relaxed text-[var(--muted)]">
-          <p><span className="font-semibold text-[var(--ink)]">En {SITE.fundacion} nacimos</span> para que puedas tener en tu hogar un aliado que te ayude con la limpieza. Desarrollamos productos de alta calidad para que te preocupes por otras cosas, no por limpiar.</p>
-          <p>En poco tiempo llegamos a ser líderes de la categoría. Día a día cambiamos junto a vos: renovamos nuestra imagen, nuestras etiquetas y lanzamos productos a la medida de tus necesidades.</p>
-          <p>Hoy estamos a la vanguardia de las últimas tendencias mundiales en limpieza y hogar. Porque vos evolucionás, y nosotros evolucionamos con vos.</p>
-        </div>
-      </div>
-    </section>
-  )
-}
+          </dl>
 
-/* --------------------------- SUSTENTABILIDAD ----------------------- */
-function Sustentabilidad() {
-  const items = [
-    { icon: Recycle, title: 'Cero desperdicio', body: 'Nuestros trapos de piso tejidos surgen de reutilizar retazos de nuestra planta textil. Aprovechamos al máximo la producción, sin generar desperdicios.' },
-    { icon: Leaf, title: 'Solo con agua', body: 'La línea de microfibras, por su composición, limpia muchas superficies solo con agua — sin químicos nocivos para el medio ambiente.' },
-  ]
-  return (
-    <section className="bg-[#0c0c0d] text-white">
-      <div className="container-x py-20 md:py-24">
-        <SectionTitle index="03" kicker="Medio ambiente" title="Calidad que respeta el planeta" dark />
-        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
-          {items.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="bg-[#0c0c0d] p-7 sm:p-9">
-              <Icon size={26} strokeWidth={1.75} className="text-[#FFD400]" />
-              <h3 className="mt-4 font-archivo text-2xl font-bold">{title}</h3>
-              <p className="mt-2 text-white/60">{body}</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="overflow-hidden rounded-2xl">
+              <SafeImg
+                src="/fabrica/planta-a.jpg"
+                alt="Vista aérea de la planta de Media Naranja en Valle Viejo, Catamarca"
+                loading="lazy"
+                width={425}
+                height={255}
+                className="aspect-[5/3] w-full object-cover"
+              />
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ------------------------------- PLANTA ---------------------------- */
-function Planta() {
-  const year = new Date().getFullYear()
-  const stats = [
-    { n: '25.000', label: 'm² cubiertos' },
-    { n: '1.7M', label: 'trapos / mes' },
-    { n: '24hs', label: '6 días / semana' },
-    { n: `+${year - SITE.fundacion}`, label: 'años' },
-  ]
-  return (
-    <section className="bg-[var(--surface)]">
-      <div className="container-x py-20 md:py-24">
-        <div className="mono-label flex items-center gap-2 text-[var(--muted)]">
-          <Factory size={16} className="text-[#E30613]" /> Nuestra planta — {SITE.planta.ciudad}
-        </div>
-        <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="bg-[var(--surface)] p-6 sm:p-8">
-              <div className="font-archivo text-4xl font-extrabold tracking-tight sm:text-5xl">{s.n}</div>
-              <div className="mono-label mt-2 text-[var(--muted)]">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ---------------------------- REVENDEDORES ------------------------- */
-function Revendedores() {
-  return (
-    <section id="revendedores" className="scroll-mt-16 border-t border-[var(--border)]">
-      <div className="container-x py-20 md:py-24">
-        <div className="grid items-center gap-10 rounded-2xl bg-[#0c0c0d] p-8 text-white sm:p-12 md:grid-cols-[1.2fr_1fr]">
-          <div>
-            <span className="mono-label text-[#FFD400]">04 — Para revendedores</span>
-            <h2 className="mt-4 font-archivo text-3xl font-extrabold sm:text-4xl">Descargá las fotos de los productos, gratis.</h2>
-            <p className="mt-3 max-w-md text-white/60">Explorá el catálogo completo de las dos líneas y bajá las fotos en alta — individuales o todas juntas — para publicar y revender. Sin vueltas.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/limpieza" className="inline-flex items-center gap-2 rounded-full bg-[#FFD400] px-5 py-3 text-sm font-semibold text-[#141210] transition-transform hover:-translate-y-0.5">
-                <Download size={16} /> Fotos de Limpieza
-              </Link>
-              <Link to="/hogar" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#141210] transition-transform hover:-translate-y-0.5">
-                <Download size={16} /> Fotos de Hogar
-              </Link>
+            <div className="overflow-hidden rounded-2xl">
+              <SafeImg
+                src="/fabrica/planta-b.jpg"
+                alt="Producción de trapos de piso en la planta textil"
+                loading="lazy"
+                width={319}
+                height={255}
+                className="aspect-[5/3] w-full object-cover"
+              />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-2">
-            {[...peek('limpieza', 3), ...peek('hogar', 3)].map((src, i) => (
-              <img key={src + i} src={src} alt="" loading="lazy" width={120} height={120} className="aspect-square w-full rounded-lg object-cover" />
-            ))}
-          </div>
         </div>
       </div>
     </section>
   )
 }
 
-/* ------------------------------ CONTACTO --------------------------- */
 function Contacto() {
-  const wa = waLink()
-  const cards = [
-    { icon: Mail, label: 'Email', value: SITE.email, href: `mailto:${SITE.email}` },
-    ...(wa ? [{ icon: MessageCircle, label: 'WhatsApp', value: SITE.whatsappDisplay || 'Escribinos', href: wa }] : []),
-    { icon: Instagram, label: 'Instagram', value: '@medianaranja', href: SITE.instagram },
-    { icon: Facebook, label: 'Facebook', value: 'Media Naranja', href: SITE.facebook },
-    { icon: MapPin, label: 'Planta', value: SITE.planta.ciudad, href: null },
-  ]
+  const [sent, setSent] = useState(false)
   return (
-    <section id="contacto" className="scroll-mt-16 border-t border-[var(--border)] bg-[var(--surface)]">
-      <div className="container-x py-20 md:py-24">
-        <SectionTitle index="05" kicker="Contacto" title="Hablemos" />
-        <p className="mt-3 max-w-md text-[var(--muted)]">¿Consultas, mayoristas o dónde comprar? Escribinos por donde te quede más cómodo.</p>
-
-        <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, label, value, href }) => {
-            const inner = (
-              <>
-                <div className="flex items-center justify-between">
-                  <Icon size={20} className="text-[#E30613]" />
-                  {href && <ArrowUpRight size={16} className="text-[var(--muted)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />}
-                </div>
-                <div className="mt-6">
-                  <div className="mono-label text-[var(--muted)]">{label}</div>
-                  <div className="mt-1 font-semibold">{value}</div>
-                </div>
-              </>
-            )
-            return href ? (
-              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener" className="group flex flex-col bg-[var(--surface)] p-6 transition-colors hover:bg-[var(--bg)]">{inner}</a>
-            ) : (
-              <div key={label} className="flex flex-col bg-[var(--surface)] p-6">{inner}</div>
-            )
-          })}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a href={SITE.tienda} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">
-            <ShoppingBag size={16} /> Comprar en la tienda
-          </a>
-        </div>
+    <section id="contacto" className="scroll-mt-16 border-t border-[var(--border)]">
+      <div className="mx-auto w-full max-w-xl px-5 py-12 text-center sm:px-8">
+        <h2 className="font-archivo text-2xl font-extrabold sm:text-3xl">Contacto</h2>
+        <p className="mt-2 text-[var(--muted)]">¿Consultas, mayoristas o dónde comprar? Escribinos.</p>
+        {sent ? (
+          <div className="mx-auto mt-6 grid place-items-center rounded-2xl border border-green-200 bg-green-50 p-8">
+            <Check className="text-green-700" size={26} /><p className="mt-2 font-semibold text-green-800">¡Gracias! Te respondemos a la brevedad.</p>
+          </div>
+        ) : (
+          <form onSubmit={(e) => { e.preventDefault(); setSent(true) }} className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <input required placeholder="Nombre" autoComplete="name" className="v5-input" />
+            <input required type="email" placeholder="E-mail" autoComplete="email" className="v5-input" />
+            <input placeholder="Teléfono" inputMode="tel" autoComplete="tel" className="v5-input sm:col-span-2" />
+            <textarea rows={3} placeholder="Comentario" className="v5-input resize-none sm:col-span-2" />
+            <button type="submit" className="rounded-full px-8 py-3 font-semibold text-white transition-transform hover:-translate-y-0.5 sm:col-span-2" style={{ background: RED }}>Enviar</button>
+          </form>
+        )}
+        <p className="mt-5 text-sm text-[var(--muted)]"><a href={`mailto:${SITE.email}`} className="underline underline-offset-2">{SITE.email}</a></p>
       </div>
+      <style>{`.v5-input{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:15px;min-height:48px;background:var(--bg);color:var(--ink)}.v5-input:focus{outline:none;border-color:var(--ink)}`}</style>
     </section>
   )
 }
 
-/* ------------------------------- FOOTER ---------------------------- */
 function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--bg)]">
-      <div className="container-x flex flex-col items-start justify-between gap-6 py-10 sm:flex-row sm:items-center">
-        <Logo />
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-          {[['Limpieza', '/limpieza'], ['Hogar', '/hogar']].map(([t, to]) => (
-            <Link key={to} to={to} className="mono-label text-[var(--muted)] hover:text-[var(--ink)]">{t}</Link>
-          ))}
-          <a href="#nosotros" className="mono-label text-[var(--muted)] hover:text-[var(--ink)]">Nosotros</a>
-          <a href="#contacto" className="mono-label text-[var(--muted)] hover:text-[var(--ink)]">Contacto</a>
-          <a href={SITE.tienda} target="_blank" rel="noopener" className="mono-label text-[var(--muted)] hover:text-[var(--ink)]">Tienda</a>
-        </div>
-        <p className="mono-label text-[var(--muted)]">© {new Date().getFullYear()} Media Naranja</p>
+    <footer className="border-t border-[var(--border)]">
+      <div className="mx-auto w-full max-w-5xl px-5 py-6 text-center text-sm text-[var(--muted)] sm:px-8">
+        Media Naranja · Fibran Sur S.A. · Argentina · © {new Date().getFullYear()}
       </div>
     </footer>
-  )
-}
-
-/* ------------------------------ SHARED ----------------------------- */
-function SectionTitle({ index, kicker, title, dark }) {
-  return (
-    <div>
-      <div className="mb-3 flex items-center gap-3">
-        {index && <span className={`mono-label ${dark ? 'text-white/40' : 'text-[var(--muted)]'}`}>{index}</span>}
-        <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: dark ? '#FFD400' : '#E30613' }} aria-hidden />
-        <span className={`mono-label ${dark ? 'text-[#FFD400]' : 'text-[#E30613]'}`}>{kicker}</span>
-      </div>
-      <h2 className={`font-archivo text-3xl font-extrabold tracking-tight sm:text-5xl ${dark ? 'text-white' : 'text-[var(--ink)]'}`}>{title}</h2>
-    </div>
   )
 }

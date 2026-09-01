@@ -1,6 +1,4 @@
-import seed from '../data/seed.json'
-import { supabase, isSupabaseEnabled } from './supabase'
-import { getMockProducts } from './mockStore'
+import { supabase, isSupabaseEnabled, conLimite } from './supabase'
 
 // Deriva la lista de categorías (únicas, en orden de aparición) de un set de productos.
 function deriveCategorias(productos, linea) {
@@ -11,6 +9,15 @@ function deriveCategorias(productos, linea) {
 
 const forceSeed = import.meta.env.VITE_USE_SEED === 'true'
 const useSeed = forceSeed || !isSupabaseEnabled
+
+// El catálogo del repo es sólo el respaldo de cuando no hay Supabase conectado.
+// Se carga aparte para que esos 34 KB no viajen en el bundle de producción,
+// donde nunca se usan porque la fuente de verdad es la base.
+let seedCache = null
+async function getSeed() {
+  if (!seedCache) seedCache = (await import('../data/seed.json')).default
+  return seedCache
+}
 
 // Normaliza una fila de Supabase al shape que usa la UI
 function fromRow(row) {
@@ -24,7 +31,6 @@ function fromRow(row) {
     descripcion: row.descripcion || '',
     specs: row.specs || {},
     imagenes: row.imagenes || [],
-    comprarUrl: row.comprar_url || 'https://www.medianaranja.store',
     orden: row.orden ?? 0,
   }
 }
@@ -39,7 +45,6 @@ function toRow(p) {
     descripcion: p.descripcion || '',
     specs: p.specs || {},
     imagenes: p.imagenes || [],
-    comprar_url: p.comprarUrl || 'https://www.medianaranja.store',
     orden: p.orden ?? 0,
   }
 }
@@ -47,17 +52,15 @@ function toRow(p) {
 /** Devuelve { productos, categorias } para una línea */
 export async function getCatalog(linea) {
   if (useSeed) {
-    const mock = getMockProducts().filter((p) => p.linea === linea)
-    const base = seed.productos.filter((p) => p.linea === linea)
-    // mock primero para que se vean arriba en la demo
-    const productos = [...mock, ...base]
+    const seed = await getSeed()
+    const productos = seed.productos.filter((p) => p.linea === linea)
     return { productos, categorias: deriveCategorias(productos, linea) }
   }
-  const { data, error } = await supabase
-    .from('productos')
-    .select('*')
-    .eq('linea', linea)
-    .order('orden', { ascending: true })
+  const { data, error } = await conLimite(
+    supabase.from('productos').select('*').eq('linea', linea).order('orden', { ascending: true }),
+    8000,
+    'el catálogo',
+  )
   if (error) throw error
   const productos = (data || []).map(fromRow)
   const seen = new Map()
@@ -68,7 +71,7 @@ export async function getCatalog(linea) {
 
 /** Todos los productos (para el admin) */
 export async function getAllProducts() {
-  if (useSeed) return [...getMockProducts(), ...seed.productos]
+  if (useSeed) return (await getSeed()).productos
   const { data, error } = await supabase
     .from('productos')
     .select('*')
@@ -80,6 +83,31 @@ export async function getAllProducts() {
 
 export async function createProduct(p) {
   const { data, error } = await supabase.from('productos').insert(toRow(p)).select().single()
+  if (error) throw error
+  return fromRow(data)
+}
+
+/**
+ * Actualiza un producto. `patch` usa los nombres de la app (categoriaLabel,
+ * categoriaLabel…) y acá se traducen a las columnas de la tabla.
+ */
+export async function updateProduct(id, patch) {
+  const columnas = {
+    linea: 'linea',
+    categoria: 'categoria',
+    categoriaLabel: 'categoria_label',
+    nombre: 'nombre',
+    slug: 'slug',
+    descripcion: 'descripcion',
+    specs: 'specs',
+    imagenes: 'imagenes',
+    orden: 'orden',
+  }
+  const row = {}
+  for (const [k, v] of Object.entries(patch)) {
+    if (columnas[k] !== undefined) row[columnas[k]] = v
+  }
+  const { data, error } = await supabase.from('productos').update(row).eq('id', id).select().single()
   if (error) throw error
   return fromRow(data)
 }

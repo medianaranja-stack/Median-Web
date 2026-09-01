@@ -1,0 +1,65 @@
+# Este archivo va en la RAIZ del repo: cuando el deploy se dispara desde GitHub,
+# Netlify lee netlify.toml desde acá. Si quedara dentro de MediaNaranjaWeb/app/
+# lo ignoraria por completo — no sabria compilar, /limpieza y /admin darian 404
+# y se perderian todas las cabeceras de seguridad.
+
+[build]
+  # La app no esta en la raiz. `publish` y `command` son relativos a `base`.
+  base = "MediaNaranjaWeb/app"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Vite reemplaza las VITE_* por su valor literal dentro del JS compilado. El
+  # escaneo de secretos de Netlify las encuentra ahí y aborta el build. No es un
+  # secreto filtrado: la anon key es pública por diseño y la seguridad está en
+  # las policies RLS de Supabase. Sin esto, conectar el repo a Netlify falla.
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY"
+
+# La linea Hogar se dio de baja: 301 a la home para no dejar URLs indexadas
+# devolviendo la landing con la URL vieja.
+[[redirects]]
+  from = "/hogar"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hogar/*"
+  to = "/"
+  status = 301
+  force = true
+
+# SPA: todas las rutas al index (React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ---------- Cabeceras de seguridad ----------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-site"
+    X-DNS-Prefetch-Control = "off"
+    # CSP acotada al proyecto Supabase del cliente (sin comodín *.supabase.co:
+    # si algún script se colara, no podría exfiltrar a otro proyecto Supabase).
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://dqlixhlsbyofejjqexzl.supabase.co https://www.medianaranja.com.ar; connect-src 'self' https://dqlixhlsbyofejjqexzl.supabase.co wss://dqlixhlsbyofejjqexzl.supabase.co; object-src 'none'; frame-src 'none'; worker-src 'self' blob:; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+# Cache largo para assets con hash
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fabrica/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

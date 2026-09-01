@@ -1,11 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowLeft, ShoppingBag, Download, ChevronRight } from 'lucide-react'
-import seed from '../data/seed.json'
+import { ArrowLeft, Download, ChevronRight } from 'lucide-react'
 import { getCatalog } from '../lib/products.js'
 import { LINEAS } from '../lib/theme.js'
-import { useStyle } from '../lib/style.jsx'
 import Logo from '../components/Logo.jsx'
 import HeartMark from '../components/HeartMark.jsx'
 import ProductCard from '../components/ProductCard.jsx'
@@ -59,8 +57,8 @@ export default function LineaPage({ linea }) {
       <a href="#productos" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-black focus:px-4 focus:py-2 focus:text-white">
         Saltar a los productos
       </a>
-      <Nav linea={linea} meta={meta} />
-      <Hero linea={linea} meta={meta} count={data.productos.length} />
+      <Nav />
+      <Hero linea={linea} meta={meta} productos={data.productos} />
 
       {/* Rail de categorías — mobile/tablet */}
       <div className="sticky top-[68px] z-20 border-y backdrop-blur-xl lg:hidden" style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--bg) 82%, transparent)' }}>
@@ -107,43 +105,28 @@ export default function LineaPage({ linea }) {
         </div>
       </section>
 
-      <SectionFooter meta={meta} linea={linea} />
+      <SectionFooter />
       {selected && <ProductModal producto={selected} onClose={() => setSelected(null)} />}
     </main>
   )
 }
 
 /* ------------------------------- NAV ------------------------------- */
-function Nav({ linea, meta }) {
-  const otra = linea === 'limpieza' ? 'hogar' : 'limpieza'
-  const { version } = useStyle()
-  const showOtra = version !== '5'
+function Nav() {
   return (
     <header className="sticky top-0 z-30 border-b backdrop-blur-xl" style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--bg) 82%, transparent)' }}>
-      <div className="container-x flex h-[68px] items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Link to="/" className="grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-black/5" aria-label="Volver al inicio">
-            <ArrowLeft size={18} />
-          </Link>
-          <Logo variant={linea === 'hogar' ? 'hogar' : 'default'} />
-        </div>
-        <div className="flex items-center gap-2">
-          {showOtra && (
-            <Link to={`/${otra}`} className="mono-label hidden rounded-full px-4 py-2 text-muted transition-colors hover:bg-black/5 hover:text-[var(--ink)] sm:block">
-              → Línea {otra === 'hogar' ? 'Hogar' : 'Limpieza'}
-            </Link>
-          )}
-          <a href={meta.comprarUrl} target="_blank" rel="noopener" className="btn btn-primary !px-5 !py-2.5">
-            <ShoppingBag size={16} /> Comprar
-          </a>
-        </div>
+      <div className="container-x flex h-[68px] items-center gap-3">
+        <Link to="/" className="grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-black/5" aria-label="Volver al inicio">
+          <ArrowLeft size={18} />
+        </Link>
+        <Logo />
       </div>
     </header>
   )
 }
 
 /* ------------------------------- HERO ------------------------------ */
-function Hero({ linea, meta }) {
+function Hero({ linea, meta, productos }) {
   const reduce = useReducedMotion()
   return (
     <section className="relative overflow-hidden">
@@ -169,24 +152,21 @@ function Hero({ linea, meta }) {
           </motion.h1>
           <p className="mt-4 max-w-md text-lg text-muted">{meta.descripcion}</p>
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a href={meta.comprarUrl} target="_blank" rel="noopener" className="btn btn-primary">
-              <ShoppingBag size={17} /> Comprar en la tienda
-            </a>
-            <a href="#productos" className="btn btn-ghost">
-              <Download size={16} /> Descargar fotos
+            <a href="#productos" className="btn btn-primary">
+              <Download size={17} /> Descargar fotos
             </a>
           </div>
         </div>
 
-        <HeroVisual linea={linea} reduce={reduce} />
+        <HeroVisual reduce={reduce} productos={productos} />
       </div>
     </section>
   )
 }
 
-function HeroVisual({ linea, reduce }) {
+function HeroVisual({ reduce, productos }) {
   // collage flotante con profundidad
-  const imgs = useHeroImages(linea)
+  const imgs = useHeroImages(productos)
   return (
     <div className="relative hidden h-[340px] md:block">
       {/* halo detrás */}
@@ -213,11 +193,11 @@ function HeroVisual({ linea, reduce }) {
   )
 }
 
-/* helper: primeras 3 imágenes de la línea desde el seed (para el hero) */
-function useHeroImages(linea) {
+/* helper: primeras 3 fotos del catálogo ya cargado, para el collage del hero */
+function useHeroImages(productos) {
   return useMemo(
-    () => seed.productos.filter((p) => p.linea === linea && p.imagenes.length).slice(0, 3).map((p) => p.imagenes[0]),
-    [linea]
+    () => (productos || []).filter((p) => p.imagenes.length).slice(0, 3).map((p) => p.imagenes[0]),
+    [productos]
   )
 }
 
@@ -310,18 +290,11 @@ function ErrorState({ msg }) {
   )
 }
 
-function SectionFooter({ meta, linea }) {
-  const otra = linea === 'limpieza' ? 'hogar' : 'limpieza'
+function SectionFooter() {
   return (
     <footer className="mt-10 border-t" style={{ borderColor: 'var(--border)' }}>
-      <div className="container-x flex flex-col items-start justify-between gap-4 py-10 sm:flex-row sm:items-center">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="mono-label text-muted hover:opacity-80">← Inicio</Link>
-          <Link to={`/${otra}`} className="mono-label text-muted hover:opacity-80">Línea {otra === 'hogar' ? 'Hogar' : 'Limpieza'}</Link>
-        </div>
-        <a href={meta.comprarUrl} target="_blank" rel="noopener" className="btn btn-primary">
-          <ShoppingBag size={16} /> Ir a la tienda
-        </a>
+      <div className="container-x flex items-center gap-4 py-10">
+        <Link to="/" className="mono-label text-muted hover:opacity-80">← Inicio</Link>
       </div>
     </footer>
   )

@@ -5,123 +5,21 @@
 /* ============ THEME TOKENS (per world) ============ */
 :root {
   color-scheme: light;
-  /* Neutral / técnico — para la landing (sin comprometerse con ninguna unidad) */
+  /* Paleta única del sitio — fabril, neutra, acento rojo Media Naranja. */
   --bg: #f4f4f2;
-  --ink: #0c0c0d;
-  --muted: #6e6e6a;
+  --ink: #1c1a17;
+  --muted: #6f6a62;
   --surface: #ffffff;
-  --border: #e2e2de;
-  --hairline: #d7d7d2;
+  --border: #e5e2da;
+  --hairline: #d9d6cd;
   --brand-red: #e30613;
   --brand-yellow: #ffd400;
   --accent: #e30613;
-  --accent-ink: #ffffff;
-  --ring: #0c0c0d;
-  --display: 'Archivo', system-ui, sans-serif;
-  --radius: 14px;
-}
-
-[data-linea='limpieza'] {
-  --bg: #fffdf3;
-  --ink: #141210;
-  --muted: #6f6a5f;
-  --surface: #ffffff;
-  --border: #ece3c4;
-  --accent: #e30613;
-  --accent-ink: #ffffff;
   --brand: #ffd400;
-  --ring: #141210;
+  --accent-ink: #ffffff;
+  --ring: #1c1a17;
   --display: 'Archivo', system-ui, sans-serif;
   --radius: 12px;
-}
-
-[data-linea='hogar'] {
-  --bg: #faf5f0;
-  --ink: #2b2724;
-  --muted: #857b72;
-  --surface: #ffffff;
-  --border: #e8ddd2;
-  --accent: #c08552;
-  --accent-ink: #ffffff;
-  --brand: #a8a29e;
-  --ring: #2b2724;
-  --display: 'Fraunces', Georgia, serif;
-  --radius: 20px;
-}
-
-/* ========================================================= */
-/* VERSIÓN 2 — Neubrutalism (bloques, bordes negros, sombras) */
-/* ========================================================= */
-[data-sv='2'] {
-  --bg: #fbf3dd; --ink: #141414; --muted: #5b5647; --surface: #ffffff;
-  --border: #141414; --hairline: #141414; --brand-red: #e30613; --brand-yellow: #ffd400;
-  --accent: #e30613; --brand: #ffd400; --accent-ink: #fff; --ring: #141414;
-  --display: 'Archivo', sans-serif; --radius: 12px;
-}
-[data-sv='2'][data-linea='limpieza'] {
-  --bg: #fff3b8; --ink: #141414; --muted: #6a6236; --surface: #ffffff; --border: #141414; --hairline: #141414;
-  --accent: #e30613; --brand: #ffd400; --ring: #141414; --display: 'Archivo', sans-serif; --radius: 12px;
-}
-[data-sv='2'][data-linea='hogar'] {
-  --bg: #efe6d4; --ink: #141414; --muted: #6b6252; --surface: #ffffff; --border: #141414; --hairline: #141414;
-  --accent: #c0611e; --brand: #e0d2bd; --ring: #141414; --display: 'Archivo', sans-serif; --radius: 12px;
-}
-[data-sv='2'] .card-depth { border: 2.5px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); transition: transform .15s ease-out, box-shadow .15s ease-out; }
-[data-sv='2'] .card-depth:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); border-color: var(--ink); }
-[data-sv='2'] .btn { border: 2px solid var(--ink); }
-[data-sv='2'] .btn-primary { box-shadow: 3px 3px 0 var(--ink); }
-[data-sv='2'] .btn-primary:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); filter: none; }
-[data-sv='2'] .btn-ghost:hover { box-shadow: 3px 3px 0 var(--ink); }
-[data-sv='2'] .card { border: 2px solid var(--ink); }
-[data-sv='2'] .tech-grid { opacity: 0; }
-[data-sv='2'] .chip { border-width: 2px; }
-
-/* ========================================================= */
-/* VERSIÓN 3 — Retro 1975 (terroso, arcos, serif vintage)     */
-/* ========================================================= */
-[data-sv='3'] {
-  --bg: #efe2c6; --ink: #3a2a1c; --muted: #8a7452; --surface: #f8eed6;
-  --border: #dcc9a2; --hairline: #cdb894; --brand-red: #cc3a1e; --brand-yellow: #e3a72f;
-  --accent: #c2410c; --brand: #e3a72f; --accent-ink: #fff; --ring: #3a2a1c;
-  --display: 'DM Serif Display', Georgia, serif; --radius: 26px;
-}
-[data-sv='3'][data-linea='limpieza'] {
-  --bg: #f0e0bd; --ink: #3a2a1c; --muted: #8a7148; --surface: #f9efd6; --border: #e0cc9f; --hairline: #d4bd8e;
-  --accent: #c8371a; --brand: #e3a72f; --ring: #3a2a1c; --display: 'DM Serif Display', Georgia, serif; --radius: 26px;
-}
-[data-sv='3'][data-linea='hogar'] {
-  --bg: #ece0cd; --ink: #3a2a1c; --muted: #8f7c62; --surface: #f7edda; --border: #ddccb2; --hairline: #d0bd9f;
-  --accent: #a85a2c; --brand: #c9a15a; --ring: #3a2a1c; --display: 'DM Serif Display', Georgia, serif; --radius: 26px;
-}
-[data-sv='3'] .card-depth { border: 1.5px solid var(--border); border-radius: 24px; box-shadow: 0 20px 44px -24px rgba(90, 50, 20, .42); }
-[data-sv='3'] .card-depth:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: 0 30px 55px -26px rgba(90, 50, 20, .5); }
-[data-sv='3'] .tech-grid { opacity: 0; }
-
-/* ========================================================= */
-/* VERSIÓN 4 — Clásico modernizado (medianaranja.com.ar)      */
-/* ========================================================= */
-[data-sv='4'] {
-  --bg: #ffffff; --ink: #20201d; --muted: #6f6a63; --surface: #ffffff;
-  --border: #e8e4dc; --hairline: #e8e4dc; --brand-red: #e30613; --brand-yellow: #ffd400;
-  --accent: #e30613; --brand: #ffd400; --accent-ink: #fff; --ring: #20201d;
-  --display: 'Archivo', sans-serif; --radius: 10px;
-}
-[data-sv='4'][data-linea='limpieza'],
-[data-sv='4'][data-linea='hogar'] {
-  --bg: #ffffff; --ink: #20201d; --muted: #6f6a63; --surface: #ffffff; --border: #ece7dd;
-  --accent: #e30613; --brand: #ffd400; --ring: #20201d; --display: 'Archivo', sans-serif; --radius: 8px;
-}
-[data-sv='4'] .tech-grid { opacity: 0; }
-
-/* ========================================================= */
-/* VERSIÓN 5 — Solo Limpieza · fabril · productos flotando    */
-/* ========================================================= */
-[data-sv='5'],
-[data-sv='5'][data-linea='limpieza'] {
-  --bg: #f4f4f2; --ink: #1c1a17; --muted: #6f6a62; --surface: #ffffff;
-  --border: #e5e2da; --hairline: #d9d6cd; --brand-red: #e30613; --brand-yellow: #ffd400;
-  --accent: #e30613; --brand: #ffd400; --accent-ink: #fff; --ring: #1c1a17;
-  --display: 'Archivo', sans-serif; --radius: 12px;
 }
 
 /* ============ BASE ============ */
@@ -171,10 +69,8 @@
     letter-spacing: -0.02em;
   }
 
-  /* Limpieza display = tight, industrial */
+  /* Display tipo industrial para la línea Limpieza */
   [data-linea='limpieza'] .display { font-weight: 800; letter-spacing: -0.03em; }
-  /* Hogar display = airy serif */
-  [data-linea='hogar'] .display { font-weight: 500; letter-spacing: -0.01em; }
 
   .btn {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold

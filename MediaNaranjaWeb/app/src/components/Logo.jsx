@@ -1,54 +1,28 @@
 import { useState } from 'react'
 
-// Logos oficiales de Media Naranja (en app/public/).
-//   • logo-clean.png → corazón + "media naranja" en ROJO (línea Limpieza / default) — 300×252
-//   • Logo-home.png  → corazón negro + "media naranja | Home" (línea Hogar) — 398×183
-// Si un archivo falta, cae automáticamente al wordmark de respaldo (no rompe la UI).
+// Logo oficial de Media Naranja: app/public/logo-clean.png (corazón + wordmark
+// en rojo) — 300×252. Si el archivo falta, cae al wordmark de respaldo.
 
-const SRC = {
-  default: { src: '/logo-clean.png', w: 300, h: 252 },
-  limpieza: { src: '/logo-clean.png', w: 300, h: 252 },
-  hogar: { src: '/Logo-home.png', w: 398, h: 183 },
-}
-
-export default function Logo({ variant = 'default', className = '' }) {
+export default function Logo({ className = '' }) {
   const [failed, setFailed] = useState(false)
-  const { src, w, h } = SRC[variant] || SRC.default
-  const isHogar = variant === 'hogar'
 
-  if (failed) return <FallbackWordmark variant={variant} className={className} />
+  if (failed) return <FallbackWordmark className={className} />
 
   return (
     <img
-      src={src}
+      src="/logo-clean.png"
       alt="Media Naranja"
-      width={w}
-      height={h}
-      data-logo={isHogar ? 'hogar' : 'default'}
+      width={300}
+      height={252}
       onError={() => setFailed(true)}
-      className={`w-auto ${isHogar ? 'h-8 sm:h-9' : 'h-10 sm:h-11'} ${className}`}
+      className={`h-10 w-auto sm:h-11 ${className}`}
       style={{ objectFit: 'contain' }}
     />
   )
 }
 
 /* ---- Respaldo textual si el PNG no está disponible ---- */
-function FallbackWordmark({ variant, className }) {
-  if (variant === 'hogar') {
-    return (
-      <span className={`inline-flex items-baseline gap-1.5 font-fraunces ${className}`}>
-        <span className="text-[1.35em] font-semibold tracking-tight" style={{ color: 'var(--ink)' }}>
-          media
-        </span>
-        <span className="text-[1.35em] font-normal italic tracking-tight" style={{ color: 'var(--accent)' }}>
-          naranja
-        </span>
-        <span className="ml-1 self-center text-[0.6em] font-body font-semibold uppercase tracking-[0.25em] text-muted">
-          home
-        </span>
-      </span>
-    )
-  }
+function FallbackWordmark({ className }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
       <span className="grid h-8 w-8 place-items-center rounded-md" style={{ background: '#FFD400' }} aria-hidden="true">
