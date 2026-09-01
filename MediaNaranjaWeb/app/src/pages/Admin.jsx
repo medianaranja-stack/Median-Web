@@ -699,9 +699,9 @@ const BANNER_MINIMO = { w: 1600, h: 700 }
 // Las mismas proporciones que usa el banner del home (BANNER_ALTO en Landing).
 // Si allá cambian, hay que cambiarlas acá o la vista previa miente.
 const VISTAS = [
-  { id: 'movil', label: 'Celular', ratio: 4 / 3 },
-  { id: 'tablet', label: 'Tablet', ratio: 16 / 9 },
-  { id: 'desktop', label: 'Computadora', ratio: 12 / 5 },
+  { id: 'movil', label: 'Celular', ratio: 3 / 2 },
+  { id: 'tablet', label: 'Tablet', ratio: 21 / 9 },
+  { id: 'desktop', label: 'Computadora', ratio: 3 / 1 },
 ]
 
 // object-position: qué parte de la foto se mantiene siempre a la vista.
