@@ -257,9 +257,22 @@ function Banner() {
 
   return (
     <section id="top" aria-label="Destacados" aria-roledescription="carrusel" className={`relative z-10 w-full ${BANNER_ALTO}`}>
-      {/* Mientras baja la primera foto, el logo late en su lugar. Sin esto el
-          banner es un rectángulo vacío y la página parece colgada. */}
-      {!lista && (
+      {/* Vista previa borrosa: viene dentro de la misma consulta que trae el
+          banner (~1 KB en la fila), así que se ve apenas responde la base, sin
+          esperar a que baje la foto real. */}
+      {!lista && slides[0]?.blur && (
+        <img
+          src={slides[0].blur}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: slides[0].foco || '50% 50%', filter: 'blur(24px)', transform: 'scale(1.06)' }}
+        />
+      )}
+
+      {/* Si no hay miniatura (banners de respaldo), late el logo. Sin nada de
+          esto el banner es un rectángulo vacío y la página parece colgada. */}
+      {!lista && !slides[0]?.blur && (
         <div
           className="absolute inset-0 grid place-items-center"
           style={{ background: 'var(--bg)' }}

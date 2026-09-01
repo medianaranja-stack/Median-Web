@@ -10,10 +10,10 @@ import { supabase, isSupabaseEnabled, conLimite } from './supabase'
 import { rutaEnBucket, uploadBannerImage } from './storage'
 
 export const RESPALDO = [
-  { id: 'local-1', url: '/fabrica/planta-a.jpg', titulo: '', orden: 0, activo: true },
-  { id: 'local-2', url: '/fabrica/planta-b.jpg', titulo: '', orden: 1, activo: true },
-  { id: 'local-3', url: '/fabrica/fabrica-2.jpg', titulo: '', orden: 2, activo: true },
-  { id: 'local-4', url: '/fabrica/nosotros.jpg', titulo: '', orden: 3, activo: true },
+  { id: 'local-1', blur: null, url: '/fabrica/planta-a.jpg', titulo: '', orden: 0, activo: true },
+  { id: 'local-2', blur: null, url: '/fabrica/planta-b.jpg', titulo: '', orden: 1, activo: true },
+  { id: 'local-3', blur: null, url: '/fabrica/fabrica-2.jpg', titulo: '', orden: 2, activo: true },
+  { id: 'local-4', blur: null, url: '/fabrica/nosotros.jpg', titulo: '', orden: 3, activo: true },
 ]
 
 /** Banners publicados, en orden. El primero es el que se ve al entrar. */
@@ -41,10 +41,10 @@ export async function getAllBanners() {
 }
 
 /** Agrega un banner al final de la lista. */
-export async function createBanner({ url, titulo = '' }, ordenSiguiente) {
+export async function createBanner({ url, titulo = '', blur = null }, ordenSiguiente) {
   const { data, error } = await supabase
     .from('banners')
-    .insert({ url, titulo, orden: ordenSiguiente, activo: true })
+    .insert({ url, titulo, blur, orden: ordenSiguiente, activo: true })
     .select()
     .single()
   if (error) throw error
