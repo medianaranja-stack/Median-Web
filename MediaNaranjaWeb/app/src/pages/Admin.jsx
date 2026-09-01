@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   LogOut, Trash2, Plus, ImagePlus, Loader2, ShieldAlert, ArrowLeft,
   Package, Images, ChevronUp, ChevronDown, Star, Eye, EyeOff, Info, AlertTriangle, Crop,
-  Pencil, X, Check, UploadCloud, BarChart3, Archive, Download,
+  Pencil, X, Check, UploadCloud, BarChart3, Archive, Download, Gauge,
 } from 'lucide-react'
 import { isSupabaseEnabled } from '../lib/supabase.js'
 import { useAuth, signIn, signOut } from '../lib/auth.jsx'
@@ -15,6 +15,7 @@ import {
 } from '../lib/banners.js'
 import { fotosEnRepo, pendientesDeMigrar, totalFotosEnRepo, migrarProducto } from '../lib/migracion.js'
 import { optimizar, pesoCorto } from '../lib/imagen.js'
+import { reoptimizarBanners, reoptimizarProductos } from '../lib/reoptimizar.js'
 import { cargarMetricas, numero, duracion, fechaCorta } from '../lib/metricas.js'
 import { Tarjeta, Barras, LineaTiempo, SERIE } from '../components/Graficos.jsx'
 import { planificar, armarZip, descargarBlob, nombreArchivoZip, pesoLegible, descargarUna, descargarProducto } from '../lib/backup.js'
@@ -487,6 +488,16 @@ function PanelProductos() {
 
         <MigracionFotos items={items} onListo={cargar} />
 
+        {items.length > 0 && !pendientesDeMigrar(items).length && (
+          <div className="mb-5">
+            <BotonReoptimizar
+              etiqueta="Optimizar las fotos de los productos"
+              ayuda="Vuelve a comprimir las fotos ya subidas. Son muchas, así que puede tardar varios minutos."
+              correr={(onCada) => reoptimizarProductos(items, onCada).then((r) => { cargar(); return r })}
+            />
+          </div>
+        )}
+
         {cargando ? (
           <div className="grid place-items-center py-20">
             <Loader2 className="animate-spin" />
@@ -915,6 +926,16 @@ function PanelBanners() {
         <div className="mt-4">
           <Aviso msg={msg} />
         </div>
+
+        {items.length > 0 && (
+          <div className="mt-4">
+            <BotonReoptimizar
+              etiqueta="Optimizar las imágenes ya cargadas"
+              ayuda="Vuelve a comprimir los banners que ya están subidos con los parámetros actuales. Si alguna no mejora al menos un 15%, la deja como está."
+              correr={(onCada) => reoptimizarBanners(items, onCada).then((r) => { cargar(); return r })}
+            />
+          </div>
+        )}
 
         {cargando ? (
           <div className="grid place-items-center py-16">
@@ -1416,6 +1437,68 @@ function OpcionBackup({ titulo, detalle, onClick, disabled, destacado }) {
       </span>
       <Download size={17} className="shrink-0" />
     </button>
+  )
+}
+
+/**
+ * Reoptimiza imágenes que ya estan en Storage. La optimizacion al subir sólo
+ * aplica a lo nuevo, asi que sin esto habria que borrar y volver a cargar todo
+ * a mano cada vez que cambian los parametros de compresion.
+ */
+function BotonReoptimizar({ etiqueta, ayuda, correr }) {
+  const [estado, setEstado] = useState(null) // {hechos,total} mientras corre
+  const [msg, setMsg] = useState(null)
+
+  const ir = async () => {
+    setEstado({ hechos: 0, total: 0 })
+    setMsg(null)
+    try {
+      const { cambiados, ahorro, fallados } = await correr((hechos, total) =>
+        setEstado({ hechos, total }),
+      )
+      setMsg(
+        cambiados === 0
+          ? { type: 'ok', text: 'Ya estaban optimizadas: no habia nada que mejorar.' }
+          : fallados.length
+            ? { type: 'warn', text: `Se optimizaron ${cambiados}, ${pesoCorto(ahorro)} menos. Fallaron ${fallados.length}.` }
+            : { type: 'ok', text: `Listo: ${cambiados} optimizadas, ${pesoCorto(ahorro)} menos para descargar.` },
+      )
+    } catch (e) {
+      setMsg({ type: 'err', text: e.message })
+    } finally {
+      setEstado(null)
+    }
+  }
+
+  const corriendo = estado !== null
+  return (
+    <div className="rounded-xl border border-[#e9e5df] bg-[#fdfcfa] p-4">
+      <h3 className="flex items-center gap-2 text-sm font-bold">
+        <Gauge size={15} /> {etiqueta}
+      </h3>
+      <p className="mt-1 text-sm leading-relaxed text-[#6b6560]">{ayuda}</p>
+
+      {corriendo && estado.total > 0 && (
+        <div className="mt-3">
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-[#e9e5df]">
+            <div
+              className="h-full rounded-full bg-[#141210] transition-[width] duration-200"
+              style={{ width: `${(estado.hechos / estado.total) * 100}%` }}
+            />
+          </div>
+          <p className="mt-1.5 text-xs text-[#6b6560]" aria-live="polite">
+            Procesando {estado.hechos} de {estado.total}… no cierres esta pestana.
+          </p>
+        </div>
+      )}
+
+      {msg && <div className="mt-3"><Aviso msg={msg} /></div>}
+
+      <button type="button" onClick={ir} disabled={corriendo} className="btn btn-ghost mt-3 !py-2.5 disabled:opacity-60">
+        {corriendo ? <Loader2 size={15} className="animate-spin" /> : <Gauge size={15} />}
+        {corriendo ? 'Optimizando…' : 'Optimizar ahora'}
+      </button>
+    </div>
   )
 }
 

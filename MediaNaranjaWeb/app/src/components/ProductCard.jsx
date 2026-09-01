@@ -17,7 +17,7 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
         </span>
         {img ? (
           <img
-            src={img}
+            src={urlServida(img)}
             alt={producto.nombre}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-[600ms] ease-out-expo group-hover:scale-[1.06]"

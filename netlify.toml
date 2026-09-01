@@ -31,6 +31,18 @@
   status = 301
   force = true
 
+# Las imagenes de Supabase se sirven por nuestro dominio en vez de directo.
+# Motivo: en el plan gratuito Supabase responde con `sb-gateway-mode: direct` y
+# fuerza `cache-control: no-cache` ignorando el que se manda al subir, asi que
+# cada visita volvia a descargar todo. Pasandolas por aca controlamos el cache
+# nosotros (ver la regla de headers mas abajo) y ademas salen por el CDN de
+# Netlify, mas cerca del visitante.
+[[redirects]]
+  from = "/img/*"
+  to = "https://dqlixhlsbyofejjqexzl.supabase.co/storage/v1/object/public/:splat"
+  status = 200
+  force = true
+
 # SPA: todas las rutas al index (React Router)
 [[redirects]]
   from = "/*"
@@ -56,6 +68,13 @@
 # Cache largo para assets con hash
 [[headers]]
   for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# El nombre del archivo lleva un hash del contenido: si cambia la imagen cambia
+# la URL, asi que se puede cachear para siempre sin miedo a servir una vieja.
+[[headers]]
+  for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

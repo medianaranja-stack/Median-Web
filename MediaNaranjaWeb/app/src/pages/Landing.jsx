@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X } from 'lucide-react'
 import { getPublicBanners } from '../lib/banners.js'
 import { getCatalog } from '../lib/products.js'
+import { urlServida } from '../lib/storage.js'
 import { medirSecciones } from '../lib/analytics.js'
 import { SITE } from '../lib/site.js'
 import Logo from '../components/Logo.jsx'
@@ -293,7 +294,7 @@ function Banner() {
                 el triple por competir con las otras tres por el ancho de banda. */}
             {(i === idx || i === (idx + 1) % slides.length) && (
             <SafeImg
-              src={s.url}
+              src={urlServida(s.url)}
               alt={s.titulo || ''}
               className="h-full w-full object-cover"
               style={{ objectPosition: s.foco || '50% 50%' }}
