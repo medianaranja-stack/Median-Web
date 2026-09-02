@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Download, ArrowUpRight } from 'lucide-react'
 import { urlServida, srcSetDe } from '../lib/urls.js'
 
@@ -16,16 +16,32 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
   // muestra un estado quieto, que se lee como "esto no cargo" y no como
   // "espera un poco mas".
   const [seRindio, setSeRindio] = useState(false)
+  const ref = useRef(null)
 
+  // El reloj para "esto no va a llegar" arranca cuando la tarjeta entra en
+  // pantalla, no cuando se monta. Con loading="lazy" una foto de abajo del
+  // pliegue ni se pide hasta que el visitante scrollea: contando desde el
+  // montaje, a los 8 s se declaraban fallidas tarjetas que nunca se intentaron
+  // bajar, y por eso quedaban en gris.
   useEffect(() => {
-    if (cargada) return
-    const t = setTimeout(() => setSeRindio(true), 8000)
-    return () => clearTimeout(t)
+    if (cargada || !ref.current) return
+    let reloj = null
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting && !reloj) reloj = setTimeout(() => setSeRindio(true), 8000)
+      },
+      { rootMargin: '200px' },
+    )
+    obs.observe(ref.current)
+    return () => {
+      obs.disconnect()
+      clearTimeout(reloj)
+    }
   }, [cargada])
   const img = producto.imagenes[0]
   const n = String(index + 1).padStart(2, '0')
   return (
-    <article className="group card-depth relative overflow-hidden">
+    <article ref={ref} className="group card-depth relative overflow-hidden">
       <button
         type="button"
         onClick={() => onOpen(producto)}
