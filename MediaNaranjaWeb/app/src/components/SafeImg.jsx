@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useYaCargada } from '../lib/yaCargada.js'
 
 // Placeholder inline (data URI) — nunca falla, no depende de la red.
 const PLACEHOLDER =
@@ -11,9 +12,24 @@ const PLACEHOLDER =
  */
 export default function SafeImg({ src, alt = '', fallback = PLACEHOLDER, ...rest }) {
   const [cur, setCur] = useState(src || fallback)
+  const ref = useRef(null)
   useEffect(() => { setCur(src || fallback) }, [src, fallback])
+
+  // Si la foto ya estaba lista antes de hidratar, su `load` no vuelve a
+  // dispararse: hay que avisarle a quien lo espera. Sin esto el banner se
+  // quedaba en la vista previa borrosa con la imagen buena ya descargada.
+  useYaCargada(
+    ref,
+    () => rest.onLoad?.(),
+    () => {
+      if (rest.onError) rest.onError({ currentTarget: ref.current })
+      else if (cur !== fallback) setCur(fallback)
+    },
+  )
+
   return (
     <img
+      ref={ref}
       src={cur}
       alt={alt}
       onError={() => { if (cur !== fallback) setCur(fallback) }}

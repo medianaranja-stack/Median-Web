@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Download, ArrowUpRight } from 'lucide-react'
 import { urlServida, srcSetDe } from '../lib/urls.js'
+import { useYaCargada } from '../lib/yaCargada.js'
 
 export default function ProductCard({ producto, index = 0, onOpen }) {
   // Cada tarjeta avisa cuando su foto llego. Sin esto quedan huecos grises
@@ -17,6 +18,7 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
   // "espera un poco mas".
   const [seRindio, setSeRindio] = useState(false)
   const ref = useRef(null)
+  const imgRef = useRef(null)
 
   // El reloj para "esto no va a llegar" arranca cuando la tarjeta entra en
   // pantalla, no cuando se monta. Con loading="lazy" una foto de abajo del
@@ -38,6 +40,11 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
       clearTimeout(reloj)
     }
   }, [cargada])
+  // Con el HTML dibujado al construir, la foto puede llegar antes de que React
+  // hidrate. Ahi el `onLoad` de abajo nunca corre y la tarjeta se queda en
+  // opacidad 0: gris, con la imagen descargada detras.
+  useYaCargada(imgRef, () => setCargada(true), () => setSeRindio(true))
+
   const img = producto.imagenes[0]
   const n = String(index + 1).padStart(2, '0')
   return (
@@ -74,6 +81,7 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
           /* La tarjeta mide ~300px en escritorio y media pantalla en celular:
              con `sizes` el navegador pide la version chica, no la de 1800px. */
           <img
+            ref={imgRef}
             src={urlServida(img)}
             srcSet={srcSetDe(img, producto.anchos) || undefined}
             sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 300px"
