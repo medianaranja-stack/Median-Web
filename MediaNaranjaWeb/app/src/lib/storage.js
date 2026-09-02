@@ -74,3 +74,39 @@ export async function uploadBannerImage(file, nombre) {
   const { data } = supabase.storage.from(BANNERS_BUCKET).getPublicUrl(path)
   return data.publicUrl
 }
+
+/**
+ * Sube las versiones chicas AL LADO de la principal.
+ *
+ * La ruta se deriva de la URL que ya devolvio la subida principal, no del
+ * nombre del archivo: uploadImage arma el path con un hash, asi que generarlo
+ * por separado daria una ruta distinta y el srcset apuntaria a archivos que no
+ * existen.
+ *
+ * Devuelve los anchos que quedaron efectivamente subidos.
+ */
+export async function subirTamanos(bucket, urlPrincipal, tamanos) {
+  const rutaBase = rutaEnBucket(urlPrincipal, bucket)
+  if (!rutaBase) return []
+  const m = rutaBase.match(/^(.*)\.([a-z0-9]+)$/i)
+  if (!m) return []
+  const [, base, ext] = m
+
+  const ok = []
+  for (const { ancho, blob } of tamanos) {
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      const { error } = await supabase.storage
+        .from(bucket)
+        .upload(`${base}-${ancho}.${ext}`, blob, {
+          cacheControl: '31536000',
+          upsert: true,
+          contentType: blob.type || undefined,
+        })
+      if (!error) ok.push(ancho)
+    } catch {
+      // Si falla una version, el srcset simplemente no la ofrece.
+    }
+  }
+  return ok
+}

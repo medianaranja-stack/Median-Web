@@ -46,6 +46,7 @@ export async function updateProduct(id, patch) {
     specs: 'specs',
     imagenes: 'imagenes',
     orden: 'orden',
+    anchos: 'anchos',
   }
   const row = {}
   for (const [k, v] of Object.entries(patch)) {

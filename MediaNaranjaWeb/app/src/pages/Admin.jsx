@@ -8,13 +8,14 @@ import {
 import { isSupabaseEnabled } from '../lib/supabase-env.js'
 import { useAuth, signIn, signOut } from '../lib/auth.jsx'
 import { getAllProducts, createProduct, updateProduct, deleteProduct } from '../lib/productosAdmin.js'
-import { uploadImage, uploadBannerImage, slugify, esDeStorage, borrarImagenesProducto } from '../lib/storage.js'
+import { uploadImage, uploadBannerImage, subirTamanos, borrarImagenesProducto } from '../lib/storage.js'
+import { slugify, esDeStorage } from '../lib/urls.js'
 import {
   getAllBanners, createBanner, deleteBanner, updateBanner, saveOrden, importarRespaldo,
 } from '../lib/bannersAdmin.js'
 import { moverBanner, hacerPrincipal, RESPALDO } from '../lib/banners.js'
 import { fotosEnRepo, pendientesDeMigrar, totalFotosEnRepo, migrarProducto } from '../lib/migracion.js'
-import { optimizar, pesoCorto, miniatura } from '../lib/imagen.js'
+import { optimizar, pesoCorto, miniatura, generarTamanos } from '../lib/imagen.js'
 import { reoptimizarBanners, reoptimizarProductos } from '../lib/reoptimizar.js'
 import { cargarMetricas, numero, duracion, fechaCorta } from '../lib/metricas.js'
 import { Tarjeta, Barras, LineaTiempo, SERIE } from '../components/Graficos.jsx'
@@ -309,12 +310,20 @@ function PanelProductos() {
 
       const subidas = []
       let ahorroFotos = 0
+      let anchosSubidos = []
       for (const f of files) {
         // eslint-disable-next-line no-await-in-loop
         const { blob, nombre, ahorro } = await optimizar(f)
         ahorroFotos += ahorro
         // eslint-disable-next-line no-await-in-loop
-        subidas.push(await uploadImage(blob, { linea: 'limpieza', categoria, slug, nombre }))
+        const url = await uploadImage(blob, { linea: 'limpieza', categoria, slug, nombre })
+        subidas.push(url)
+        // Versiones chicas para el srcset: la tarjeta se ve a ~300px y bajar la
+        // grande para eso era el 97% del peso de la pagina.
+        // eslint-disable-next-line no-await-in-loop
+        const tam = await generarTamanos(blob)
+        // eslint-disable-next-line no-await-in-loop
+        anchosSubidos = await subirTamanos('productos', url, tam)
       }
       // Los specs vacíos no se guardan: la ficha sólo muestra los que tienen valor.
       const specs = Object.fromEntries(
@@ -329,6 +338,7 @@ function PanelProductos() {
         descripcion: form.descripcion.trim(),
         specs,
         imagenes: [...fotos, ...subidas],
+        anchos: anchosSubidos.length ? anchosSubidos : undefined,
       }
 
       if (editando) {
@@ -802,7 +812,9 @@ function PanelBanners() {
         // eslint-disable-next-line no-await-in-loop
         const blur = await miniatura(blob)
         // eslint-disable-next-line no-await-in-loop
-        await createBanner({ url, blur }, orden++)
+        const anchos = await subirTamanos('banners', url, await generarTamanos(blob))
+        // eslint-disable-next-line no-await-in-loop
+        await createBanner({ url, blur, anchos }, orden++)
       }
 
       const optimizadas = ahorroTotal > 0 ? ` Se optimizaron: ${pesoCorto(ahorroTotal)} menos de descarga.` : ''

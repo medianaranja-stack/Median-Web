@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X } from 'lucide-react'
 import { getPublicBanners, RESPALDO } from '../lib/banners.js'
 import { getCatalog } from '../lib/products.js'
-import { urlServida } from '../lib/urls.js'
+import { urlServida, srcSetDe } from '../lib/urls.js'
 import { medirSecciones } from '../lib/analytics.js'
 import { SITE } from '../lib/site.js'
 import Logo from '../components/Logo.jsx'
@@ -324,6 +324,8 @@ function Banner() {
             {(i === visible || i === (visible + 1) % slides.length) && (
             <SafeImg
               src={urlServida(s.url)}
+              srcSet={srcSetDe(s.url, s.anchos) || undefined}
+              sizes="100vw"
               alt={s.titulo || ''}
               className="h-full w-full object-cover"
               style={{ objectPosition: s.foco || '50% 50%' }}

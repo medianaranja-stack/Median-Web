@@ -1,5 +1,5 @@
 import { Download, ArrowUpRight } from 'lucide-react'
-import { urlServida } from '../lib/urls.js'
+import { urlServida, srcSetDe } from '../lib/urls.js'
 
 export default function ProductCard({ producto, index = 0, onOpen }) {
   const img = producto.imagenes[0]
@@ -17,8 +17,12 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
           {n}
         </span>
         {img ? (
+          /* La tarjeta mide ~300px en escritorio y media pantalla en celular:
+             con `sizes` el navegador pide la version chica, no la de 1800px. */
           <img
             src={urlServida(img)}
+            srcSet={srcSetDe(img, producto.anchos) || undefined}
+            sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 300px"
             alt={producto.nombre}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-[600ms] ease-out-expo group-hover:scale-[1.06]"

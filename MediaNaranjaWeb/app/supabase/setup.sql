@@ -107,6 +107,12 @@ create table if not exists public.productos (
 -- Orden de listado por línea (getCatalog ordena por linea + orden).
 create index if not exists productos_linea_idx on public.productos (linea, orden);
 
+-- Anchos disponibles de cada foto (400, 800, 1600...). Se generan al subir y
+-- se guardan como archivos aparte en Storage, con el ancho en el nombre.
+-- Sirve para armar el srcset: sin esta lista habria que adivinar cuales existen
+-- y una que falte daria 404 sin posibilidad de recuperarse.
+alter table public.productos add column if not exists anchos jsonb not null default '[]'::jsonb;
+
 -- Evita productos duplicados. Importante: storage.js arma la ruta de las fotos
 -- como linea/categoria/slug/..., así que dos productos con la misma terna se
 -- pisarían las imágenes entre sí.
@@ -165,6 +171,8 @@ create table if not exists public.banners (
   foco       text not null default '50% 50%',
   created_at timestamptz not null default now()
 );
+
+alter table public.banners add column if not exists anchos jsonb not null default '[]'::jsonb;
 
 -- Vista previa borrosa en base64 (~1 KB). Viaja con la fila, asi que se puede
 -- mostrar algo apenas responde la consulta, sin esperar a que baje la foto real.

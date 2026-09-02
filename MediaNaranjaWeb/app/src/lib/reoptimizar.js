@@ -7,8 +7,8 @@
 // Es conservador: si la versión nueva no es al menos un 15% más liviana, deja
 // la original. Recomprimir un JPG ya comprimido degrada la imagen sin ganar
 // peso, y hacerlo repetidamente la arruina.
-import { optimizar, miniatura } from './imagen'
-import { uploadImage, uploadBannerImage } from './storage'
+import { optimizar, miniatura, generarTamanos } from './imagen'
+import { uploadImage, uploadBannerImage, subirTamanos } from './storage'
 import { esDeStorage, rutaEnBucket } from './urls'
 import { supabase } from './supabase'
 import { updateBanner } from './bannersAdmin'
@@ -48,13 +48,21 @@ export async function reoptimizarBanners(items, onCada) {
       // eslint-disable-next-line no-await-in-loop
       const { blob, nombre } = await optimizar(archivo)
       if (blob.size > archivo.size * (1 - MEJORA_MINIMA)) {
-        // Ya pesaba bien, pero puede faltarle la vista previa borrosa.
+        // Ya pesaba bien, pero puede faltarle la miniatura o los tamaños del
+        // srcset, que es lo que de verdad achica la pagina.
+        const parche = {}
         if (!b.blur) {
           // eslint-disable-next-line no-await-in-loop
           const soloBlur = await miniatura(archivo)
-          // eslint-disable-next-line no-await-in-loop
-          if (soloBlur) await updateBanner(b.id, { blur: soloBlur })
+          if (soloBlur) parche.blur = soloBlur
         }
+        if (!b.anchos?.length) {
+          // eslint-disable-next-line no-await-in-loop
+          const anchos = await subirTamanos('banners', b.url, await generarTamanos(archivo))
+          if (anchos.length) parche.anchos = anchos
+        }
+        // eslint-disable-next-line no-await-in-loop
+        if (Object.keys(parche).length) await updateBanner(b.id, parche)
         continue
       }
 
@@ -63,7 +71,9 @@ export async function reoptimizarBanners(items, onCada) {
       // eslint-disable-next-line no-await-in-loop
       const blur = await miniatura(blob)
       // eslint-disable-next-line no-await-in-loop
-      await updateBanner(b.id, { url: nuevaUrl, blur })
+      const anchos = await subirTamanos('banners', nuevaUrl, await generarTamanos(blob))
+      // eslint-disable-next-line no-await-in-loop
+      await updateBanner(b.id, { url: nuevaUrl, blur, anchos })
       // eslint-disable-next-line no-await-in-loop
       await borrarDe('banners', b.url)
       ahorro += archivo.size - blob.size
@@ -88,6 +98,7 @@ export async function reoptimizarProductos(items, onCada) {
   for (const p of items) {
     const nuevas = []
     let tocado = false
+    let anchosProducto = []
     for (const url of p.imagenes || []) {
       try {
         if (!esDeStorage(url)) {
@@ -99,6 +110,13 @@ export async function reoptimizarProductos(items, onCada) {
         // eslint-disable-next-line no-await-in-loop
         const { blob, nombre } = await optimizar(archivo)
         if (blob.size > archivo.size * (1 - MEJORA_MINIMA)) {
+          // La foto ya pesaba bien, pero igual hay que generarle los tamaños
+          // del srcset: es lo que baja la pagina de 4,3 MB a ~0,3 MB.
+          if (!anchosProducto.length) {
+            // eslint-disable-next-line no-await-in-loop
+            anchosProducto = await subirTamanos('productos', url, await generarTamanos(archivo))
+            if (anchosProducto.length) tocado = true
+          }
           nuevas.push(url)
           continue
         }
@@ -112,6 +130,10 @@ export async function reoptimizarProductos(items, onCada) {
         nuevas.push(nuevaUrl)
         ahorro += archivo.size - blob.size
         tocado = true
+        if (!anchosProducto.length) {
+          // eslint-disable-next-line no-await-in-loop
+          anchosProducto = await subirTamanos('productos', nuevaUrl, await generarTamanos(blob))
+        }
         // eslint-disable-next-line no-await-in-loop
         await borrarDe('productos', url)
       } catch (e) {
@@ -123,7 +145,10 @@ export async function reoptimizarProductos(items, onCada) {
     }
     if (tocado) {
       // eslint-disable-next-line no-await-in-loop
-      await updateProduct(p.id, { imagenes: nuevas })
+      await updateProduct(p.id, {
+        imagenes: nuevas,
+        ...(anchosProducto.length ? { anchos: anchosProducto } : {}),
+      })
       cambiados++
     }
   }

@@ -32,6 +32,7 @@ export function fromRow(row) {
     descripcion: row.descripcion || '',
     specs: row.specs || {},
     imagenes: row.imagenes || [],
+    anchos: row.anchos || [],
     orden: row.orden ?? 0,
   }
 }
@@ -46,6 +47,7 @@ export function toRow(p) {
     descripcion: p.descripcion || '',
     specs: p.specs || {},
     imagenes: p.imagenes || [],
+    anchos: p.anchos || [],
     orden: p.orden ?? 0,
   }
 }
