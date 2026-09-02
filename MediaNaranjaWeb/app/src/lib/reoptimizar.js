@@ -16,6 +16,17 @@ import { updateProduct } from './productosAdmin'
 
 const MEJORA_MINIMA = 0.15
 
+/**
+ * Anchos que existen en TODAS las fotos del producto. `anchos` es una sola
+ * lista para el producto entero, asi que declarar uno que solo tenga la primera
+ * foto deja a las demas apuntando a archivos que no existen.
+ * null significa "todavia no se miro ninguna".
+ */
+function interseccion(actual, nuevos) {
+  if (actual === null) return nuevos
+  return actual.filter((w) => nuevos.includes(w))
+}
+
 /** Baja una imagen de Storage y la devuelve como File, para poder optimizarla. */
 async function bajarComoArchivo(url) {
   const res = await fetch(url, { cache: 'no-store' })
@@ -98,7 +109,10 @@ export async function reoptimizarProductos(items, onCada) {
   for (const p of items) {
     const nuevas = []
     let tocado = false
-    let anchosProducto = []
+    // Los tamaños se generan para CADA foto. `anchos` describe al producto, asi
+    // que solo puede quedar en la interseccion: un ancho que exista en todas.
+    // Si una foto no lo tiene, su srcset apuntaria a un archivo inexistente.
+    let anchosComunes = null
     for (const url of p.imagenes || []) {
       try {
         if (!esDeStorage(url)) {
@@ -110,13 +124,12 @@ export async function reoptimizarProductos(items, onCada) {
         // eslint-disable-next-line no-await-in-loop
         const { blob, nombre } = await optimizar(archivo)
         if (blob.size > archivo.size * (1 - MEJORA_MINIMA)) {
-          // La foto ya pesaba bien, pero igual hay que generarle los tamaños
-          // del srcset: es lo que baja la pagina de 4,3 MB a ~0,3 MB.
-          if (!anchosProducto.length) {
-            // eslint-disable-next-line no-await-in-loop
-            anchosProducto = await subirTamanos('productos', url, await generarTamanos(archivo))
-            if (anchosProducto.length) tocado = true
-          }
+          // La foto ya pesaba bien, pero igual necesita sus tamaños: es lo que
+          // baja la pagina de 4,3 MB a ~0,3 MB.
+          // eslint-disable-next-line no-await-in-loop
+          const w = await subirTamanos('productos', url, await generarTamanos(archivo))
+          anchosComunes = interseccion(anchosComunes, w)
+          if (w.length) tocado = true
           nuevas.push(url)
           continue
         }
@@ -130,15 +143,16 @@ export async function reoptimizarProductos(items, onCada) {
         nuevas.push(nuevaUrl)
         ahorro += archivo.size - blob.size
         tocado = true
-        if (!anchosProducto.length) {
-          // eslint-disable-next-line no-await-in-loop
-          anchosProducto = await subirTamanos('productos', nuevaUrl, await generarTamanos(blob))
-        }
+        // eslint-disable-next-line no-await-in-loop
+        const w = await subirTamanos('productos', nuevaUrl, await generarTamanos(blob))
+        anchosComunes = interseccion(anchosComunes, w)
         // eslint-disable-next-line no-await-in-loop
         await borrarDe('productos', url)
       } catch (e) {
         nuevas.push(url)
         fallados.push(e.message)
+        // Si no se pudo procesar, no se puede prometer ningun ancho para ella.
+        anchosComunes = []
       } finally {
         onCada?.(++hechos, total)
       }
@@ -147,7 +161,7 @@ export async function reoptimizarProductos(items, onCada) {
       // eslint-disable-next-line no-await-in-loop
       await updateProduct(p.id, {
         imagenes: nuevas,
-        ...(anchosProducto.length ? { anchos: anchosProducto } : {}),
+        anchos: anchosComunes || [],
       })
       cambiados++
     }

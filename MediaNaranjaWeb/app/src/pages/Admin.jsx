@@ -310,7 +310,7 @@ function PanelProductos() {
 
       const subidas = []
       let ahorroFotos = 0
-      let anchosSubidos = []
+      let anchosSubidos = null
       for (const f of files) {
         // eslint-disable-next-line no-await-in-loop
         const { blob, nombre, ahorro } = await optimizar(f)
@@ -318,12 +318,12 @@ function PanelProductos() {
         // eslint-disable-next-line no-await-in-loop
         const url = await uploadImage(blob, { linea: 'limpieza', categoria, slug, nombre })
         subidas.push(url)
-        // Versiones chicas para el srcset: la tarjeta se ve a ~300px y bajar la
-        // grande para eso era el 97% del peso de la pagina.
+        // Versiones chicas para el srcset, de CADA foto: `anchos` describe al
+        // producto entero, asi que solo vale la interseccion. Declarar un ancho
+        // que solo tiene la primera foto rompe las demas.
         // eslint-disable-next-line no-await-in-loop
-        const tam = await generarTamanos(blob)
-        // eslint-disable-next-line no-await-in-loop
-        anchosSubidos = await subirTamanos('productos', url, tam)
+        const w = await subirTamanos('productos', url, await generarTamanos(blob))
+        anchosSubidos = anchosSubidos === null ? w : anchosSubidos.filter((x) => w.includes(x))
       }
       // Los specs vacíos no se guardan: la ficha sólo muestra los que tienen valor.
       const specs = Object.fromEntries(
@@ -338,7 +338,7 @@ function PanelProductos() {
         descripcion: form.descripcion.trim(),
         specs,
         imagenes: [...fotos, ...subidas],
-        anchos: anchosSubidos.length ? anchosSubidos : undefined,
+        anchos: anchosSubidos || [],
       }
 
       if (editando) {
