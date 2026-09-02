@@ -1,1 +1,4 @@
 .memsearch/
+
+# Local Netlify folder
+.netlify

@@ -2,6 +2,12 @@ import { isSupabaseEnabled } from './supabase-env'
 import { leer, tomarPrecargado } from './api'
 
 // Deriva la lista de categorías (únicas, en orden de aparición) de un set de productos.
+function categoriasDe(productos, linea) {
+  const seen = new Map()
+  for (const p of productos) if (!seen.has(p.categoria)) seen.set(p.categoria, p.categoriaLabel)
+  return [...seen].map(([slug, label]) => ({ linea, slug, label }))
+}
+
 function deriveCategorias(productos, linea) {
   const seen = new Map()
   for (const p of productos) if (!seen.has(p.categoria)) seen.set(p.categoria, p.categoriaLabel)
@@ -53,19 +59,23 @@ export function toRow(p) {
 }
 
 /** Devuelve { productos, categorias } para una línea */
-export async function getCatalog(linea) {
+export async function getCatalog(linea, { completo = false } = {}) {
   if (useSeed) {
     const seed = await getSeed()
     const productos = seed.productos.filter((p) => p.linea === linea)
     return { productos, categorias: deriveCategorias(productos, linea) }
   }
-  // Si la Edge Function ya los dejo en el HTML, se usan sin pedir nada.
-  const yaEstan = linea === 'limpieza' ? tomarPrecargado('productos') : null
-  const data = yaEstan?.length ? yaEstan : await leer('productos', `select=*&linea=eq.${encodeURIComponent(linea)}&order=orden.asc`)
+  // Si la Edge Function ya los dejo en el HTML, se usan para pintar sin pedir
+  // nada. Vienen recortados —solo los campos de la tarjeta y las primeras 12—
+  // asi que se marcan como parciales: la ficha necesita descripcion y specs,
+  // que llegan despues con la consulta completa.
+  const yaEstan = !completo && linea === 'limpieza' ? tomarPrecargado('productos') : null
+  if (yaEstan?.length) {
+    const productos = yaEstan.map(fromRow)
+    return { productos, categorias: categoriasDe(productos, linea), parcial: true }
+  }
+  const data = await leer('productos', `select=*&linea=eq.${encodeURIComponent(linea)}&order=orden.asc`)
   const productos = (data || []).map(fromRow)
-  const seen = new Map()
-  for (const p of productos) if (!seen.has(p.categoria)) seen.set(p.categoria, p.categoriaLabel)
-  const categorias = [...seen].map(([slug, label]) => ({ linea, slug, label }))
-  return { productos, categorias }
+  return { productos, categorias: categoriasDe(productos, linea) }
 }
 export const CATALOG_MODE = useSeed ? 'seed' : 'supabase'

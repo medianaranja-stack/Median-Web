@@ -7,12 +7,19 @@ import { urlServida, srcSetDe } from '../lib/urls.js'
 import { downloadImage, downloadAll, filenameFor } from '../lib/download.js'
 
 export default function ProductModal({ producto, onClose }) {
+  // La foto grande tarda mas que la miniatura de la tarjeta: sin esto queda un
+  // recuadro blanco vacio mientras baja.
+  const [fotoLista, setFotoLista] = useState(false)
   // Una apertura de ficha por vez que se abre el modal.
   useEffect(() => { registrarProducto(producto.slug) }, [producto.slug])
 
   const [active, setActive] = useState(0)
   const [busy, setBusy] = useState(false)
   const [done, setDone] = useState(false)
+
+  // Al cambiar de foto vuelve a estar cargando. Va despues de declarar `active`:
+  // un efecto que lo referencia antes lo lee en zona muerta temporal y rompe.
+  useEffect(() => { setFotoLista(false) }, [active])
 
   const close = useCallback(() => onClose(), [onClose])
 
@@ -77,13 +84,27 @@ export default function ProductModal({ producto, onClose }) {
           <div className="grid gap-0 overflow-y-auto overscroll-contain md:grid-cols-[1.1fr_1fr]">
             {/* Galería */}
             <div className="bg-[#f4f1ec] p-4 sm:p-6">
-              <div className="aspect-square w-full overflow-hidden rounded-2xl bg-white">
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white">
+                {!fotoLista && (
+                  <div aria-hidden className="absolute inset-0 animate-pulse bg-[#f0ece5]" />
+                )}
                 <img
                   src={urlServida(imgs[active])}
                   srcSet={srcSetDe(imgs[active], producto.anchos) || undefined}
                   sizes="(max-width: 640px) 100vw, 700px"
+                  // Si una version del srcset falta, se cae al original en vez
+                  // de dejar el icono de imagen rota.
+                  onLoad={() => setFotoLista(true)}
+                  onError={(e) => {
+                    if (e.currentTarget.srcset) {
+                      e.currentTarget.srcset = ''
+                      e.currentTarget.src = urlServida(imgs[active])
+                      return
+                    }
+                    setFotoLista(true)
+                  }}
                   alt={`${producto.nombre} — foto ${active + 1}`}
-                  className="h-full w-full object-cover"
+                  className={`relative h-full w-full object-cover transition-opacity duration-300 ${fotoLista ? 'opacity-100' : 'opacity-0'}`}
                 />
               </div>
               {imgs.length > 1 && (
@@ -102,6 +123,12 @@ export default function ProductModal({ producto, onClose }) {
                         srcSet={srcSetDe(src, producto.anchos) || undefined}
                         sizes="72px"
                         alt=""
+                        onError={(e) => {
+                          if (e.currentTarget.srcset) {
+                            e.currentTarget.srcset = ''
+                            e.currentTarget.src = urlServida(src)
+                          }
+                        }}
                         className="h-full w-full object-cover"
                       />
                     </button>

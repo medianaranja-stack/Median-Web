@@ -8,7 +8,7 @@ import {
 import { isSupabaseEnabled } from '../lib/supabase-env.js'
 import { useAuth, signIn, signOut } from '../lib/auth.jsx'
 import { getAllProducts, createProduct, updateProduct, deleteProduct } from '../lib/productosAdmin.js'
-import { uploadImage, uploadBannerImage, subirTamanos, borrarImagenesProducto } from '../lib/storage.js'
+import { uploadImage, uploadBannerImage, subirTamanos, borrarImagenesProducto, precalentar, variantesDe } from '../lib/storage.js'
 import { slugify, esDeStorage } from '../lib/urls.js'
 import {
   getAllBanners, createBanner, deleteBanner, updateBanner, saveOrden, importarRespaldo,
@@ -309,8 +309,9 @@ function PanelProductos() {
       const categoria = form.categoria || slugify(form.categoriaLabel)
 
       const subidas = []
+      const aCalentar = []
       let ahorroFotos = 0
-      let anchosSubidos = []
+      let anchosSubidos = null
       for (const f of files) {
         // eslint-disable-next-line no-await-in-loop
         const { blob, nombre, ahorro } = await optimizar(f)
@@ -318,13 +319,15 @@ function PanelProductos() {
         // eslint-disable-next-line no-await-in-loop
         const url = await uploadImage(blob, { linea: 'limpieza', categoria, slug, nombre })
         subidas.push(url)
-        // Versiones chicas para el srcset: la tarjeta se ve a ~300px y bajar la
-        // grande para eso era el 97% del peso de la pagina.
+        // Versiones chicas para el srcset, de CADA foto: `anchos` describe al
+        // producto entero, asi que solo vale la interseccion. Declarar un ancho
+        // que solo tiene la primera foto rompe las demas.
         // eslint-disable-next-line no-await-in-loop
-        const tam = await generarTamanos(blob)
-        // eslint-disable-next-line no-await-in-loop
-        anchosSubidos = await subirTamanos('productos', url, tam)
+        const w = await subirTamanos('productos', url, await generarTamanos(blob))
+        anchosSubidos = anchosSubidos === null ? w : anchosSubidos.filter((x) => w.includes(x))
+        aCalentar.push(...variantesDe(url, w))
       }
+      await precalentar(aCalentar)
       // Los specs vacíos no se guardan: la ficha sólo muestra los que tienen valor.
       const specs = Object.fromEntries(
         Object.entries(form.specs).filter(([, v]) => v.trim()).map(([k, v]) => [k, v.trim()]),
@@ -338,7 +341,7 @@ function PanelProductos() {
         descripcion: form.descripcion.trim(),
         specs,
         imagenes: [...fotos, ...subidas],
-        anchos: anchosSubidos.length ? anchosSubidos : undefined,
+        anchos: anchosSubidos || [],
       }
 
       if (editando) {
@@ -801,6 +804,7 @@ function PanelBanners() {
 
       let orden = items.length
       let ahorroTotal = 0
+      const nuevas = []
       for (const f of files) {
         // Se comprime antes de subir. Un PNG de 2400px pesa ~4 MB y en WebP baja
         // a ~350 KB: sin esto cada visitante se descarga esos megas.
@@ -815,8 +819,12 @@ function PanelBanners() {
         const anchos = await subirTamanos('banners', url, await generarTamanos(blob))
         // eslint-disable-next-line no-await-in-loop
         await createBanner({ url, blur, anchos }, orden++)
+        // Deja el CDN tibio: si no, el primer visitante espera ~1,7 s en vez
+        // de ~0,4 s mientras Netlify va a buscar la imagen a Supabase.
+        nuevas.push(...variantesDe(url, anchos))
       }
 
+      await precalentar(nuevas)
       const optimizadas = ahorroTotal > 0 ? ` Se optimizaron: ${pesoCorto(ahorroTotal)} menos de descarga.` : ''
       setMsg(
         chicas.length

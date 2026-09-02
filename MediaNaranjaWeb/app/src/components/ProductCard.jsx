@@ -38,7 +38,15 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
                banda a la foto del banner, que es lo unico que se ve al entrar. */
             fetchPriority="low"
             onLoad={() => setCargada(true)}
-            onError={() => setCargada(true)}
+            onError={(e) => {
+              // Si falta la version del srcset, reintentar con el original.
+              if (e.currentTarget.srcset) {
+                e.currentTarget.srcset = ''
+                e.currentTarget.src = urlServida(img)
+                return
+              }
+              setCargada(true)
+            }}
             className={`h-full w-full object-cover transition-[transform,opacity] duration-[600ms] ease-out-expo group-hover:scale-[1.06] ${cargada ? 'opacity-100' : 'opacity-0'}`}
           />
         ) : (
