@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import { Download, ArrowUpRight } from 'lucide-react'
 import { urlServida, srcSetDe } from '../lib/urls.js'
 
 export default function ProductCard({ producto, index = 0, onOpen }) {
+  // Cada tarjeta avisa cuando su foto llego. Sin esto quedan huecos grises
+  // desparejos mientras las 12 imagenes van cayendo de a una.
+  const [cargada, setCargada] = useState(false)
   const img = producto.imagenes[0]
   const n = String(index + 1).padStart(2, '0')
   return (
@@ -16,6 +20,10 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
         <span className="mono-label absolute left-3 top-3 z-10 rounded-full bg-black/45 px-2 py-1 text-white/90 backdrop-blur">
           {n}
         </span>
+        {/* Esqueleto: ocupa el lugar mientras la foto baja, y se apaga sola. */}
+        {img && !cargada && (
+          <div aria-hidden className="absolute inset-0 animate-pulse bg-[#efece5]" />
+        )}
         {img ? (
           /* La tarjeta mide ~300px en escritorio y media pantalla en celular:
              con `sizes` el navegador pide la version chica, no la de 1800px. */
@@ -25,7 +33,13 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
             sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 300px"
             alt={producto.nombre}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-[600ms] ease-out-expo group-hover:scale-[1.06]"
+            decoding="async"
+            /* La grilla esta abajo del pliegue: que no le compita el ancho de
+               banda a la foto del banner, que es lo unico que se ve al entrar. */
+            fetchPriority="low"
+            onLoad={() => setCargada(true)}
+            onError={() => setCargada(true)}
+            className={`h-full w-full object-cover transition-[transform,opacity] duration-[600ms] ease-out-expo group-hover:scale-[1.06] ${cargada ? 'opacity-100' : 'opacity-0'}`}
           />
         ) : (
           <div className="grid h-full w-full place-items-center text-muted">Sin foto</div>
