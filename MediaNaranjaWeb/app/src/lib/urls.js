@@ -36,3 +36,23 @@ export function slugify(s) {
     .replace(/^-+|-+$/g, '')
     .toLowerCase()
 }
+
+/**
+ * Arma el srcset a partir de la URL principal y los anchos disponibles.
+ * Los archivos viven al lado del original con el ancho pegado al final
+ * (abc123.webp -> abc123-400.webp), asi que se derivan de la URL sin guardar
+ * nada mas. subirTamanos() los escribe exactamente con ese patron.
+ *
+ * Sin anchos devuelve null y el <img> usa src a secas, como antes.
+ */
+export function srcSetDe(url, anchos) {
+  if (!Array.isArray(anchos) || !anchos.length || !esDeStorage(url)) return null
+  const m = url.match(/^(.*)\.([a-z0-9]+)$/i)
+  if (!m) return null
+  const [, base, ext] = m
+  return anchos
+    .slice()
+    .sort((a, b) => a - b)
+    .map((w) => `${urlServida(`${base}-${w}.${ext}`)} ${w}w`)
+    .join(', ')
+}

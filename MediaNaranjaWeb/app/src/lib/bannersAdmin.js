@@ -16,10 +16,10 @@ export async function getAllBanners() {
 }
 
 /** Agrega un banner al final de la lista. */
-export async function createBanner({ url, titulo = '', blur = null }, ordenSiguiente) {
+export async function createBanner({ url, titulo = '', blur = null, anchos = [] }, ordenSiguiente) {
   const { data, error } = await supabase
     .from('banners')
-    .insert({ url, titulo, blur, orden: ordenSiguiente, activo: true })
+    .insert({ url, titulo, blur, anchos, orden: ordenSiguiente, activo: true })
     .select()
     .single()
   if (error) throw error

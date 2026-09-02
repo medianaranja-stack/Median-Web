@@ -14,6 +14,11 @@
 const ANCHO_MAX = 1800
 const CALIDAD = 0.72
 
+// Anchos que se generan de cada foto. La tarjeta de producto se ve a ~300px y
+// el banner a ~1440: mandar 1800px para una miniatura son ~36 veces los pixeles
+// que se muestran, y ahi se iba el 97% del peso de la pagina.
+export const ANCHOS = [400, 800, 1600]
+
 /** Formatos que ya vienen comprimidos y no conviene volver a tocar si son chicos. */
 const YA_LIVIANO = 400 * 1024
 
@@ -130,4 +135,37 @@ export async function miniatura(file) {
   } catch {
     return null
   }
+}
+
+/**
+ * Genera las versiones chicas de una foto, ademas de la principal.
+ * Solo crea las que sean mas chicas que el original: agrandar no tiene sentido.
+ * Devuelve [{ ancho, blob, nombre }], listo para subir.
+ */
+export async function generarTamanos(file) {
+  const salida = []
+  try {
+    const img = await cargarImagen(file)
+    const tipo = soportaWebp() ? 'image/webp' : 'image/jpeg'
+    const ext = tipo === 'image/webp' ? 'webp' : 'jpg'
+    const base = file.name.replace(/\.[^.]+$/, '')
+
+    for (const ancho of ANCHOS) {
+      if (ancho >= img.naturalWidth) continue
+      const h = Math.round((img.naturalHeight / img.naturalWidth) * ancho)
+      const canvas = document.createElement('canvas')
+      canvas.width = ancho
+      canvas.height = h
+      const ctx = canvas.getContext('2d')
+      ctx.imageSmoothingQuality = 'high'
+      ctx.drawImage(img, 0, 0, ancho, h)
+      // Las versiones chicas aguantan mas compresion: se ven a menos tamaño.
+      // eslint-disable-next-line no-await-in-loop
+      const blob = await aBlob(canvas, tipo, ancho <= 400 ? 0.68 : 0.72)
+      if (blob) salida.push({ ancho, blob, nombre: `${base}-${ancho}.${ext}` })
+    }
+  } catch {
+    // Que falle generar tamaños no puede impedir subir la foto.
+  }
+  return salida
 }
