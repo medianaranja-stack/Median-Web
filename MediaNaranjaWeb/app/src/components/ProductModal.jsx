@@ -10,6 +10,8 @@ export default function ProductModal({ producto, onClose }) {
   // La foto grande tarda mas que la miniatura de la tarjeta: sin esto queda un
   // recuadro blanco vacio mientras baja.
   const [fotoLista, setFotoLista] = useState(false)
+  // Igual que en las tarjetas: si no llega, se deja de latir.
+  const [fotoSeRindio, setFotoSeRindio] = useState(false)
   // Una apertura de ficha por vez que se abre el modal.
   useEffect(() => { registrarProducto(producto.slug) }, [producto.slug])
 
@@ -19,7 +21,16 @@ export default function ProductModal({ producto, onClose }) {
 
   // Al cambiar de foto vuelve a estar cargando. Va despues de declarar `active`:
   // un efecto que lo referencia antes lo lee en zona muerta temporal y rompe.
-  useEffect(() => { setFotoLista(false) }, [active])
+  useEffect(() => {
+    setFotoLista(false)
+    setFotoSeRindio(false)
+  }, [active])
+
+  useEffect(() => {
+    if (fotoLista) return
+    const t = setTimeout(() => setFotoSeRindio(true), 8000)
+    return () => clearTimeout(t)
+  }, [fotoLista, active])
 
   const close = useCallback(() => onClose(), [onClose])
 
@@ -86,7 +97,16 @@ export default function ProductModal({ producto, onClose }) {
             <div className="bg-[#f4f1ec] p-4 sm:p-6">
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white">
                 {!fotoLista && (
-                  <div aria-hidden className="absolute inset-0 animate-pulse" style={{ background: 'var(--border)' }} />
+                  <div
+                    aria-hidden
+                    className={`absolute inset-0 ${fotoSeRindio ? '' : 'animate-pulse'}`}
+                    style={{ background: 'var(--border)' }}
+                  />
+                )}
+                {!fotoLista && fotoSeRindio && (
+                  <p className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-[var(--muted)]">
+                    No se pudo cargar esta foto.
+                  </p>
                 )}
                 <img
                   src={urlServida(imgs[active])}
@@ -101,7 +121,7 @@ export default function ProductModal({ producto, onClose }) {
                       e.currentTarget.src = urlServida(imgs[active])
                       return
                     }
-                    setFotoLista(true)
+                    setFotoSeRindio(true)
                   }}
                   alt={`${producto.nombre} — foto ${active + 1}`}
                   className={`relative h-full w-full object-cover transition-opacity duration-300 ${fotoLista ? 'opacity-100' : 'opacity-0'}`}

@@ -1,11 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Download, ArrowUpRight } from 'lucide-react'
 import { urlServida, srcSetDe } from '../lib/urls.js'
 
 export default function ProductCard({ producto, index = 0, onOpen }) {
   // Cada tarjeta avisa cuando su foto llego. Sin esto quedan huecos grises
   // desparejos mientras las 12 imagenes van cayendo de a una.
+  //
+  // Nota: estas fotos NO llevan fetchPriority="low". Se probo y fue un error:
+  // loading="lazy" ya alcanza para que no le compitan al banner, y al entrar en
+  // pantalla el navegador les sube la prioridad solo. Sumarle prioridad baja las
+  // dejaba en gris mientras el visitante las estaba mirando.
   const [cargada, setCargada] = useState(false)
+  // Un esqueleto que late para siempre miente: dice "cargando" cuando en
+  // realidad la foto no va a llegar. Pasado un limite se deja de latir y se
+  // muestra un estado quieto, que se lee como "esto no cargo" y no como
+  // "espera un poco mas".
+  const [seRindio, setSeRindio] = useState(false)
+
+  useEffect(() => {
+    if (cargada) return
+    const t = setTimeout(() => setSeRindio(true), 8000)
+    return () => clearTimeout(t)
+  }, [cargada])
   const img = producto.imagenes[0]
   const n = String(index + 1).padStart(2, '0')
   return (
@@ -23,8 +39,20 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
         {/* Esqueleto mientras la foto baja. Usa var(--border) y no un gris
             propio: #efece5 sobre el fondo #f4f4f2 casi no se distingue y la
             grilla se leia vacia en vez de cargando. */}
-        {img && !cargada && (
+        {img && !cargada && !seRindio && (
           <div aria-hidden className="absolute inset-0 animate-pulse" style={{ background: 'var(--border)' }} />
+        )}
+
+        {/* Ya no esta cargando: quieto, sin latir, y con el logo tenue para que
+            se lea como una foto que falta y no como una tarjeta rota. */}
+        {img && !cargada && seRindio && (
+          <div
+            className="absolute inset-0 grid place-items-center"
+            style={{ background: 'var(--border)' }}
+            title="No se pudo cargar la foto"
+          >
+            <img src="/logo-clean.png" alt="" width={300} height={252} className="h-8 w-auto opacity-25" />
+          </div>
         )}
         {img ? (
           /* La tarjeta mide ~300px en escritorio y media pantalla en celular:
@@ -36,9 +64,6 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
             alt={producto.nombre}
             loading="lazy"
             decoding="async"
-            /* La grilla esta abajo del pliegue: que no le compita el ancho de
-               banda a la foto del banner, que es lo unico que se ve al entrar. */
-            fetchPriority="low"
             onLoad={() => setCargada(true)}
             onError={(e) => {
               // Si falta la version del srcset, reintentar con el original.
@@ -47,7 +72,9 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
                 e.currentTarget.src = urlServida(img)
                 return
               }
-              setCargada(true)
+              // La foto no llego. Marcar `cargada` la mostraria rota a
+              // opacidad 1: lo correcto es pasar al estado quieto.
+              setSeRindio(true)
             }}
             className={`h-full w-full object-cover transition-[transform,opacity] duration-[600ms] ease-out-expo group-hover:scale-[1.06] ${cargada ? 'opacity-100' : 'opacity-0'}`}
           />
