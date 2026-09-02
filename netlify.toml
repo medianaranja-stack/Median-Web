@@ -34,6 +34,10 @@
 # Inyecta los datos del home y el preload de la portada en el HTML, para que
 # el navegador empiece a bajar la foto durante el parseo en vez de esperar a
 # que corra el JS y responda la base.
+#
+# El archivo vive en MediaNaranjaWeb/app/netlify/edge-functions/, no en la raiz:
+# Netlify busca las edge functions DENTRO del `base` declarado arriba. Estaba en
+# la raiz y por eso nunca se ejecuto.
 [[edge_functions]]
   function = "datos-iniciales"
   path = "/"

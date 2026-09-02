@@ -8,7 +8,7 @@
 // la original. Recomprimir un JPG ya comprimido degrada la imagen sin ganar
 // peso, y hacerlo repetidamente la arruina.
 import { optimizar, miniatura, generarTamanos } from './imagen'
-import { uploadImage, uploadBannerImage, subirTamanos } from './storage'
+import { uploadImage, uploadBannerImage, subirTamanos, precalentar, variantesDe } from './storage'
 import { esDeStorage, rutaEnBucket } from './urls'
 import { supabase } from './supabase'
 import { updateBanner } from './bannersAdmin'
@@ -46,6 +46,7 @@ async function borrarDe(bucket, url) {
  * `onCada(hechos, total)` para el progreso.
  */
 export async function reoptimizarBanners(items, onCada) {
+  const aCalentar = []
   let cambiados = 0
   let ahorro = 0
   let hechos = 0
@@ -74,6 +75,7 @@ export async function reoptimizarBanners(items, onCada) {
         }
         // eslint-disable-next-line no-await-in-loop
         if (Object.keys(parche).length) await updateBanner(b.id, parche)
+        if (parche.anchos) aCalentar.push(...variantesDe(b.url, parche.anchos))
         continue
       }
 
@@ -85,6 +87,7 @@ export async function reoptimizarBanners(items, onCada) {
       const anchos = await subirTamanos('banners', nuevaUrl, await generarTamanos(blob))
       // eslint-disable-next-line no-await-in-loop
       await updateBanner(b.id, { url: nuevaUrl, blur, anchos })
+      aCalentar.push(...variantesDe(nuevaUrl, anchos))
       // eslint-disable-next-line no-await-in-loop
       await borrarDe('banners', b.url)
       ahorro += archivo.size - blob.size
@@ -95,6 +98,7 @@ export async function reoptimizarBanners(items, onCada) {
       onCada?.(++hechos, items.length)
     }
   }
+  await precalentar(aCalentar)
   return { cambiados, ahorro, fallados }
 }
 

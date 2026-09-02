@@ -110,3 +110,27 @@ export async function subirTamanos(bucket, urlPrincipal, tamanos) {
   }
   return ok
 }
+
+/**
+ * Pide una vez cada version recien subida para que quede cacheada en el borde.
+ *
+ * Netlify solo guarda la imagen despues de que alguien la pide: la primera
+ * peticion tiene que ir hasta Supabase y tarda ~1,7 s contra los ~0,4 s de una
+ * cacheada. Sin esto ese costo lo paga el primer visitante real. Haciendolo
+ * desde el panel al terminar de subir, lo paga el admin y nadie mas lo nota.
+ *
+ * No importa si falla: es solo un calentamiento.
+ */
+export async function precalentar(urls) {
+  await Promise.allSettled(
+    urls.filter(Boolean).map((u) => fetch(urlServida(u), { mode: 'no-cors', cache: 'reload' })),
+  )
+}
+
+/** Todas las variantes de una imagen, para precalentarlas juntas. */
+export function variantesDe(url, anchos) {
+  const m = url?.match(/^(.*)\.([a-z0-9]+)$/i)
+  if (!m) return [url]
+  const [, base, ext] = m
+  return [url, ...(anchos || []).map((w) => `${base}-${w}.${ext}`)]
+}

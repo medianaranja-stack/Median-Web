@@ -408,9 +408,24 @@ function Productos({ onOpen }) {
   useEffect(() => {
     let vivo = true
     getCatalog('limpieza')
-      .then((d) => vivo && setAll(d.productos))
-      .catch((e) => vivo && setError(e.message))
-      .finally(() => vivo && setCargando(false))
+      .then((d) => {
+        if (!vivo) return
+        setAll(d.productos)
+        setCargando(false)
+        // Los datos inyectados en el HTML alcanzan para pintar las tarjetas
+        // pero no traen descripcion ni ficha: se completan en segundo plano
+        // para que abrir un producto no muestre una ficha vacia.
+        if (d.parcial) {
+          getCatalog('limpieza', { completo: true })
+            .then((full) => vivo && setAll(full.productos))
+            .catch(() => {})
+        }
+      })
+      .catch((e) => {
+        if (!vivo) return
+        setError(e.message)
+        setCargando(false)
+      })
     return () => { vivo = false }
   }, [])
 
