@@ -242,6 +242,7 @@ function Banner() {
   // Primera foto que termino de bajar, e indices que fallaron. Con eso el
   // carrusel sabe que mostrar aunque la portada no cargue.
   const [cargada, setCargada] = useState(null)
+  const [listas, setListas] = useState([])
   const [fallidas, setFallidas] = useState([])
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const lista = cargada !== null
@@ -256,15 +257,22 @@ function Banner() {
     return () => { vivo = false }
   }, [])
 
-  // El carrusel no arranca hasta que haya algo visible. Antes rotaba durante la
-  // carga: como solo se monta la foto actual y la siguiente, la portada se
-  // desmontaba antes de terminar de bajar, su onLoad no llegaba nunca y el
-  // loader quedaba colgado mientras los puntitos seguian avanzando.
+  // El carrusel solo pasa a una foto QUE YA BAJO. Antes avanzaba a ciegas cada
+  // 5 s: si la siguiente no habia terminado, el banner quedaba en blanco. Ahora,
+  // si la proxima todavia no esta, se queda en la actual y reintenta al rato.
   useEffect(() => {
     if (reduce || !lista || slides.length < 2) return
-    const t = setInterval(() => setIdx((i) => (i + 1) % slides.length), 5000)
+    const t = setInterval(() => {
+      setIdx((i) => {
+        for (let salto = 1; salto <= slides.length; salto++) {
+          const cand = (i + salto) % slides.length
+          if (listas.includes(cand)) return cand
+        }
+        return i // ninguna otra lista todavia: quedarse donde esta
+      })
+    }, 5000)
     return () => clearInterval(t)
-  }, [reduce, lista, slides.length])
+  }, [reduce, lista, slides.length, listas])
 
   // Que foto se muestra. Mientras no cargo ninguna se apunta a la primera que
   // todavia no fallo: si la portada no llega, se pasa sola a la siguiente en
@@ -335,7 +343,10 @@ function Banner() {
               style={{ objectPosition: s.foco || '50% 50%' }}
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchPriority={i === 0 ? 'high' : undefined}
-              onLoad={() => setCargada((c) => (c === null ? i : c))}
+              onLoad={() => {
+                setCargada((c) => (c === null ? i : c))
+                setListas((l) => (l.includes(i) ? l : [...l, i]))
+              }}
               onError={() => setFallidas((f) => (f.includes(i) ? f : [...f, i]))}
             />
             )}
