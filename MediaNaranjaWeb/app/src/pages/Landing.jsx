@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X } from 'lucide-react'
-import { getPublicBanners, RESPALDO } from '../lib/banners.js'
-import { getCatalog } from '../lib/products.js'
+import { getPublicBanners, bannersSembrados, RESPALDO } from '../lib/banners.js'
+import { getCatalog, catalogoSembrado } from '../lib/products.js'
 import { urlServida, srcSetDe } from '../lib/urls.js'
 import { medirSecciones } from '../lib/analytics.js'
 import { SITE } from '../lib/site.js'
@@ -237,7 +237,10 @@ function PageBg() {
 }
 
 function Banner() {
-  const [slides, setSlides] = useState([])
+  // Sembrado desde el HTML: el prerender ya dejo escritos los banners, asi que
+  // el primer render sale con la portada puesta y el navegador empieza a bajar
+  // la foto mientras parsea, sin esperar a que React arranque.
+  const [slides, setSlides] = useState(bannersSembrados)
   const [idx, setIdx] = useState(0)
   // Primera foto que termino de bajar, e indices que fallaron. Con eso el
   // carrusel sabe que mostrar aunque la portada no cargue.
@@ -250,10 +253,16 @@ function Banner() {
 
   useEffect(() => {
     let vivo = true
+    // Revalidacion: el HTML se genero al desplegar, asi que si el admin cambio
+    // un banner despues, esta consulta lo corrige sin necesidad de reconstruir.
+    // Si falla, se conserva lo sembrado; solo se cae al respaldo si no hay nada.
     getPublicBanners()
-      .then((bs) => vivo && setSlides(bs))
+      .then((bs) => {
+        if (!vivo) return
+        setSlides((s) => (bs?.length ? bs : s.length ? s : RESPALDO))
+      })
       // Sin este catch, un error deja slides vacio y el loader gira para siempre.
-      .catch(() => vivo && setSlides(RESPALDO))
+      .catch(() => vivo && setSlides((s) => (s.length ? s : RESPALDO)))
     return () => { vivo = false }
   }, [])
 
@@ -342,7 +351,7 @@ function Banner() {
               className="h-full w-full object-cover"
               style={{ objectPosition: s.foco || '50% 50%' }}
               loading={i === 0 ? 'eager' : 'lazy'}
-              fetchPriority={i === 0 ? 'high' : undefined}
+              fetchpriority={i === 0 ? 'high' : undefined}
               onLoad={() => {
                 setCargada((c) => (c === null ? i : c))
                 setListas((l) => (l.includes(i) ? l : [...l, i]))
@@ -413,33 +422,32 @@ function Modules() {
 function Productos({ onOpen }) {
   // Sale de la base, no de un archivo del repo: lo que el cliente carga o edita
   // en el panel tiene que verse acá sin volver a desplegar.
-  const [all, setAll] = useState([])
-  const [cargando, setCargando] = useState(true)
+  // Lo que el prerender dejo en el HTML: alcanza para dibujar las tarjetas en
+  // el primer frame, asi que si hay semilla no se muestra el estado de carga.
+  const semilla = useMemo(() => catalogoSembrado('limpieza').productos, [])
+  const [all, setAll] = useState(semilla)
+  const [cargando, setCargando] = useState(semilla.length === 0)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     let vivo = true
+    // Siempre se consulta la base, aunque haya semilla: la del HTML viene
+    // recortada (sin descripcion ni specs) y ademas puede haber quedado vieja
+    // si el admin cargo productos despues del ultimo despliegue.
     getCatalog('limpieza')
       .then((d) => {
         if (!vivo) return
         setAll(d.productos)
         setCargando(false)
-        // Los datos inyectados en el HTML alcanzan para pintar las tarjetas
-        // pero no traen descripcion ni ficha: se completan en segundo plano
-        // para que abrir un producto no muestre una ficha vacia.
-        if (d.parcial) {
-          getCatalog('limpieza', { completo: true })
-            .then((full) => vivo && setAll(full.productos))
-            .catch(() => {})
-        }
       })
       .catch((e) => {
         if (!vivo) return
-        setError(e.message)
+        // Con semilla en pantalla, un fallo de red no es un error visible.
+        if (!semilla.length) setError(e.message)
         setCargando(false)
       })
     return () => { vivo = false }
-  }, [])
+  }, [semilla])
 
   const featured = all.slice(0, 12)
   return (
@@ -526,7 +534,7 @@ function Historia() {
                 src={src}
                 alt={`Imagen de campaña de Media Naranja en ${anio}`}
                 loading="lazy"
-                fetchPriority="low"
+                fetchpriority="low"
                 width={823}
                 height={326}
                 className="aspect-[823/326] w-full object-cover"
@@ -591,7 +599,7 @@ function Historia() {
                 src="/fabrica/planta-a.jpg"
                 alt="Vista aérea de la planta de Media Naranja en Valle Viejo, Catamarca"
                 loading="lazy"
-                fetchPriority="low"
+                fetchpriority="low"
                 width={425}
                 height={255}
                 className="aspect-[5/3] w-full object-cover"
@@ -602,7 +610,7 @@ function Historia() {
                 src="/fabrica/planta-b.jpg"
                 alt="Producción de trapos de piso en la planta textil"
                 loading="lazy"
-                fetchPriority="low"
+                fetchpriority="low"
                 width={319}
                 height={255}
                 className="aspect-[5/3] w-full object-cover"

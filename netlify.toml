@@ -31,16 +31,9 @@
   status = 301
   force = true
 
-# Inyecta los datos del home y el preload de la portada en el HTML, para que
-# el navegador empiece a bajar la foto durante el parseo en vez de esperar a
-# que corra el JS y responda la base.
-#
-# El archivo vive en MediaNaranjaWeb/app/netlify/edge-functions/, no en la raiz:
-# Netlify busca las edge functions DENTRO del `base` declarado arriba. Estaba en
-# la raiz y por eso nunca se ejecuto.
-[[edge_functions]]
-  function = "datos-iniciales"
-  path = "/"
+# Ya no hay Edge Function. Las paginas publicas se dibujan al construir
+# (scripts/prerender.mjs), asi que el HTML sale del CDN ya escrito: mas rapido
+# que renderizar en cada visita y sin gastar invocaciones del plan.
 
 # Las imagenes de Supabase se sirven por nuestro dominio en vez de directo.
 # Motivo: en el plan gratuito Supabase responde con `sb-gateway-mode: direct` y
@@ -54,7 +47,19 @@
   status = 200
   force = true
 
-# SPA: todas las rutas al index (React Router)
+# /admin es privado: no se prerenderiza, asi que va al molde vacio. Si cayera
+# en /index.html recibiria el home ya dibujado y React tendria que borrarlo y
+# rehacerlo, que es un parpadeo gratis.
+[[redirects]]
+  from = "/admin/*"
+  to = "/app.html"
+  status = 200
+
+# Resto de rutas al home. Netlify sirve los archivos estaticos ANTES que las
+# redirecciones, asi que /limpieza y sus categorias reciben su propio HTML ya
+# dibujado y no pasan por aca. Lo que llegue es una ruta desconocida, y para
+# esas la app muestra el home igual (<Route path="*" element={<Landing />} />),
+# asi que el marcado que reciben es el correcto.
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -88,6 +93,13 @@
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# El HTML se regenera en cada despliegue: hay que revalidarlo siempre, o el CDN
+# seguiria sirviendo la version vieja despues de publicar cambios.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/fabrica/*"

@@ -7,7 +7,7 @@
 // que el home nunca quede vacío. El panel las muestra como "de respaldo" para
 // que no parezca que el carrusel salió de la nada.
 import { isSupabaseEnabled } from './supabase-env'
-import { leer, tomarPrecargado } from './api'
+import { leer, sembrado } from './api'
 
 export const RESPALDO = [
   { id: 'local-1', blur: null, url: '/fabrica/planta-a.jpg', titulo: '', orden: 0, activo: true },
@@ -16,17 +16,24 @@ export const RESPALDO = [
   { id: 'local-4', blur: null, url: '/fabrica/nosotros.jpg', titulo: '', orden: 3, activo: true },
 ]
 
-/** Banners publicados, en orden. El primero es el que se ve al entrar. */
+/** Los banners que el prerender dejo en el HTML, para pintar sin esperar nada. */
+export function bannersSembrados() {
+  return sembrado('banners') || []
+}
+
+/**
+ * Banners publicados, en orden. El primero es el que se ve al entrar.
+ *
+ * Devuelve `null` si la consulta falla, en vez de caer solo al respaldo: quien
+ * llama puede ya tener los banners buenos sembrados desde el HTML, y pisarlos
+ * con las fotos del repo seria un retroceso visible.
+ */
 export async function getPublicBanners() {
   if (!isSupabaseEnabled) return RESPALDO
-  // Un fallo de red o un proyecto pausado no pueden dejar el home sin hero:
-  // ante cualquier problema se cae a las fotos del repo, que siempre están.
-  // Si la Edge Function ya los dejo en el HTML, se usan sin pedir nada.
-  const yaEstan = tomarPrecargado('banners')
-  if (yaEstan?.length) return yaEstan
   const data = await leer('banners', 'select=*&activo=eq.true&order=orden.asc', 6000)
     .catch(() => null)
-  return data && data.length ? data : RESPALDO
+  if (!data) return null
+  return data.length ? data : RESPALDO
 }
 
 /** Devuelve la lista con el banner `id` movido `delta` posiciones. */

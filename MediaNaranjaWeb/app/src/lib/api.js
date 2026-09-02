@@ -28,16 +28,43 @@ export async function leer(tabla, consulta, espera = 8000) {
   }
 }
 
-/**
- * Datos que la Edge Function dejo en el HTML. Si estan, el primer render no
- * necesita consultar nada y se pinta en el primer frame. Se leen una sola vez:
- * a partir de ahi cualquier recarga de datos va contra la base, para no mostrar
- * informacion vieja si el admin cambia algo mientras la pestana esta abierta.
- */
-let precargados = typeof window !== 'undefined' ? window.__DATOS__ : null
+/** Donde el prerender deja los datos dentro del HTML. */
+export const ID_DATOS = 'datos-iniciales'
 
-export function tomarPrecargado(clave) {
-  const v = precargados?.[clave]
-  if (v) precargados = { ...precargados, [clave]: null }
-  return v || null
+let cache
+function datosDelHtml() {
+  if (cache !== undefined) return cache
+  if (typeof window === 'undefined') return (cache = null)
+  // Al prerenderizar no hay DOM: los datos llegan por aca.
+  if (window.__DATOS__) return (cache = window.__DATOS__)
+  const el = typeof document !== 'undefined' ? document.getElementById(ID_DATOS) : null
+  try {
+    cache = el ? JSON.parse(el.textContent) : null
+  } catch {
+    cache = null
+  }
+  return cache
+}
+
+/**
+ * Datos que el prerender dejo escritos en el HTML.
+ *
+ * Sirven para SEMBRAR el estado inicial de forma sincronica: el componente
+ * pinta con datos en su primer render, sin esperar a ningun efecto. Es lo que
+ * permite que el HTML llegue ya dibujado — antes traia los datos pero no el
+ * marcado, asi que el visitante miraba una pantalla en blanco hasta que React
+ * bajaba y se ejecutaba.
+ *
+ * Viajan en un <script type="application/json">, que el navegador NO ejecuta:
+ * es un bloque de datos. Un script inline comun quedaria bloqueado por la CSP
+ * (`script-src 'self'`, sin 'unsafe-inline'), y relajarla para esto seria abrir
+ * la puerta a XSS a cambio de nada.
+ *
+ * NO se consumen: el mismo valor se lee al prerenderizar y al hidratar, y tienen
+ * que coincidir exactamente o React descarta el arbol y lo vuelve a dibujar de
+ * cero, que es justo lo que se quiere evitar. Los datos frescos llegan despues,
+ * por la revalidacion en segundo plano que hace cada pagina.
+ */
+export function sembrado(clave) {
+  return datosDelHtml()?.[clave] || null
 }

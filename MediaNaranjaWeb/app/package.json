@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "eslint src && vite build",
+    "build": "eslint src && vite build && vite build -c vite.ssr.config.js && node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "eslint src"
   },

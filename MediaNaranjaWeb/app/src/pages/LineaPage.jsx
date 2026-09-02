@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowLeft, Download, ChevronRight } from 'lucide-react'
-import { getCatalog } from '../lib/products.js'
+import { getCatalog, catalogoSembrado } from '../lib/products.js'
 import { LINEAS } from '../lib/theme.js'
 import Logo from '../components/Logo.jsx'
 import HeartMark from '../components/HeartMark.jsx'
@@ -14,8 +14,11 @@ export default function LineaPage({ linea }) {
   const meta = LINEAS[linea]
   const { categoria } = useParams()
   const navigate = useNavigate()
-  const [data, setData] = useState({ productos: [], categorias: [] })
-  const [loading, setLoading] = useState(true)
+  // Sembrado desde el HTML que genero el prerender: si hay datos, la grilla
+  // sale dibujada en el primer render y no se muestra el estado de carga.
+  const semilla = useMemo(() => catalogoSembrado(linea), [linea])
+  const [data, setData] = useState(semilla)
+  const [loading, setLoading] = useState(semilla.productos.length === 0)
   const [error, setError] = useState(null)
   const [selected, setSelected] = useState(null)
 
@@ -26,8 +29,11 @@ export default function LineaPage({ linea }) {
 
   useEffect(() => {
     let alive = true
-    setLoading(true)
-    setData({ productos: [], categorias: [] })
+    // Se vuelve a la semilla en vez de vaciar: al cambiar de linea no hay nada
+    // sembrado y queda vacio igual, pero al montar evita un parpadeo entre lo
+    // que ya venia dibujado en el HTML y la respuesta de la base.
+    setData(semilla)
+    setLoading(semilla.productos.length === 0)
     getCatalog(linea)
       .then((d) => {
         if (!alive) return
@@ -37,10 +43,11 @@ export default function LineaPage({ linea }) {
         })
         setError(null)
       })
-      .catch((e) => alive && setError(e.message))
+      // Con la semilla en pantalla, un fallo de red no es un error visible.
+      .catch((e) => alive && !semilla.productos.length && setError(e.message))
       .finally(() => alive && setLoading(false))
     return () => { alive = false }
-  }, [linea])
+  }, [linea, semilla])
 
   const activeCat = categoria || 'todos'
   const productos = useMemo(

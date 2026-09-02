@@ -1,5 +1,5 @@
 import { isSupabaseEnabled } from './supabase-env'
-import { leer, tomarPrecargado } from './api'
+import { leer, sembrado } from './api'
 
 // Deriva la lista de categorías (únicas, en orden de aparición) de un set de productos.
 function categoriasDe(productos, linea) {
@@ -59,23 +59,26 @@ export function toRow(p) {
 }
 
 /** Devuelve { productos, categorias } para una línea */
-export async function getCatalog(linea, { completo = false } = {}) {
+export async function getCatalog(linea) {
   if (useSeed) {
     const seed = await getSeed()
     const productos = seed.productos.filter((p) => p.linea === linea)
     return { productos, categorias: deriveCategorias(productos, linea) }
   }
-  // Si la Edge Function ya los dejo en el HTML, se usan para pintar sin pedir
-  // nada. Vienen recortados —solo los campos de la tarjeta y las primeras 12—
-  // asi que se marcan como parciales: la ficha necesita descripcion y specs,
-  // que llegan despues con la consulta completa.
-  const yaEstan = !completo && linea === 'limpieza' ? tomarPrecargado('productos') : null
-  if (yaEstan?.length) {
-    const productos = yaEstan.map(fromRow)
-    return { productos, categorias: categoriasDe(productos, linea), parcial: true }
-  }
   const data = await leer('productos', `select=*&linea=eq.${encodeURIComponent(linea)}&order=orden.asc`)
   const productos = (data || []).map(fromRow)
   return { productos, categorias: categoriasDe(productos, linea) }
 }
+/**
+ * Catalogo que el prerender dejo en el HTML, listo para sembrar el estado
+ * inicial. Viene recortado —solo los campos de la tarjeta y las primeras 12—
+ * porque alcanza para dibujar la grilla en el primer frame; la descripcion y
+ * las specs llegan con la consulta completa de siempre.
+ */
+export function catalogoSembrado(linea) {
+  const filas = sembrado('productos')
+  const productos = (filas || []).map(fromRow).filter((p) => p.linea === linea)
+  return { productos, categorias: categoriasDe(productos, linea) }
+}
+
 export const CATALOG_MODE = useSeed ? 'seed' : 'supabase'
