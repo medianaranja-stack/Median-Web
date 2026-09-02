@@ -321,11 +321,14 @@ function Banner() {
                 absoluto, el navegador las considera visibles y loading="lazy" no
                 las difiere — bajaba las cuatro en paralelo y la primera tardaba
                 el triple por competir con las otras tres por el ancho de banda. */}
-            {(i === visible || i === (visible + 1) % slides.length) && (
+            {/* Al arrancar se pide SOLO la que se ve. La siguiente se precarga
+                recien cuando la primera ya esta: si no, dos fotos grandes
+                compiten por el ancho de banda y la que importa llega mas tarde. */}
+            {(i === visible || (lista && i === (visible + 1) % slides.length)) && (
             <SafeImg
               src={urlServida(s.url)}
               srcSet={srcSetDe(s.url, s.anchos) || undefined}
-              sizes="100vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 800px, 1600px"
               alt={s.titulo || ''}
               className="h-full w-full object-cover"
               style={{ objectPosition: s.foco || '50% 50%' }}
@@ -493,6 +496,7 @@ function Historia() {
                 src={src}
                 alt={`Imagen de campaña de Media Naranja en ${anio}`}
                 loading="lazy"
+                fetchPriority="low"
                 width={823}
                 height={326}
                 className="aspect-[823/326] w-full object-cover"
@@ -557,6 +561,7 @@ function Historia() {
                 src="/fabrica/planta-a.jpg"
                 alt="Vista aérea de la planta de Media Naranja en Valle Viejo, Catamarca"
                 loading="lazy"
+                fetchPriority="low"
                 width={425}
                 height={255}
                 className="aspect-[5/3] w-full object-cover"
@@ -567,6 +572,7 @@ function Historia() {
                 src="/fabrica/planta-b.jpg"
                 alt="Producción de trapos de piso en la planta textil"
                 loading="lazy"
+                fetchPriority="low"
                 width={319}
                 height={255}
                 className="aspect-[5/3] w-full object-cover"
