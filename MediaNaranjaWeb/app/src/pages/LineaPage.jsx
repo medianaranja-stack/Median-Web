@@ -7,6 +7,7 @@ import { LINEAS } from '../lib/theme.js'
 import Logo from '../components/Logo.jsx'
 import HeartMark from '../components/HeartMark.jsx'
 import ProductCard from '../components/ProductCard.jsx'
+import CargandoProductos from '../components/CargandoProductos.jsx'
 import ProductModal from '../components/ProductModal.jsx'
 
 export default function LineaPage({ linea }) {
@@ -88,7 +89,7 @@ export default function LineaPage({ linea }) {
         {/* Grilla */}
         <div>
           {loading ? (
-            <SkeletonGrid />
+            <CargandoProductos cantidad={9} columnas="grid-cols-2 sm:grid-cols-3" />
           ) : error ? (
             <ErrorState msg={error} />
           ) : productos.length === 0 ? (
@@ -251,22 +252,6 @@ function ProductGrid({ productos, onOpen }) {
         >
           <ProductCard producto={p} index={i} onOpen={onOpen} />
         </motion.div>
-      ))}
-    </div>
-  )
-}
-
-function SkeletonGrid() {
-  return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-      {Array.from({ length: 9 }).map((_, i) => (
-        <div key={i} className="card-depth overflow-hidden">
-          <div className="aspect-square w-full animate-pulse" style={{ background: 'var(--border)' }} />
-          <div className="space-y-2 p-4">
-            <div className="h-3 w-1/2 animate-pulse rounded" style={{ background: 'var(--border)' }} />
-            <div className="h-4 w-3/4 animate-pulse rounded" style={{ background: 'var(--border)' }} />
-          </div>
-        </div>
       ))}
     </div>
   )
