@@ -9,6 +9,7 @@ import { SITE } from '../lib/site.js'
 import Logo from '../components/Logo.jsx'
 import SafeImg from '../components/SafeImg.jsx'
 import ProductCard from '../components/ProductCard.jsx'
+import CargandoProductos from '../components/CargandoProductos.jsx'
 import ProductModal from '../components/ProductModal.jsx'
 
 const YELLOW = '#FFD400', RED = '#E30613', INK = '#1c1a17'
@@ -442,13 +443,16 @@ function Productos({ onOpen }) {
             Ver todos{all.length ? ` (${all.length})` : ''} <ArrowRight size={15} />
           </Link>
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {cargando
-            ? Array.from({ length: 8 }, (_, i) => (
-                // Reserva el lugar mientras carga, para que no salte el layout.
-                <div key={i} className="aspect-[3/4] animate-pulse rounded-2xl bg-black/[0.06]" />
-              ))
-            : featured.map((p, i) => <ProductCard key={p.id} producto={p} index={i} onOpen={onOpen} />)}
+        <div className="mt-6">
+          {cargando ? (
+            <CargandoProductos cantidad={8} />
+          ) : (
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {featured.map((p, i) => (
+                <ProductCard key={p.id} producto={p} index={i} onOpen={onOpen} />
+              ))}
+            </div>
+          )}
         </div>
         {!cargando && !all.length && (
           <p className="mt-6 text-[15px] text-[var(--muted)]">

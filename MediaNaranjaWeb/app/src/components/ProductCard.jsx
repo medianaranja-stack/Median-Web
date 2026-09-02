@@ -20,9 +20,11 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
         <span className="mono-label absolute left-3 top-3 z-10 rounded-full bg-black/45 px-2 py-1 text-white/90 backdrop-blur">
           {n}
         </span>
-        {/* Esqueleto: ocupa el lugar mientras la foto baja, y se apaga sola. */}
+        {/* Esqueleto mientras la foto baja. Usa var(--border) y no un gris
+            propio: #efece5 sobre el fondo #f4f4f2 casi no se distingue y la
+            grilla se leia vacia en vez de cargando. */}
         {img && !cargada && (
-          <div aria-hidden className="absolute inset-0 animate-pulse bg-[#efece5]" />
+          <div aria-hidden className="absolute inset-0 animate-pulse" style={{ background: 'var(--border)' }} />
         )}
         {img ? (
           /* La tarjeta mide ~300px en escritorio y media pantalla en celular:

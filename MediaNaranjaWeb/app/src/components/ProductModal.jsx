@@ -86,7 +86,7 @@ export default function ProductModal({ producto, onClose }) {
             <div className="bg-[#f4f1ec] p-4 sm:p-6">
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white">
                 {!fotoLista && (
-                  <div aria-hidden className="absolute inset-0 animate-pulse bg-[#f0ece5]" />
+                  <div aria-hidden className="absolute inset-0 animate-pulse" style={{ background: 'var(--border)' }} />
                 )}
                 <img
                   src={urlServida(imgs[active])}
