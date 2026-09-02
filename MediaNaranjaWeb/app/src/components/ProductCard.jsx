@@ -5,6 +5,11 @@ import { urlServida, srcSetDe } from '../lib/urls.js'
 export default function ProductCard({ producto, index = 0, onOpen }) {
   // Cada tarjeta avisa cuando su foto llego. Sin esto quedan huecos grises
   // desparejos mientras las 12 imagenes van cayendo de a una.
+  //
+  // Nota: estas fotos NO llevan fetchPriority="low". Se probo y fue un error:
+  // loading="lazy" ya alcanza para que no le compitan al banner, y al entrar en
+  // pantalla el navegador les sube la prioridad solo. Sumarle prioridad baja las
+  // dejaba en gris mientras el visitante las estaba mirando.
   const [cargada, setCargada] = useState(false)
   const img = producto.imagenes[0]
   const n = String(index + 1).padStart(2, '0')
@@ -36,9 +41,6 @@ export default function ProductCard({ producto, index = 0, onOpen }) {
             alt={producto.nombre}
             loading="lazy"
             decoding="async"
-            /* La grilla esta abajo del pliegue: que no le compita el ancho de
-               banda a la foto del banner, que es lo unico que se ve al entrar. */
-            fetchPriority="low"
             onLoad={() => setCargada(true)}
             onError={(e) => {
               // Si falta la version del srcset, reintentar con el original.
