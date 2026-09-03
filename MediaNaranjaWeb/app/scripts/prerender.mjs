@@ -20,6 +20,7 @@ const DIST = join(RAIZ, 'dist')
 // 60 solo engordaria el documento y retrasaria el primer pintado.
 const TARJETAS = 12
 const CAMPOS = 'id,nombre,slug,categoria,categoria_label,imagenes,anchos,linea,orden'
+const ID_DATOS = 'datos-iniciales'
 
 // --- variables de entorno -------------------------------------------------
 // En Netlify vienen del entorno; en local, del .env que Vite lee solo.
@@ -53,22 +54,29 @@ async function leer(tabla, consulta) {
   }
 }
 
+/**
+ * Trae los datos y ademas informa QUE consultas fallaron.
+ *
+ * La distincion importa: una tabla vacia es un estado legitimo (si el cliente
+ * borra todos los banners, el sitio cae a las fotos del repo y esta bien). Una
+ * consulta que falla es un problema de infraestructura, y ahi lo que se dibuje
+ * va a salir sin fotos.
+ */
 async function traerDatos() {
-  if (!URL_BASE || !ANON) {
-    console.log('  · sin credenciales de Supabase: se dibuja el estado de carga')
-    return { banners: [], productos: [] }
-  }
+  if (!URL_BASE || !ANON) return { banners: [], productos: [], fallaron: ['sin credenciales'] }
+
+  const fallaron = []
   const [banners, productos] = await Promise.all([
     leer('banners', 'select=*&activo=eq.true&order=orden.asc').catch((e) => {
-      console.log('  · banners:', e.message)
+      fallaron.push(`banners (${e.message})`)
       return []
     }),
     leer('productos', `select=${CAMPOS}&linea=eq.limpieza&order=orden.asc&limit=${TARJETAS}`).catch((e) => {
-      console.log('  · productos:', e.message)
+      fallaron.push(`productos (${e.message})`)
       return []
     }),
   ])
-  return { banners, productos }
+  return { banners, productos, fallaron }
 }
 
 // --- sombras de las APIs del navegador ------------------------------------
@@ -126,14 +134,48 @@ function guardar(ruta, html) {
 }
 
 // --- principal ------------------------------------------------------------
+// Netlify define NETLIFY=true en sus builds. Sirve para ser estricto ahi y
+// permisivo cuando alguien construye en su maquina sin .env.
+const EN_NETLIFY = process.env.NETLIFY === 'true'
+
 const plantilla = readFileSync(join(DIST, 'index.html'), 'utf8')
+
+// El molde tiene que ser la salida limpia de `vite build`. Si ya trae marcado
+// inyectado es que este script corrio dos veces sin un build en medio, y estaria
+// dibujando sobre su propia salida: se acumularian bloques de datos y el
+// resultado seria incoherente.
+if (!plantilla.includes('<div id="root"></div>') || plantilla.includes(ID_DATOS)) {
+  console.error('\n  ✗ dist/index.html no es el molde limpio de vite build.')
+  console.error('     Correr `vite build` antes de este script (npm run build hace las dos).')
+  process.exit(1)
+}
 
 // El molde vacio, para /admin: es privado, cambia con cada sesion y no tiene
 // sentido dibujarlo al construir. Se guarda ANTES de tocar nada.
 writeFileSync(join(DIST, 'app.html'), plantilla)
 
-const datos = await traerDatos()
+const { fallaron, ...datos } = await traerDatos()
 console.log(`  · datos: ${datos.banners.length} banners, ${datos.productos.length} productos`)
+
+// Si la base no contesto, lo que se dibujaria sale sin banner, sin productos y
+// sin la precarga de portada: o sea, el sitio lento otra vez, y quieto asi
+// hasta la proxima reconstruccion. Con builds disparados a mano eso se ve al
+// toque; con la reconstruccion diaria corriendo de madrugada, no se entera
+// nadie. Asi que se corta.
+//
+// Netlify, ante un build fallido, MANTIENE el despliegue anterior. Contenido de
+// ayer completo y rapido es mucho mejor que contenido de hoy sin fotos.
+if (fallaron.length) {
+  console.error(`\n  ✗ No se pudieron leer los datos: ${fallaron.join(', ')}`)
+  if (EN_NETLIFY) {
+    console.error('     Se corta el build a proposito. Netlify deja publicado el')
+    console.error('     despliegue anterior, que esta completo.')
+    console.error('     Si el proyecto de Supabase esta pausado, hay que reanudarlo')
+    console.error('     y volver a desplegar.')
+    process.exit(1)
+  }
+  console.error('     Build local: se continua, pero las paginas salen sin fotos.')
+}
 
 prepararEntorno(datos)
 const { render, precargaDePortada } = await import('../dist-ssr/entry-server.js')
@@ -153,7 +195,7 @@ const fallidas = []
 
 const cabeza =
   precargaDePortada(datos.banners) +
-  `<script type="application/json" id="datos-iniciales">${seguro(datos)}</script>`
+  `<script type="application/json" id="${ID_DATOS}">${seguro(datos)}</script>`
 
 for (const ruta of rutas) {
   globalThis.window.location.pathname = ruta
