@@ -31,6 +31,12 @@
   status = 301
   force = true
 
+# Las functions viven DENTRO del `base` declarado arriba, igual que pasaba con
+# las edge functions. Se declara explicito para no depender de la convencion:
+# la vez que se dio por sentado, la funcion nunca se ejecuto.
+[functions]
+  directory = "netlify/functions"
+
 # Ya no hay Edge Function. Las paginas publicas se dibujan al construir
 # (scripts/prerender.mjs), asi que el HTML sale del CDN ya escrito: mas rapido
 # que renderizar en cada visita y sin gastar invocaciones del plan.
