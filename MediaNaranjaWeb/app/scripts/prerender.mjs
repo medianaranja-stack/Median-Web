@@ -118,8 +118,14 @@ function prepararEntorno(datos) {
 // navegador leeria el resto como HTML. Escapando `<` eso no puede pasar.
 const seguro = (o) => JSON.stringify(o).replace(/</g, '\\u003c')
 
+// Cada ruta se guarda como `<ruta>.html`, no como `<ruta>/index.html`.
+//
+// Con la forma de directorio, Netlify redirige /limpieza a /limpieza/ antes de
+// servir (su funcion "Pretty URLs"): un viaje de ida y vuelta extra para quien
+// entra directo. Medido en produccion, 1,5 s contra 0,87 s del home. Como
+// archivo suelto lo sirve de una, sin redireccion.
 function guardar(ruta, html) {
-  const destino = ruta === '/' ? join(DIST, 'index.html') : join(DIST, ruta, 'index.html')
+  const destino = ruta === '/' ? join(DIST, 'index.html') : join(DIST, `${ruta}.html`)
   mkdirSync(dirname(destino), { recursive: true })
   writeFileSync(destino, html)
   console.log(`  ✓ ${ruta.padEnd(28)} ${(html.length / 1024).toFixed(1)} KB`)
