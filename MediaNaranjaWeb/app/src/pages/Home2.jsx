@@ -1,6 +1,11 @@
+// COPIA DEL HOME PARA PROBAR UN ESTILO NUEVO.
+//
+// Es un duplicado a proposito: permite rehacer el diseño sin tocar la pagina
+// que esta en produccion, y compararlas lado a lado. Cuando se decida, o esto
+// reemplaza a Landing.jsx o se borra entero junto con su ruta y su boton.
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X } from 'lucide-react'
+import { BookOpen, Package, Mail, ArrowRight, Download, Facebook, Instagram, Factory, Check, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { getPublicBanners, bannersSembrados, RESPALDO } from '../lib/banners.js'
 import { getCatalog, catalogoSembrado } from '../lib/products.js'
 import { urlServida, srcSetDe } from '../lib/urls.js'
@@ -22,7 +27,6 @@ const YELLOW = '#FFD400', RED = '#E30613', INK = '#1c1a17'
 // El costo es recorte vertical — de una foto 2,4:1 se ve el 80% del alto en
 // notebook. Para eso está el punto de encuadre en el panel.
 // El aspect-ratio además reserva el alto antes de que cargue la foto (sin CLS).
-const BANNER_ALTO = 'aspect-[3/2] sm:aspect-[21/9] lg:aspect-[3/1] max-h-[560px]'
 
 // Secciones del navbar. El id tiene que existir como <section id="…"> abajo.
 const NAV = [
@@ -42,33 +46,28 @@ const ZONAS = [
   { id: 'top' }, { id: 'modulos' }, { id: 'productos' }, { id: 'historia' }, { id: 'contacto' },
 ]
 
-/**
- * Acceso temporal a la prueba de estilo. Flota sobre la pagina en vez de vivir
- * en el navbar para no alterar el diseño que esta en produccion mientras se
- * compara, y para que se lea como lo que es: algo que se va a sacar.
- */
-function BotonHome2() {
-  return (
-    <Link
-      to="/home2"
-      className="fixed bottom-4 right-4 z-50 rounded-full border border-dashed border-[var(--border)] bg-white/90 px-4 py-2 text-sm font-semibold text-[var(--ink)] shadow-lg backdrop-blur transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-      style={{ outlineColor: RED }}
-    >
-      home2
-    </Link>
-  )
-}
-
-export default function Landing() {
+export default function Home2() {
   const [selected, setSelected] = useState(null)
   // Se monta después del primer render para que las secciones ya existan.
   useEffect(() => medirSecciones(ZONAS), [])
+
+  // El navbar de esta version es fijo, asi que al tabular el navegador puede
+  // dejar el elemento enfocado justo debajo y taparlo. scroll-padding-top le
+  // reserva ese alto al hacer scroll, tanto por foco como por ancla.
+  //
+  // Se pone y se saca al montar porque es propio de esta pagina: el home real
+  // tiene una barra mas baja y no necesita este margen.
+  useEffect(() => {
+    const raiz = document.documentElement
+    const previo = raiz.style.scrollPaddingTop
+    raiz.style.scrollPaddingTop = '7rem'
+    return () => { raiz.style.scrollPaddingTop = previo }
+  }, [])
   return (
     <main className="relative min-h-dvh bg-[var(--bg)] font-body text-[var(--ink)]">
       <a href="#modulos" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-[#1c1a17] focus:px-4 focus:py-2 focus:text-white">Saltar al contenido</a>
       <h1 className="sr-only">Media Naranja Limpieza — productos de limpieza hechos en Argentina desde 1975.</h1>
       <PageBg />
-      <BotonHome2 />
       <div className="relative z-10">
         <Header />
         <Banner />
@@ -143,6 +142,73 @@ function useSeccionActiva() {
   return activa
 }
 
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Lenguaje visual de esta prueba, adaptado de mortimer.com.ar a la marca.
+   Tres piezas: campo rojo con textura, corte diagonal, y titulos en italica.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/**
+ * Textura del hero. Un rojo plano y liso se lee barato en pantallas grandes;
+ * la grilla fina y la luz central le dan profundidad sin competir con el texto.
+ * La mascara la desvanece en los bordes para que no parezca un papel cuadriculado.
+ */
+function TexturaHero() {
+  const desvanecer = 'radial-gradient(ellipse 85% 65% at 50% 35%, #000 35%, transparent 100%)'
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,.55) 1px, transparent 1px),' +
+            'linear-gradient(90deg, rgba(255,255,255,.55) 1px, transparent 1px)',
+          backgroundSize: '56px 56px',
+          WebkitMaskImage: desvanecer,
+          maskImage: desvanecer,
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{ background: 'radial-gradient(ellipse 70% 55% at 50% 30%, rgba(255,255,255,.18), transparent 70%)' }}
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-48"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,.22), transparent)' }}
+      />
+    </div>
+  )
+}
+
+/** Corte diagonal que cierra el hero contra la seccion siguiente. */
+function CorteDiagonal() {
+  return (
+    <div aria-hidden className="absolute inset-x-0 bottom-0 z-20 leading-[0]">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none" className="block h-[52px] w-full sm:h-[80px] lg:h-[100px]">
+        <path d="M0,110 L1440,18 L1440,110 Z" fill="var(--bg)" />
+      </svg>
+    </div>
+  )
+}
+
+/**
+ * Titulo de seccion: rojo, italica pesada, centrado. Es el gesto que mas se
+ * repite en la referencia y el que le da unidad a toda la pagina.
+ */
+function TituloSeccion({ children, sub, antetitulo }) {
+  return (
+    <div className="text-center">
+      {antetitulo && (
+        <p className="mono-label mb-2" style={{ color: 'var(--muted)' }}>{antetitulo}</p>
+      )}
+      <h2 className="font-archivo text-3xl font-black italic leading-none tracking-tight sm:text-4xl lg:text-[2.75rem]" style={{ color: RED }}>
+        {children}
+      </h2>
+      {sub && <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">{sub}</p>}
+    </div>
+  )
+}
+
 function Header() {
   const [abierto, setAbierto] = useState(false)
   const activa = useSeccionActiva()
@@ -167,10 +233,24 @@ function Header() {
   }, [abierto, cerrar])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-black/5" style={{ background: YELLOW }}>
-      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-6 px-5 sm:px-8">
-        <a href="#top" aria-label="Media Naranja Limpieza — ir al inicio" className="shrink-0 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1c1a17]">
-          <Logo />
+    // Flotante sobre el hero, no pegado arriba: es el gesto que define la
+    // referencia. Va fijo para que la navegacion siga a mano al scrollear —
+    // un navbar que se va obliga a volver arriba para cambiar de seccion.
+    <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 sm:pt-4">
+      <div
+        className="mx-auto flex w-full max-w-6xl items-center gap-2 rounded-full px-2.5 py-2 shadow-xl sm:gap-5 sm:px-4 sm:py-2.5"
+        style={{ background: RED }}
+      >
+        {/* Placa blanca detras del logo: el logo oficial es rojo y sobre rojo
+            desapareceria. Recolorearlo no es opcion — es la marca. */}
+        <a
+          href="#top"
+          aria-label="Media Naranja Limpieza — ir al inicio"
+          className="shrink-0 rounded-full bg-white px-3.5 py-1.5 transition-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-4"
+        >
+          {/* El logo es corazon + wordmark en una marca casi cuadrada: por debajo
+              de ~40px de alto el wordmark deja de leerse. */}
+          <Logo className="!h-9 w-auto sm:!h-11" />
         </a>
 
         {/* Escritorio */}
@@ -181,13 +261,13 @@ function Header() {
                 <a
                   href={`#${id}`}
                   aria-current={activa === id ? 'true' : undefined}
-                  className="relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-semibold text-[#5c4a00] transition-colors duration-200 hover:bg-black/[0.06] hover:text-[#1c1a17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c1a17] aria-[current]:text-[#1c1a17]"
+                  className="relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-bold text-white/80 transition-colors duration-200 hover:bg-white/15 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current]:text-white"
                 >
                   {label}
                   <span
                     aria-hidden
-                    className="absolute inset-x-3.5 -bottom-px h-0.5 origin-left rounded-full transition-transform duration-200"
-                    style={{ background: RED, transform: `scaleX(${activa === id ? 1 : 0})` }}
+                    className="absolute inset-x-3.5 bottom-1 h-0.5 origin-left rounded-full transition-transform duration-200"
+                    style={{ background: YELLOW, transform: `scaleX(${activa === id ? 1 : 0})` }}
                   />
                 </a>
               </li>
@@ -196,10 +276,21 @@ function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1">
-          <a href={SITE.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-full text-[#5c4a00] transition-colors hover:bg-black/[0.06] hover:text-[#1c1a17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a17]"><Facebook size={18} /></a>
-          <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-full text-[#5c4a00] transition-colors hover:bg-black/[0.06] hover:text-[#1c1a17] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a17]"><Instagram size={18} /></a>
+          <a href={SITE.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="hidden h-10 w-10 place-items-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white sm:grid"><Facebook size={17} /></a>
+          <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="hidden h-10 w-10 place-items-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-white sm:grid"><Instagram size={17} /></a>
 
-          {/* Móvil */}
+          {/* Boton amarillo. En la referencia dice "Donde comprar"; aca no puede
+              serlo: los enlaces a tienda se dieron de baja a pedido del cliente.
+              El equivalente util es el contacto (mayoristas y consultas). */}
+          <a
+            href="#contacto"
+            className="ml-1 hidden items-center rounded-full px-5 py-2.5 font-archivo text-sm font-extrabold italic transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:inline-flex"
+            style={{ background: YELLOW, color: INK }}
+          >
+            Contacto
+          </a>
+
+          {/* Movil */}
           <button
             ref={burgerRef}
             type="button"
@@ -207,21 +298,21 @@ function Header() {
             aria-expanded={abierto}
             aria-controls="menu-movil"
             aria-label={abierto ? 'Cerrar menú' : 'Abrir menú'}
-            className="grid h-11 w-11 place-items-center rounded-full text-[#1c1a17] transition-colors hover:bg-black/[0.06] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1c1a17] md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full text-white transition-colors hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white md:hidden"
           >
             {abierto ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Panel móvil */}
+      {/* Panel movil */}
       <div
         id="menu-movil"
         hidden={!abierto}
-        className="border-t border-black/10 md:hidden"
-        style={{ background: YELLOW }}
+        className="mx-auto mt-2 w-full max-w-6xl overflow-hidden rounded-3xl shadow-xl md:hidden"
+        style={{ background: RED }}
       >
-        <nav aria-label="Secciones" className="mx-auto w-full max-w-5xl px-5 pb-3 pt-1 sm:px-8">
+        <nav aria-label="Secciones" className="px-5 py-2">
           <ul>
             {NAV.map(({ id, label }) => (
               <li key={id}>
@@ -229,7 +320,7 @@ function Header() {
                   href={`#${id}`}
                   onClick={cerrar}
                   aria-current={activa === id ? 'true' : undefined}
-                  className="flex min-h-[48px] items-center justify-between border-b border-black/[0.07] text-base font-semibold text-[#5c4a00] transition-colors last:border-0 hover:text-[#1c1a17] aria-[current]:text-[#1c1a17]"
+                  className="flex min-h-[52px] items-center justify-between border-b border-white/15 font-archivo text-base font-extrabold italic text-white/85 transition-colors last:border-0 hover:text-white aria-[current]:text-white"
                 >
                   {label}
                   <ArrowRight size={17} aria-hidden />
@@ -237,6 +328,11 @@ function Header() {
               </li>
             ))}
           </ul>
+          <div className="flex items-center gap-2 py-3">
+            <a href={SITE.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-full text-white/80 hover:bg-white/15 hover:text-white"><Facebook size={18} /></a>
+            <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-full text-white/80 hover:bg-white/15 hover:text-white"><Instagram size={18} /></a>
+            <a href="#contacto" onClick={cerrar} className="ml-auto rounded-full px-5 py-2.5 font-archivo text-sm font-extrabold italic" style={{ background: YELLOW, color: INK }}>Contacto</a>
+          </div>
         </nav>
       </div>
     </header>
@@ -265,6 +361,12 @@ function Banner() {
   const [cargada, setCargada] = useState(null)
   const [listas, setListas] = useState([])
   const [fallidas, setFallidas] = useState([])
+  // Un carrusel que avanza solo cada 5 s tiene que poder detenerse (WCAG 2.2.2).
+  // `detenido` lo corta para siempre en cuanto el visitante toca una flecha o un
+  // punto: si esta eligiendo que mirar, que se le mueva solo es una molestia.
+  // `pausado` lo suspende mientras el puntero esta encima o hay foco adentro.
+  const [detenido, setDetenido] = useState(false)
+  const [pausado, setPausado] = useState(false)
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const lista = cargada !== null
   const todasFallaron = slides.length > 0 && fallidas.length >= slides.length
@@ -288,7 +390,7 @@ function Banner() {
   // 5 s: si la siguiente no habia terminado, el banner quedaba en blanco. Ahora,
   // si la proxima todavia no esta, se queda en la actual y reintenta al rato.
   useEffect(() => {
-    if (reduce || !lista || slides.length < 2) return
+    if (reduce || detenido || pausado || !lista || slides.length < 2) return
     const t = setInterval(() => {
       setIdx((i) => {
         for (let salto = 1; salto <= slides.length; salto++) {
@@ -299,7 +401,7 @@ function Banner() {
       })
     }, 5000)
     return () => clearInterval(t)
-  }, [reduce, lista, slides.length, listas])
+  }, [reduce, detenido, pausado, lista, slides.length, listas])
 
   // Que foto se muestra. Mientras no cargo ninguna se apunta a la primera que
   // todavia no fallo: si la portada no llega, se pasa sola a la siguiente en
@@ -307,113 +409,166 @@ function Banner() {
   const primeraViable = slides.findIndex((_, i) => !fallidas.includes(i))
   const visible = lista ? idx : Math.max(0, primeraViable)
 
+  const s = slides[visible]
+
   return (
-    <section id="top" aria-label="Destacados" aria-roledescription="carrusel" className={`relative z-10 w-full ${BANNER_ALTO}`}>
-      {/* Vista previa borrosa: viene dentro de la misma consulta que trae el
-          banner (~1 KB en la fila), así que se ve apenas responde la base, sin
-          esperar a que baje la foto real. */}
-      {!lista && !todasFallaron && slides[visible]?.blur && (
-        <img
-          src={slides[visible].blur}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: slides[visible].foco || '50% 50%', filter: 'blur(24px)', transform: 'scale(1.06)' }}
-        />
-      )}
+    <section
+      id="top"
+      aria-label="Destacados"
+      aria-roledescription="carrusel"
+      className="relative isolate overflow-hidden"
+      style={{ background: RED }}
+      onMouseEnter={() => setPausado(true)}
+      onMouseLeave={() => setPausado(false)}
+      onFocusCapture={() => setPausado(true)}
+      onBlurCapture={() => setPausado(false)}
+    >
+      <TexturaHero />
 
-      {/* Si no hay miniatura (banners de respaldo), late el logo. Sin nada de
-          esto el banner es un rectángulo vacío y la página parece colgada. */}
-      {!lista && !todasFallaron && !slides[visible]?.blur && (
-        <div
-          className="absolute inset-0 grid place-items-center"
-          style={{ background: 'var(--bg)' }}
-          role="status"
-          aria-label="Cargando"
-        >
-          <img
-            src="/logo-clean.png"
-            alt=""
-            width={300}
-            height={252}
-            className="mn-latido h-16 w-auto sm:h-20"
-          />
-        </div>
-      )}
-
-      <div
-        className="mn-banner-mask absolute inset-0 transition-opacity duration-500"
-        style={{ opacity: lista ? 1 : 0 }}
-      >
-        {slides.map((s, i) => (
-          <div
-            key={s.id}
-            className="absolute inset-0 transition-opacity duration-[900ms] ease-out"
-            style={{ opacity: i === visible ? 1 : 0 }}
-            aria-hidden={i !== visible}
-          >
-            {/* Sólo se pide la actual y la siguiente. Antes se renderizaban las
-                cuatro <img> juntas: como están todas dentro del mismo contenedor
-                absoluto, el navegador las considera visibles y loading="lazy" no
-                las difiere — bajaba las cuatro en paralelo y la primera tardaba
-                el triple por competir con las otras tres por el ancho de banda. */}
-            {/* Al arrancar se pide SOLO la que se ve. La siguiente se precarga
-                recien cuando la primera ya esta: si no, dos fotos grandes
-                compiten por el ancho de banda y la que importa llega mas tarde. */}
-            {(i === visible || (lista && i === (visible + 1) % slides.length)) && (
-            <SafeImg
-              src={urlServida(s.url)}
-              srcSet={srcSetDe(s.url, s.anchos) || undefined}
-              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 800px, 1600px"
-              alt={s.titulo || ''}
-              className="h-full w-full object-cover"
-              style={{ objectPosition: s.foco || '50% 50%' }}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              fetchpriority={i === 0 ? 'high' : undefined}
-              onLoad={() => {
-                setCargada((c) => (c === null ? i : c))
-                setListas((l) => (l.includes(i) ? l : [...l, i]))
-              }}
-              onError={() => setFallidas((f) => (f.includes(i) ? f : [...f, i]))}
-            />
-            )}
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-9 px-5 pb-14 pt-28 sm:px-8 sm:pb-16 sm:pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-20 lg:pt-36">
+        {/* ---- Texto ---- */}
+        <div className="relative">
+          {/* Amarillo sobre rojo da 3,41:1: alcanza para texto grande, no para
+              cuerpo. Por eso el antetitulo es grande y en negrita, nunca chico. */}
+          <p className="font-archivo text-xl font-extrabold italic leading-none sm:text-2xl" style={{ color: YELLOW }}>
+            Desde 1975
+          </p>
+          <h2 className="mt-2 font-archivo text-[2.75rem] font-black italic leading-[0.9] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            {s?.titulo || 'Limpieza que rinde'}
+          </h2>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-white/85 sm:text-lg">
+            Fabricamos trapos, microfibras y accesorios de limpieza en Valle Viejo, Catamarca.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              to="/limpieza"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-archivo text-sm font-extrabold italic transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-base"
+              style={{ background: YELLOW, color: INK }}
+            >
+              Ver productos <ArrowRight size={17} aria-hidden />
+            </Link>
+            <a
+              href="#historia"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-white/45 px-6 py-3 font-archivo text-sm font-extrabold italic text-white transition-colors hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-base"
+            >
+              Conocenos
+            </a>
           </div>
-        ))}
+        </div>
+
+        {/* ---- Foto ----
+            La referencia usa un recorte de producto sobre el fondo. Aca las
+            fotos son apaisadas y vienen de la base, asi que van en un panel
+            redondeado con halo: mantiene la composicion a dos columnas sin
+            pedirle a las fotos algo que no son. */}
+        <div className="relative">
+          <div
+            className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.75rem] shadow-2xl ring-1 ring-white/30 sm:aspect-[16/10] lg:aspect-[4/3]"
+            style={{ boxShadow: '0 30px 70px -20px rgba(0,0,0,.55)' }}
+          >
+            {/* Vista previa borrosa mientras baja la foto real. */}
+            {!lista && !todasFallaron && s?.blur && (
+              <img
+                src={s.blur}
+                alt=""
+                aria-hidden
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: s.foco || '50% 50%', filter: 'blur(24px)', transform: 'scale(1.06)' }}
+              />
+            )}
+
+            {/* Sin miniatura (banners de respaldo): late el logo. */}
+            {!lista && !todasFallaron && !s?.blur && (
+              <div className="absolute inset-0 grid place-items-center bg-black/20" role="status" aria-label="Cargando">
+                <img src="/logo-clean.png" alt="" width={300} height={252} className="mn-latido h-14 w-auto" />
+              </div>
+            )}
+
+            <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: lista ? 1 : 0 }}>
+              {slides.map((b, i) => (
+                <div
+                  key={b.id}
+                  className="absolute inset-0 transition-opacity duration-[900ms] ease-out"
+                  style={{ opacity: i === visible ? 1 : 0 }}
+                  aria-hidden={i !== visible}
+                >
+                  {/* Solo se pide la que se ve; la siguiente recien cuando la
+                      primera ya esta, para que no compitan por el ancho de banda. */}
+                  {(i === visible || (lista && i === (visible + 1) % slides.length)) && (
+                    <SafeImg
+                      src={urlServida(b.url)}
+                      srcSet={srcSetDe(b.url, b.anchos) || undefined}
+                      sizes="(max-width: 1024px) 100vw, 620px"
+                      alt={b.titulo || ''}
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: b.foco || '50% 50%' }}
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      fetchpriority={i === 0 ? 'high' : undefined}
+                      onLoad={() => {
+                        setCargada((c) => (c === null ? i : c))
+                        setListas((l) => (l.includes(i) ? l : [...l, i]))
+                      }}
+                      onError={() => setFallidas((f) => (f.includes(i) ? f : [...f, i]))}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Flechas, como en la referencia. Ocultas si hay una sola foto. */}
+          {slides.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={() => { setDetenido(true); setIdx((i) => (i - 1 + slides.length) % slides.length) }}
+                aria-label="Imagen anterior"
+                className="absolute -left-2 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/30 text-white backdrop-blur transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white lg:-left-5"
+              >
+                <ChevronLeft size={22} />
+              </button>
+              <button
+                type="button"
+                onClick={() => { setDetenido(true); setIdx((i) => (i + 1) % slides.length) }}
+                aria-label="Imagen siguiente"
+                className="absolute -right-2 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-black/30 text-white backdrop-blur transition hover:bg-black/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white lg:-right-5"
+              >
+                <ChevronRight size={22} />
+              </button>
+            </>
+          )}
+        </div>
       </div>
 
-      {/* El título va fuera de la máscara: si no, se desvanece con la imagen. */}
-      {slides[visible]?.titulo && (
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/60 to-transparent pb-14 pt-20">
-          <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-            <h2 className="max-w-2xl font-archivo text-2xl font-extrabold leading-tight tracking-tight text-white drop-shadow-sm sm:text-4xl">
-              {slides[visible].titulo}
-            </h2>
-          </div>
-        </div>
-      )}
-
+      {/* Puntos */}
       {slides.length > 1 && (
-        <div className="absolute inset-x-0 bottom-4 z-10 mx-auto flex w-full max-w-5xl justify-center gap-2 px-5 sm:px-8">
-          {slides.map((s, i) => (
+        <div className="relative z-30 mx-auto flex w-full max-w-6xl justify-center gap-2 px-5 pb-16 sm:px-8 sm:pb-20">
+          {slides.map((b, i) => (
             <button
-              key={s.id}
+              key={b.id}
               type="button"
-              onClick={() => setIdx(i)}
+              onClick={() => { setDetenido(true); setIdx(i) }}
               aria-label={`Ver imagen ${i + 1} de ${slides.length}`}
               aria-current={i === visible ? 'true' : undefined}
-              className="grid h-11 w-6 place-items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c1a17]"
+              // El punto se ve chico pero el area que responde al dedo mide
+              // 44x44: es el minimo para no errarle en un telefono.
+              className="grid h-11 w-11 place-items-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
             >
               <span
-                className="h-2 rounded-full transition-all duration-300"
+                // Se anima transform y color, nunca width: animar el ancho
+                // obliga al navegador a recalcular la disposicion en cada cuadro.
+                className="block h-2 w-2 rounded-full transition-[transform,background-color] duration-300"
                 style={{
-                  width: i === visible ? 22 : 8,
-                  background: i === visible ? INK : 'rgba(28,26,23,.3)',
+                  transform: i === visible ? 'scaleX(3.25)' : 'scaleX(1)',
+                  background: i === visible ? YELLOW : 'rgba(255,255,255,.5)',
                 }}
               />
             </button>
           ))}
         </div>
       )}
+
+      <CorteDiagonal />
     </section>
   )
 }
@@ -469,15 +624,18 @@ function Productos({ onOpen }) {
 
   const featured = all.slice(0, 12)
   return (
-    <section id="productos" className="scroll-mt-16 border-t border-[var(--border)]">
+    <section id="productos" className="scroll-mt-28 border-t border-[var(--border)]">
       <div className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="font-archivo text-2xl font-extrabold sm:text-3xl">Nuestros productos</h2>
-            <p className="mt-1 text-[15px] text-[var(--muted)]">Tocá un producto para ver la ficha y descargar las fotos.</p>
-          </div>
-          <Link to="/limpieza" className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5" style={{ background: INK }}>
-            Ver todos{all.length ? ` (${all.length})` : ''} <ArrowRight size={15} />
+        <TituloSeccion sub="Tocá un producto para ver la ficha y descargar las fotos.">
+          Nuestros productos
+        </TituloSeccion>
+        <div className="mt-6 flex justify-center">
+          <Link
+            to="/limpieza"
+            className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-archivo text-sm font-extrabold italic text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            style={{ background: RED, outlineColor: RED }}
+          >
+            Ver todos{all.length ? ` (${all.length})` : ''} <ArrowRight size={16} aria-hidden />
           </Link>
         </div>
         <div className="mt-6">
@@ -520,10 +678,9 @@ const DATOS_PLANTA = [
 
 function Historia() {
   return (
-    <section id="historia" className="scroll-mt-16 border-t border-[var(--border)]">
+    <section id="historia" className="scroll-mt-28 border-t border-[var(--border)]">
       <div className="mx-auto w-full max-w-5xl px-5 py-14 sm:px-8">
-        <p className="mono-label" style={{ color: RED }}>● Desde 1975</p>
-        <h2 className="mt-2 font-archivo text-2xl font-extrabold sm:text-3xl">Nosotros</h2>
+        <TituloSeccion antetitulo="● Desde 1975">Sobre nosotros</TituloSeccion>
 
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[var(--ink)] sm:text-xl">
           En 1975 nacimos para que vos puedas tener en tu hogar un aliado para ayudarte a hacer
@@ -644,10 +801,9 @@ function Historia() {
 function Contacto() {
   const [sent, setSent] = useState(false)
   return (
-    <section id="contacto" className="scroll-mt-16 border-t border-[var(--border)]">
+    <section id="contacto" className="scroll-mt-28 border-t border-[var(--border)]">
       <div className="mx-auto w-full max-w-xl px-5 py-12 text-center sm:px-8">
-        <h2 className="font-archivo text-2xl font-extrabold sm:text-3xl">Contacto</h2>
-        <p className="mt-2 text-[var(--muted)]">¿Consultas, mayoristas o dónde comprar? Escribinos.</p>
+        <TituloSeccion sub="¿Consultas o pedidos mayoristas? Escribinos.">Contacto</TituloSeccion>
         {sent ? (
           <div className="mx-auto mt-6 grid place-items-center rounded-2xl border border-green-200 bg-green-50 p-8">
             <Check className="text-green-700" size={26} /><p className="mt-2 font-semibold text-green-800">¡Gracias! Te respondemos a la brevedad.</p>
@@ -670,9 +826,14 @@ function Contacto() {
 
 function Footer() {
   return (
-    <footer className="border-t border-[var(--border)]">
-      <div className="mx-auto w-full max-w-5xl px-5 py-6 text-center text-sm text-[var(--muted)] sm:px-8">
-        Media Naranja · Fibran Sur S.A. · Argentina · © {new Date().getFullYear()}
+    <footer style={{ background: RED }}>
+      <div className="mx-auto w-full max-w-6xl px-5 py-10 text-center sm:px-8">
+        <p className="font-archivo text-2xl font-black italic leading-none" style={{ color: YELLOW }}>
+          Media Naranja
+        </p>
+        <p className="mt-3 text-sm text-white/80">
+          Fibran Sur S.A. · Valle Viejo, Catamarca · Argentina · © {new Date().getFullYear()}
+        </p>
       </div>
     </footer>
   )
