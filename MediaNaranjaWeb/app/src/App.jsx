@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Landing from './pages/Landing.jsx'
 import LineaPage from './pages/LineaPage.jsx'
+import Home2 from './pages/Home2.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import { registrarVisita } from './lib/analytics.js'
 
@@ -32,6 +33,8 @@ export default function App() {
       <Suspense fallback={<Fallback />}>
         <Routes>
           <Route path="/" element={<Landing />} />
+          {/* Temporal: prueba de un estilo nuevo. Se va junto con Home2.jsx. */}
+          <Route path="/home2" element={<Home2 />} />
           <Route path="/limpieza" element={<LineaPage key="limpieza" linea="limpieza" />} />
           <Route path="/limpieza/:categoria" element={<LineaPage key="limpieza" linea="limpieza" />} />
           <Route path="/admin/*" element={<Admin />} />

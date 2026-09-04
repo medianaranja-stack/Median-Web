@@ -190,7 +190,9 @@ const { render, precargaDePortada } = await import('../dist-ssr/entry-server.js'
 // puede abrir directo o recibir por link, y sin su propio HTML caeria en el
 // molde del home y React tendria que redibujar todo.
 const categorias = [...new Set(datos.productos.map((p) => p.categoria).filter(Boolean))]
-const rutas = ['/', '/limpieza', ...categorias.map((c) => `/limpieza/${c}`)]
+// /home2 es la prueba de estilo: se dibuja igual que el resto para poder
+// compararla contra el home en las mismas condiciones.
+const rutas = ['/', '/home2', '/limpieza', ...categorias.map((c) => `/limpieza/${c}`)]
 
 // Bloque de DATOS, no de codigo: el navegador no lo ejecuta, asi que la CSP
 // (`script-src 'self'`) lo deja pasar sin tener que habilitar scripts inline.
